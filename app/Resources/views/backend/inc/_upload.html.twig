@@ -1,0 +1,57 @@
+
+<div class="col-lg-3 col-xlg-3 col-md-3">
+    <div class="card">
+        <div class="card-body">
+        {{ form_start(uploadForm, {'attr': {'class': ''}}) }}
+        {{ form_errors(uploadForm) }}
+        <fieldset>
+            <br>
+            <div class="control-group span12">
+                {{ form_label(uploadForm.file) }}
+                <div class="controls">
+                    {{ form_widget(uploadForm.file, {'attr': {'': '', 'class': 'dropify'}}) }}
+                </div>
+            </div>
+        </fieldset>
+        <br>
+        <button class="btn btn-outline-primary btn-block" type="submit">Subir Arquivo!</button>
+
+        {{ form_widget(uploadForm._token) }}
+        {{ form_end(uploadForm, {'render_rest': false}) }}
+        </div>
+    </div>
+    <div class="card">
+        {#<div class="card-body">#}
+            {#<form id="upload" action="" method="post" enctype="multipart/form-data">#}
+                {#<h4 class="card-title">Subir arquivos</h4>#}
+                {#<label for="input-file-now">Todos os seus arquivos de utilidade</label>#}
+                {#<input type="file" id="input-file-now" class="dropify" />#}
+                {#<button class="btn btn-outline-primary" type="submit">Manda Brasa!</button>#}
+            {#</form>#}
+        {#</div>#}
+        {#<div><hr></div>#}
+        {#<div class="card">#}
+        <div class="card-header">
+            <h4>Uploads de: {{ dados.cliente|truncate(20) }}</h4>
+        </div>
+        <div class="card-body">
+            {#<h4 class="card-title"></h4>#}
+            {% for upload in uploads %}
+                <a href="{{ asset('./uploads/' ~ upload.nome) }}">
+                    <small>{{ upload.nomeOriginal|lower|truncate(35) }}</small>
+                </a>
+                <a title="Apagar este arquivo"
+                   class="btn btn-sm btn-outline-danger pull-right"
+                   href="javascript:void(0)"
+                   onclick="if(confirm('Tem certeza que deseja apagar definitivamente?'))
+                           {window.location=
+                           '{{ path('admin_upload_apagar', { id: upload.id }) }}';
+                           }">
+                    <i class="halflings-icon trash"></i> Apagar</a>
+                {% if not loop.last %}
+                    <hr>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="card-body">
+    <form class="form-horizontal form-material" id="loginform" action="index.html">
+
+        <!-- esta linea incluye el logo, sus textos y su enlace -->
+        {{ include('auth/inc/_logo.html.twig') }}
+
+        <h3 class="box-title m-t-40 m-b-0">{{ 'auth.register.title'|trans|capitalize }}</h3>
+        <small>{{ 'auth.register.subtitle'|trans|capitalize }}</small>
+        <div class="form-group m-t-20">
+            <div class="col-xs-12">
+                <input class="form-control" type="text" required="" placeholder="{{ 'auth.register.name'|trans|capitalize }}">
+            </div>
+        </div>
+        <div class="form-group ">
+            <div class="col-xs-12">
+                <input class="form-control" type="text" required="" placeholder="{{ 'auth.register.email'|trans }}">
+            </div>
+        </div>
+        <div class="form-group ">
+            <div class="col-xs-12">
+                <input class="form-control" type="password" required="" placeholder="{{ 'auth.register.password'|trans|capitalize }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <input class="form-control" type="password" required="" placeholder="{{ 'auth.register.confirm'|trans|capitalize }}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-12">
+                <div class="checkbox checkbox-primary p-t-0">
+                    <input id="checkbox-signup" type="checkbox">
+                    <label for="checkbox-signup"> {{ 'auth.register.aceito'|trans|capitalize }}
+                        <a href="{{ path('terms') }}">{{ 'auth.register.terms'|trans|capitalize }}</a>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group text-center m-t-20">
+            <div class="col-xs-12">
+                <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">
+                    {{ 'auth.register.action'|trans|capitalize }}
+                </button>
+            </div>
+        </div>
+        <div class="form-group m-b-0">
+            <div class="col-sm-12 text-center">
+                <p>{{ 'auth.register.haveAnAccount'|trans|capitalize }}
+                    <a href="{{ path('fos_user_security_login') }}" class="text-info m-l-5">
+                        <b>{{ 'auth.register.signIn'|trans|capitalize }}</b>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </form>
+</div>

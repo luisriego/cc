@@ -1,0 +1,132 @@
+
+<div class="row">
+    <!-- column -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Listagem de {{ titulo|capitalize }}</h3>
+                <table class="table table-bordered table-striped" id="myTable">
+                    <thead>
+                    <tr>
+                        {% if cabeceras is defined %}
+                            <th class="text-nowrap">Açao</th>
+                        {#{% for campo in campos %}#}
+                            {#<th>{{ campo|capitalize }}</th>#}
+                        {#{% endfor %}#}
+
+                            {% for cabecera in cabeceras %}
+                                <th>{{ cabecera|capitalize }}</th>
+                            {% endfor %}
+                        {% endif %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {#{% if dados|length != 0 %}#}
+                    {% for dado in dados %}
+                        <tr>
+                            <td class="text-nowrap">
+                                <a href="{{ path('edit-chamados-abertos', { chamado: dado.id }) }}"
+                                   data-toggle="tooltip"
+                                   data-original-title="{{ 'call.open.icon.edit'|trans|capitalize }}">
+                                    <i class="fa fa-pencil text-inverse m-r-10"></i>
+                                </a>
+                                <a href="{{ path('timeline-chamados', { chamado: dado.id }) }}"
+                                   data-toggle="tooltip"
+                                   data-original-title="{{ 'call.open.icon.timeline'|trans|capitalize }}">
+                                    <i class="mdi mdi-timer text-inverse m-r-10"></i>
+                                </a>
+
+                                {% if ('Chamados Abertos' in titulo or 'ultimos chamados abertos' in titulo) %}
+                                    <a href="{{ path('end-chamados-abertos', { chamado: dado.id }) }}"
+                                       data-toggle="tooltip"
+                                       data-original-title="{{ 'call.open.icon.close'|trans|capitalize }}">
+                                        <i class="mdi mdi-sleep"></i>
+                                    </a>
+                                {% else %}
+                                    <a href="{{ path('reactivate-chamados', { chamado: dado.id }) }}"
+                                       data-toggle="tooltip"
+                                       data-original-title="{{ 'call.open.icon.reopen'|trans|capitalize }}">
+                                        <i class="mdi mdi-sleep-off"></i>
+                                    </a>
+                                {% endif %}
+                                <a class=""
+                                   href="#"
+                                   data-toggle="tooltip"
+                                   data-original-title="{{ 'call.open.icon.delete'|trans|capitalize }}">
+                                    <i class="mdi mdi-delete text-danger"></i>
+                                </a>
+                            </td>
+                            {% for campo in campos %}
+                                {% if campo == 'roles' %}
+                                    {% if dado.roles[0] == 'ROLE_ADMIN' or dado.roles[0] == 'ROLE_SUPER_ADMIN' %}
+                                        <td>Administrador</td>
+                                    {% elseif dado.roles[0] == 'ROLE_TECNICO' %}
+                                        <td>Tecnico</td>
+                                    {% else %}
+                                        <td>Usuario</td>
+                                    {% endif %}
+                                {% elseif campo == 'empresa' %}
+                                    <td class="editable"
+                                        style="width: 20%"
+                                        title="{{ attribute(dado, campo) }}"
+                                        id="{{ dado.id }}">
+                                        {% set client = (attribute(dado, campo) == null) ? attribute(dado, 'empresa')|url_encode : (attribute(dado, campo))|url_encode %}
+                                        {% if attribute(dado, campo) is null %}
+                                            Atençao!! Cliente nao asignado corretamente.
+                                        {% else %}
+                                            {% if attribute(dado, campo) is null %}
+                                                <a href="">
+                                                {{ client }}<small>{{ attribute(dado, 'empresa')|truncate(20) }}</small>
+                                            {% else %}
+                                                {% if attribute(dado, 'cliente').id is defined %}
+                                                    <a href="{{ path('admin_cliente_edit', { id: attribute(dado, 'cliente').id }) }}">
+                                                {% else %}
+                                                    <a href="">
+                                                {% endif %}
+                                               <small>{{ attribute(dado, campo)|truncate(30)|upper }}</small>
+                                            {% endif %}
+                                            </a>
+                                        {% endif %}
+                                    </td>
+                                {% else %}
+                                    {% if attribute(dado, campo).timezone is defined %}
+                                        <td id="{{ dado.id }}"
+                                            style="width: 100px">
+                                            {{ attribute(dado, campo)|date('d/m/Y') }}
+                                        </td>
+                                    {% elseif campo == 'valor' %}
+                                        <td style="width: 115px">
+                                                {#<span class="label">#}
+                                                    {{ attribute(dado, campo)|rating }}
+                                                {#</span>#}
+                                        </td>
+                                    {% elseif campo == 'status' %}
+                                        <td>
+                                            <span class="label"
+                                                  style="background-color: {{ dado.status.cor }}; color: white">
+                                                {{ dado.status.nome|capitalize }}
+                                            </span>
+                                        </td>
+                                    {% elseif campo == 'mensagem' or campo == 'problema' %}
+                                        <td class="editable"
+                                            title="{{ attribute(dado, campo) }}"
+                                            id="{{ dado.id }}">
+                                            {{ attribute(dado, campo)|truncate(65) }}
+                                        </td>
+                                    {% else %}
+                                        <td class="editable"
+                                            title="{{ attribute(dado, campo) }}"
+                                            id="{{ dado.id }}">
+                                            {{ attribute(dado, campo)|truncate(20)|upper }}
+                                        </td>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

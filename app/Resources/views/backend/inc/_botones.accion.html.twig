@@ -1,0 +1,24 @@
+{% if action is not defined %}
+    {% set action = 'Salvar' %}
+    {#{% set action = 'Salvar & Retornar' %}#}
+{% endif %}
+{% if return is not defined %}
+    {% set return = 'Retornar' %}
+{% endif %}
+{% if printAction is not defined %}
+    {% set printAction = true %}
+{% endif %}
+{% if printReturn is not defined %}
+    {% set printReturn = true %}
+{% endif %}
+
+{% if printAction %}
+    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+        <i class="mdi mdi-content-save"></i> {{ action }}
+    </button>
+{% endif %}
+{% if printReturn %}
+    <a href="{{ app.request.headers.get('referer') }}" type="button" class="btn btn-inverse waves-effect waves-light">
+        <i class="mdi mdi-keyboard-return"></i> {{ return }}
+    </a>
+{% endif %}

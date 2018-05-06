@@ -37,5 +37,6 @@ monolog:
         #    type: chromephp
         #    level: info
 
-#swiftmailer:
-#    delivery_addresses: ['me@example.com']
+swiftmailer:
+    delivery_addresses: ['dev@expresate.com.br']
+#    intercept_redirects: true

@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+
+{% block head %}
+    <link href="{{ asset('assets/css/pages/file-upload.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+
+    {#{{ include('dashboard/inc/_breadcrumb.html.twig') }}#}
+
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+
+
+    {{ include('status/inc/_nuevo.status.html.twig') }}
+
+
+
+    <!-- ============================================================== -->
+    <!-- End Page Content -->
+    <!-- ============================================================== -->
+
+
+{% endblock %}
+
+{% block js %}
+    <!-- Editable -->
+    <script src="{{ asset('assets/plugins/jquery-datatables-editable/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/plugins/tiny-editable/mindmup-editabletable.js') }}"></script>
+    <script src="{{ asset('assets/plugins/tiny-editable/numeric-input-example.js') }}"></script>
+    <script>
+//        $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+        $('#editable-datatable').editableTableWidget().numericInputExample().find('td:first').focus();
+        $(document).ready(function() {
+            $('#editable-datatable').DataTable();
+        });
+    </script>
+{% endblock %}

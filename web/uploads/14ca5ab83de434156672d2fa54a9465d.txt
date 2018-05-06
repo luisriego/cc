@@ -1,0 +1,55 @@
+cls
+echo off
+cls
+REM -
+REM - Clinica do Micro
+REM - 
+REM - Criado por: Franey Vieira Martins
+REM - Site: www.clinicadomicro.com.br
+REM -
+REM - VARIAVEIS
+
+REM - ESTRUTURA
+echo # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - -#
+echo #                               Inicio e Limpeza                          #
+echo # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - -#
+TIMEOUT /T 5 /NOBREAK
+net time \\192.168.0.25 /SET /YES
+net use * /del /yes
+echo # Limpeza realizada com sucesso.
+echo # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - -#
+echo #                         Mapeando Rede                                   #
+echo # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - -#
+
+net use r: \\192.168.0.25\Rede /USER:locacao lll.5050
+if exist \\192.168.0.25\Rede\ net use r: \\192.168.0.25\Rede /USER:locacao lll.5050 /persistent:yes
+TIMEOUT /T 2 /NOBREAK
+if exist \\192.168.0.25\Rede\ net use r: \\192.168.0.25\Rede /USER:locacao lll.5050 /persistent:yes
+TIMEOUT /T 2 /NOBREAK
+if exist \\192.168.0.25\Rede\ net use r: \\192.168.0.25\Rede /USER:locacao lll.5050 /persistent:yes
+TIMEOUT /T 2 /NOBREAK
+if exist \\192.168.0.25\Rede\ net use r: \\192.168.0.25\Rede /USER:locacao lll.5050 /persistent:yes
+
+net use l: \\192.168.0.25\locacao /USER:locacao lll.5050
+if exist \\192.168.0.25\Rede\ net use l: \\192.168.0.25\locacao /USER:locacao lll.5050 /persistent:yes
+TIMEOUT /T 2 /NOBREAK
+if exist \\192.168.0.25\Rede\ net use l: \\192.168.0.25\locacao /USER:locacao lll.5050 /persistent:yes
+TIMEOUT /T 2 /NOBREAK
+if exist \\192.168.0.25\Rede\ net use l: \\192.168.0.25\locacao /USER:locacao lll.5050 /persistent:yes
+TIMEOUT /T 2 /NOBREAK
+if exist \\192.168.0.25\Rede\ net use l: \\192.168.0.25\locacao /USER:locacao lll.5050 /persistent:yes
+
+echo.
+echo # Mapeamento realizado com sucesso.
+echo.
+echo # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - -#
+echo.
+echo # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - -#
+echo #                    Configurando Hambiente                               #
+echo # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - -#
+R:\BGInfo\bginfo R:\BGInfo\mdi.bgi /TIMER:0 /SILENT /NOLICPROMPT
+echo.
+echo # Configuracoes realizada com sucesso.
+echo.
+exit
+

@@ -1,0 +1,100 @@
+{% if app.user.avatar %}
+    {% set imagem = app.user.avatar %}
+{% else %}
+    {% set imagem = 'default.jpg' %}
+{% endif %}
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<!-- Row -->
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-4 col-xlg-3 col-md-5">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text-center">{{ usuario.profile.nomeCompleto }}</h3>
+                <div><hr></div>
+                <center class="m-t-30">
+                    <img src="{{ asset('assets/images/users/'~imagem) }}"
+                         class="img-circle"
+                         width="150"
+                         data-toggle="modal" data-target=".bs-example-modal-lg"/>
+
+                    <h4 class="card-title m-t-10">{{ usuario.nomeCompleto }}</h4>
+                    <h6 class="card-subtitle">{{ usuario.profile.titulo }}</h6>
+                    {#<h6 class="card-subtitle">{{ usuario.profile.mensagem|capitalize }}</h6>#}
+                    <div class="row text-center justify-content-md-center">
+                        <div class="col-4"><a href="javascript:void(0)" class="link"><i class="icon-people"></i> <font class="font-medium">254</font></a></div>
+                        <div class="col-4"><a href="javascript:void(0)" class="link"><i class="icon-picture"></i> <font class="font-medium">54</font></a></div>
+                    </div>
+                </center>
+                {#Modal que se ejecuta para cambiar el avatar del usuario#}
+                {{ include('backend/dashboard/_modal.Profile.html.twig') }}
+            </div>
+            <div><hr></div>
+            <div class="card-body">
+                <small class="text-muted">Email </small>
+                <h6>{{ usuario.email }}</h6>
+                <small class="text-muted p-t-30 db">Telefone</small>
+                <h6>{{ usuario.profile.telefone }}</h6>
+                <h6>{{ usuario.profile.celular }}</h6>
+                <small class="text-muted p-t-30 db">Endereço</small>
+                <h6>{{ usuario.endereco.enderecoCompleto }}</h6>
+                <h5>{{ usuario.endereco.bairro }} {{ usuario.endereco.cidade }} MG</h5>
+
+                <small class="text-muted p-t-30 db">Social Profile</small>
+                <br/>
+                <button class="btn btn-circle btn-secondary"><i class="fa fa-facebook"></i></button>
+                <button class="btn btn-circle btn-secondary"><i class="fa fa-twitter"></i></button>
+                <button class="btn btn-circle btn-secondary"><i class="fa fa-youtube"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-8 col-xlg-9 col-md-7">
+        <div class="card">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs profile-tab" role="tablist">
+                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile" role="tab">Perfil</a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Endereço</a> </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <!--second tab-->
+                <div class="tab-pane active" id="profile" role="tabpanel">
+                    <div class="card-body">
+                        {#<div class="row">#}
+                            {{ form_start(form, {'attr': {'class': 'form-material m-t-30'}}) }}
+                            {{ form_errors(form) }}
+                            <div class="col-md-12">
+                                {{ form_widget(form) }}
+                            </div>
+                            {{ include('backend/inc/_botones.accion.html.twig') }}
+                            {{ form_widget(form._token) }}
+                            {{ form_end(form, {'render_rest': false}) }}
+                        {#</div>#}
+                    </div>
+                </div>
+                <div class="tab-pane" id="settings" role="tabpanel">
+                    <div class="card-body">
+                        {{ form_start(formDir, {'attr': {'class': 'form-material m-t-30'}}) }}
+                        {{ form_errors(formDir) }}
+                        <div class="col-md-12">
+                            {{ form_widget(formDir) }}
+                        </div>
+                        {{ include('backend/inc/_botones.accion.html.twig') }}
+                        {{ form_widget(formDir._token) }}
+                        {{ form_end(formDir, {'render_rest': false}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+</div>
+<!-- Row -->
+<!-- ============================================================== -->
+<!-- End PAge Content -->
+<!-- ============================================================== -->

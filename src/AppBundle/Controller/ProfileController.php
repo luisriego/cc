@@ -1,0 +1,201 @@
+<?php
+
+namespace AppBundle\Controller;
+
+use AppBundle\Entity\Endereco;
+use AppBundle\Entity\Profile;
+use AppBundle\Entity\Settings;
+use AppBundle\Services\Uploads;
+use AppBundle\Services\Utiles;
+use AppBundle\Entity\User;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+
+class ProfileController extends Controller
+{
+    /**
+     * @Route("/admin/perfil/", name="perfil")
+     */
+    public function profileAction(Request $request, Utiles $utiles, Uploads $uploads)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $usuario = $this->getUser();
+
+        $weather = $utiles->weather();
+
+        if ($usuario->getProfile() == null){
+            $usuario->setProfile(new Profile);
+        }
+        if ($usuario->getEndereco() == null){
+            $usuario->setEndereco(new Endereco);
+        }
+
+        $form = $this->createForm('AppBundle\Form\ProfileType', $usuario->getProfile());
+        $formDir = $this->createForm('AppBundle\Form\ProfileDirType', $usuario->getEndereco());
+        $formAvatar = $this->createForm('AppBundle\Form\UserAvatarType', $usuario);
+        $form->handleRequest($request);
+        $formDir->handleRequest($request);
+        $formAvatar->handleRequest($request);
+
+
+        if (($form->isSubmitted() && $form->isValid()) || ($formDir->isSubmitted() && $formDir->isValid())) {
+//            if ($usuario->getNome() == null && $form["nome"]->getData() != null) {
+//                $usuario->setNome($form["nome"]->getData());
+//            }
+//            if ($usuario->getSobrenome() == null && $form["sobrenome"]->getData() != null) {
+//                $usuario->setSobrenome($form["sobrenome"]->getData());
+//            }
+
+            $em->persist($usuario);
+            $em->flush();
+
+//            return $this->redirectToRoute('admin_user_index', array('id' => $perfil->getId()));
+        }
+//
+//        if ($formDir->isSubmitted() && $formDir->isValid()) {
+//
+//            $em->persist($endereco);
+//            $em->flush();
+//
+//        }
+
+        if ($formAvatar->isSubmitted() && $formAvatar->isValid()) {
+
+            $file = $formAvatar["imageFile"]->getData();
+            $original = $file->getClientOriginalName();
+            $fileGet = $usuario->getImageFile();
+            $fileName = $uploads->upload($fileGet);
+
+            $salvo = $uploads->guardar($fileName, $original, $usuario);
+
+            if(!$salvo)
+            {
+                $request->getSession()
+                    ->getFlashBag()
+                    ->add('maldicion', 'Algo salió mal y no guardó el Upload!')
+                ;
+            }else{
+                $request->getSession()
+                    ->getFlashBag()
+                    ->add('sucesso', 'Todo salió como lo planeamos!')
+                ;
+            }
+
+        }
+
+        // dados del breadcrumb
+        $breadcrumbs = [
+            'home' => [
+                'name' => 'Painel Principal',
+                'url'  => 'homepage',
+                'is_root' => true
+            ],
+            'profile' => [
+                'name' => 'Perfil de Usuario',
+                'url'  => 'profile',
+                'is_root' => true
+            ],
+        ];
+
+        // replace this example code with whatever you need
+        return $this->render('backend/dashboard/profile.html.twig', [
+            'usuario'       => $this->getUser(),
+            'weather'       => $weather,
+            'breadcrumbs'   => $breadcrumbs,
+            'titulo'        => 'Meu perfil',
+            'action'        => 'Guardar',
+            'form'          => $form->createView(),
+            'formDir'       => $formDir->createView(),
+            'formAvatar'    => $formAvatar->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/admin/configuracao_geral/", name="config")
+     */
+    public function configAction(Request $request, Utiles $utiles, Uploads $uploads)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $settings = $em->getRepository('AppBundle:Settings')->findOneBy(array('id' => 1));
+        $settings = ($settings) ? $settings : new Settings();
+        $titulo = 'Configuração Geral';
+
+        $weather = $utiles->weather();
+
+        // dados del breadcrumb
+        $breadcrumbs = [
+            'home' => [
+                'name' => 'Painel Principal',
+                'url'  => 'homepage',
+                'is_root' => false
+            ],
+            'profile' => [
+                'name' => 'Configuracao Geral',
+                'url'  => 'profile',
+                'is_root' => true
+            ],
+        ];
+
+        $form = $this->createForm('AppBundle\Form\SettingsType', $settings);
+        $formAvatar = $this->createForm('AppBundle\Form\SettingsLogoType', $settings);
+        $form->handleRequest($request);
+        $formAvatar->handleRequest($request);
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            if ($form["telefone"]->getData()) {
+                $telefone = preg_replace("/[^0-9,.]/", "", $form["telefone"]->getData());
+                $settings->setTelefone($telefone);
+            }
+            if ($form["celular"]->getData()) {
+                $celular = preg_replace("/[^0-9,.]/", "", $form["celular"]->getData());
+                $settings->setCelular($celular);
+            }
+
+            $em->persist($settings);
+
+            $em->flush();
+        }
+
+        if ($formAvatar->isSubmitted() && $formAvatar->isValid()) {
+            $this->procesarAvatar($request, $uploads, $formAvatar,$settings, 'assets/images/clients');
+        }
+        
+
+        // replace this example code with whatever you need
+        return $this->render('backend/dashboard/config.html.twig', [
+            'usuario'       => $this->getUser(),
+            'weather'       => $weather,
+            'breadcrumbs'   => $breadcrumbs,
+            'titulo'        => $titulo,
+            'action'        => 'Guardar',
+            'settings'      => $settings,
+            'form'          => $form->createView(),
+            'formAvatar'    => $formAvatar->createView(),
+        ]);
+    }
+
+    function procesarAvatar(Request $request, Uploads $uploads, $formAvatar, $usuario, $targetDir = null) {
+
+        $file = $formAvatar["imageFile"]->getData();
+        $original = $file->getClientOriginalName();
+//        $fileGet = $usuario->getImageFile();
+        $fileName = $uploads->upload($file, $targetDir);
+        $salvo = $uploads->guardar($fileName, $fileName, $usuario);
+//dump($salvo, $original, $fileName);
+        if(!$salvo)
+        {
+            $request->getSession()
+                ->getFlashBag()
+                ->add('maldicion', 'Algo salió mal y no guardó el Upload!')
+            ;
+        }else{
+            $request->getSession()
+                ->getFlashBag()
+                ->add('sucesso', 'Todo salió como lo planeamos!')
+            ;
+        }
+    }
+}

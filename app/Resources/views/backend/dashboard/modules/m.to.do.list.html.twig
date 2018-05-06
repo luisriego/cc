@@ -1,0 +1,122 @@
+<div class="row">
+    <div class="col-lg-8 col-xlg-9">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex no-block">
+                    <div>
+                        <h4 class="card-title"><span class="lstick"></span>To Do list</h4>
+                        <h6 class="card-subtitle">List of your next task to complete</h6></div>
+                    <div class="ml-auto">
+                        <button class="pull-right btn btn-sm btn-rounded btn-success" data-toggle="modal" data-target="#myModal">Add Task</button>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- To do list widgets -->
+                <!-- ============================================================== -->
+                <div class="to-do-widget m-t-20">
+                    <!-- .modal for add task -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Add Task</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label>Task name</label>
+                                            <input type="text" class="form-control" placeholder="Enter Task Name"> </div>
+                                        <div class="form-group">
+                                            <label>Assign to</label>
+                                            <select class="custom-select form-control pull-right">
+                                                <option selected="">Sachin</option>
+                                                <option value="1">Sehwag</option>
+                                                <option value="2">Pritam</option>
+                                                <option value="3">Alia</option>
+                                                <option value="4">Varun</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+                    <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
+                        <li class="list-group-item" data-role="task">
+                            <div class="checkbox checkbox-info">
+                                <input type="checkbox" id="inputSchedule" name="inputCheckboxesSchedule">
+                                <label for="inputSchedule" class=""> <span>Schedule meeting with</span> <span class="label label-rounded label-danger pull-right">Today</span></label>
+                            </div>
+                            <ul class="assignedto">
+                                <li><img src="../assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave"></li>
+                                <li><img src="../assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Jessica"></li>
+                                <li><img src="../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
+                                <li><img src="../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item" data-role="task">
+                            <div class="checkbox checkbox-info">
+                                <input type="checkbox" id="inputCall" name="inputCheckboxesCall">
+                                <label for="inputCall" class=""> <span>Give Purchase report to</span> <span class="label label-info label-rounded pull-right">Yesterday</span> </label>
+                            </div>
+                            <ul class="assignedto">
+                                <li><img src="../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
+                                <li><img src="../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item" data-role="task">
+                            <div class="checkbox checkbox-info">
+                                <input type="checkbox" id="inputBook" name="inputCheckboxesBook">
+                                <label for="inputBook" class=""> <span>Book flight for holiday</span><span class="label label-primary label-rounded pull-right">1 week </span> </label>
+                            </div>
+                            <div class="item-date"> 26 jun 2017</div>
+                        </li>
+                        <li class="list-group-item" data-role="task">
+                            <div class="checkbox checkbox-info">
+                                <input type="checkbox" id="inputForward" name="inputCheckboxesForward">
+                                <label for="inputForward" class=""> <span>Forward all tasks</span> <span class="label label-warning label-rounded pull-right">2 weeks</span> </label>
+                            </div>
+                            <div class="item-date"> 26 jun 2017</div>
+                        </li>
+                        <li class="list-group-item" data-role="task">
+                            <div class="checkbox checkbox-info">
+                                <input type="checkbox" id="inputForward2" name="inputCheckboxesd">
+                                <label for="inputForward2" class=""> <span>Important tasks</span> <span class="label label-success label-rounded pull-right">2 weeks</span> </label>
+                            </div>
+                            <ul class="assignedto">
+                                <li><img src="../assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Assign to Steave"></li>
+                                <li><img src="../assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Assign to Jessica"></li>
+                                <li><img src="../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Assign to Selina"></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-xlg-3">
+        <div class="card">
+            <img class="card-img-top img-responsive" src="../assets/images/big/img1.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h3 class="font-normal">Featured Hydroflora Pots Garden &amp; Outdoors</h3>
+                <span class="label label-info label-rounded">Technology</span>
+                <p class="m-b-0 m-t-20">Titudin venenatis ipsum aciat. Vestibulum ullamcorper quam. nenatis ipsum ac feugiat. Ibulum ullamcorper</p>
+                <div class="d-flex m-t-20">
+                    <button class="btn p-l-0 btn-link ">Read more</button>
+                    <div class="ml-auto align-self-center">
+                        <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-heart-o"></i></a>
+                        <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-share-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

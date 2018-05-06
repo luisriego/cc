@@ -1,3 +1,10 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+api_app:
+    resource: '@AppBundle/Controller/ApiController.php'
+    type: rest
+    prefix: api/
+    methods:  [GET, POST, PUT]
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

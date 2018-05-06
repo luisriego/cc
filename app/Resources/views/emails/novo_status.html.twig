@@ -1,0 +1,59 @@
+<div id="formulario">
+    <h3 class="text-left"><strong>CLÍNICA DO MICRO</strong></h3>
+    <h4 class="text-left">PROTOCOLO Nº <span>{{ os.id }}</span></h4>
+    <h4> <span>STATUS ATUAL:</span> <span style="color: red"> {{ os.status|capitalize }}</span></h4>
+    {#<p class="text-left"><span>{{ os.data | date('d/m/Y H:i') }}</span></p>#}
+    <p>O status do seu chamado técnico n° {{ os.id }} mudou de  <span>{{ statusAnterior }}</span> para <span>{{ os.status }}</span></p>
+    <table style="padding:0;margin: 0;padding: 3px;width: 100%;border: 1px solid #000000;border-collapse: collapse;border-spacing: 0;">
+        <thead>
+            <tr>
+                <td style="width:20%;background:#1775ca;color:#FFF;padding:3px;">Campo</td>
+                <td style="width:80%;max-width: 150px ;background:#1775ca;color:#FFF;padding:3px;">Dados</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nome:</td><td>{{ os.nome }}</td>
+            </tr>
+            <tr>
+                <td>Email:</td><td>{{ os.email }}</td>
+            </tr>
+            <tr>
+                <td>Empresa:</td><td>{{ os.empresa }}</td>
+            </tr>
+            <tr>
+                <td>Telefone:</td><td>{{ os.telefone }}</td>
+            </tr>
+            <tr>
+                <td class="">Solicitação:</td>
+                <td style="max-height: 30px"><p>{{ os.mensagem }}</p></td>
+            </tr>
+            <tr>
+                <td>Problema constatado:</td><td><p>{{ os.problema }}</p></td>
+            </tr>
+            <tr>
+                <td>Solução:</td><td><p>{{ os.solucao }}</p></td>
+            </tr>
+            <tr>
+                <td>Tecnicos:</td>
+                <td>
+                    <p>
+                        {% for tecnico in os.tecnicos %}
+                            {{ tecnico.nome }} -
+                        {% endfor %}
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <p>Data e hora de chegada: </p>
+    <p>Data e hora de saida: </p>
+    <p>Responsável</p>
+    <br><br><br><br>
+    <br />
+    <p>Não responder este email, qualquer inconformidade usar o Sistema de Chamados ou pelos nossos telefones.</p>
+    {#<p>(31) 3221-8025 / 3281-5558</p>#}
+    {#<img src="{{ asset('bundles/app/img/footer.jpg') }}" alt="footer">#}
+    <img src="{{ absolute_url(asset('banners/footer-ana-paula.jpg')) }}" alt="{{ absolute_url(asset('banners/footer-ana-paula.jpg')) }}">
+</div>

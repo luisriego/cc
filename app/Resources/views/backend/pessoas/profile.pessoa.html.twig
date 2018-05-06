@@ -1,0 +1,109 @@
+{% extends 'backend/layout.html.twig' %}
+{% block title %}{{ titulo }}{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('assets/plugins/dropify/dist/css/dropify.min.css') }}">
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('assets/plugins/dropify/dist/css/dropify.min.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+
+    {{ include('backend/inc/_breadcrumb.html.twig') }}
+
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    {#<h2 class="">{{ subtitulo|title }}</h2>#}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                <strong>Fantastico!</strong>  {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    {{ include('backend/pessoas/inc/_profile.pessoas.html.twig') }}
+
+    <!-- ============================================================== -->
+    <!-- To Do List -->
+    <!-- ============================================================== -->
+    {#{{ include('dashboard/modules/m.to.do.list.html.twig') }}#}
+
+
+
+    <!-- ============================================================== -->
+    <!-- End Page Content -->
+    <!-- ============================================================== -->
+
+
+{% endblock %}
+{% block js %}
+    <script src="{{ asset('assets/plugins/jquery-datatables-editable/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/plugins/tiny-editable/mindmup-editabletable.js') }}"></script>
+    <script src="{{ asset('assets/plugins/tiny-editable/numeric-input-example.js') }}"></script>
+    <script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/select2/dist/js/select2.full.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/mask.js') }}"></script>
+    <script>
+        $(".select2").select2();
+        $('.selectpicker').selectpicker();
+    </script>
+
+    <!-- Codigo necesario para el upload -->
+    <script src="{{ asset('assets/plugins/dropify/dist/js/dropify.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $("#upload").on('submit',(function(e) {
+                console.log('Ahora a subir!');
+
+            }));
+            // Basic
+            $('.dropify').dropify();
+
+            Translated
+            $('.dropify').dropify({
+                messages: {
+                    default: 'Glissez-déposez un fichier ici ou cliquez',
+                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                    remove: 'Supprimer',
+                    error: 'Désolé, le fichier trop volumineux'
+                }
+            });
+
+            // Used events
+            var drEvent = $('#input-file-events').dropify();
+
+//            drEvent.on('dropify.submit', function(event, element) {
+//                return confirm("Quer subir mesmo \"" + element.file.name + "\" ?");
+//            });
+
+            drEvent.on('dropify.beforeClear', function(event, element) {
+                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+            });
+
+            drEvent.on('dropify.afterClear', function(event, element) {
+                alert('File deleted');
+            });
+
+            drEvent.on('dropify.errors', function(event, element) {
+                console.log('Has Errors');
+            });
+
+            var drDestroy = $('#input-file-to-destroy').dropify();
+            drDestroy = drDestroy.data('dropify')
+            $('#toggleDropify').on('click', function(e) {
+                e.preventDefault();
+                if (drDestroy.isDropified()) {
+                    drDestroy.destroy();
+                } else {
+                    drDestroy.init();
+                }
+            })
+        });
+    </script>
+{% endblock %}

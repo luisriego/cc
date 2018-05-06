@@ -1,0 +1,113 @@
+<div class="card-body">
+
+
+    <form class="form-horizontal form-material" id="loginform" action="{{ path("fos_user_security_check") }}" method="post">
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
+        <!-- esta linea incluye el logo, sus textos y su enlace -->
+        {{ include('auth/inc/_logo.html.twig') }}
+        {% if error %}
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+        <div class="form-group m-t-40">
+            <div class="col-xs-12">
+                <input
+                        class="form-control"
+                        required="required"
+                        placeholder="{{ 'auth.login.username'|trans|capitalize }}"
+                        type="text"
+                        id="username" name="_username"
+                        value="{{ last_username }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <input
+                        class="form-control"
+                        placeholder="{{ 'auth.login.password'|trans|capitalize }}"
+                        type="password"
+                        required="required"
+                        id="password" name="_password">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-12">
+                <div class="checkbox checkbox-primary pull-left p-t-0">
+                    <input id="checkbox-signup" type="checkbox" class="filled-in chk-col-light-blue" name="_remember_me" value="on">
+                    <label for="checkbox-signup"> {{ 'auth.login.remember-me'|trans|capitalize }} </label>
+                </div>
+                <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right">
+                    <i class="fa fa-lock m-r-5"></i>
+                    {{ 'auth.login.forgotPwd'|trans|capitalize }}
+                </a>
+            </div>
+        </div>
+        <div class="form-group text-center m-t-20">
+            <div class="col-xs-12">
+                <input class="btn btn-info btn-lg btn-block text-uppercase btn-rounded"
+                       type="submit"
+                       id="_submit"
+                       name="_submit"
+                       value="{{ 'auth.login.action'|trans|capitalize }}">
+                </input>
+            </div>
+        </div>
+    {#</form>#}
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+                <div class="social">
+                    <a
+                            href="javascript:void(0)"
+                            class="btn  btn-facebook"
+                            data-toggle="tooltip"
+                            title="{{ 'auth.login.facebook'|trans|capitalize }}">
+                        <i aria-hidden="true" class="fa fa-facebook"></i>
+                    </a>
+                    <a
+                            href="javascript:void(0)"
+                            class="btn btn-googleplus"
+                            data-toggle="tooltip"
+                            title="{{ 'auth.login.google'|trans|capitalize }}">
+                        <i aria-hidden="true" class="fa fa-google-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="form-group m-b-0">
+            <div class="col-sm-12 text-center">
+                {{ 'auth.login.haveAnAccount'|trans|capitalize }}
+                <a href="{{ path('fos_user_registration_register') }}" class="text-primary m-l-5">
+                    <b>{{ 'auth.login.signUp'|trans|capitalize }}</b>
+                </a>
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal" id="recoverform" action="index.html">
+        <div class="form-group ">
+            <div class="col-xs-12">
+                <h3>{{ 'auth.recovery.recover'|trans|capitalize }}</h3>
+                <p class="text-muted">{{ 'auth.recovery.instructions'|trans|capitalize }} </p>
+            </div>
+        </div>
+        <div class="form-group ">
+            <div class="col-xs-12">
+                <input class="form-control" type="text" required="" placeholder="{{ 'auth.recovery.email'|trans }}">
+            </div>
+        </div>
+        <div class="form-group text-center m-t-20">
+            <div class="col-xs-12">
+                <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">
+                    {{ 'auth.recovery.reset'|trans|capitalize }}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

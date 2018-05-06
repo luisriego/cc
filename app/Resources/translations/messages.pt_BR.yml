@@ -1,0 +1,105 @@
+auth:
+    login:
+        action: login
+        username: usuário
+        password: password
+        remember-me: 'lembrar de mim'
+        forgotPwd: 'esqueceu a senha?'
+        haveAnAccount: 'Você ainda não tem conta?'
+        signUp: 'registrar-se'
+        facebook: 'logar-se com Facebook'
+        google: 'logar-se com Google'
+    recovery:
+        recover: 'recuperar senha'
+        instructions: 'introduza seu e-mail e lhe enviaremos instruções!'
+        email: 'e-mail'
+        reset: 'recuperar'
+    register:
+        title: 'registre-se agora!'
+        subtitle: 'Crie sua conta para acessar o sistema'
+        name: nome
+        email: e-mail
+        password: password
+        confirm: confirmar password
+        terms: térmos
+        conditions: condições
+        aceito: aceito todos os
+        action: registrar-se
+        haveAnAccount: 'Você já tem uma conta?'
+        signIn: entrar
+
+header:
+    viewProfile: ver perfil de usuário
+    profile: meu perfil
+    role: meu role
+    account: minha conta
+    custom: customizar a minha conta
+
+left:
+    account:
+        profile: meu perfil
+        balance: financeiro
+        setting: configuração geral
+        logout: logout
+        nouser: nenhum usuário logado
+    home: painel principal
+    dashboard: dashboard
+    call:
+        title: chamados técnicos
+        open: ainda abertos
+        close: finalizados
+        rejected: reprovados
+    person:
+        title: pessoas
+        users: usuários
+        clients: clientes
+        thecnics: técnicos
+        employees: empleados
+    data:
+        title: dados utilizados
+        statuses: status
+        servers: servidores
+        vServers: servidores virtuais
+        net: tipos de internet
+        systems: sistemas
+        printers: impressoras
+        workstations: estações de trabalho
+        routers: tipos de roteador
+        bugs: tipos de defeito
+    graph:
+        title: gráficos
+        graphics: gráficos
+        reports: relatório
+
+call:
+    open:
+        icon:
+            graphic: Gráficos
+            close: finalizar este chamado
+            reopen: reabrir este chamado
+            edit: editar
+            timeline: linha do tempo
+            delete: apagar
+
+dashboard:
+    noNewCalls: 'Neste momento não há novos Chamados, Parabéns pelo trabalho de prevenção!'
+
+settings:
+    dataEditTitle: Edição de dados
+    type:
+        email:
+            open: Quero receber um Email sempre que um Chamado seja Aberto/Fechado
+            all: Quero receber um Email sempre que houver modificacões nos Chamados
+            openClient: Todos os clientes receberão um Email quando um Chamado seja Aberto/Fechado
+            allClient: Todos os clientes receberão um Email quando houver modificacões nos Chamados
+        sms:
+            open: Quero receber um SMS sempre que um Chamado seja Aberto/Fechado
+            all: Quero receber um SMS sempre que houver modificacões nos Chamados
+            openClient: Todos os clientes receberão um SMS quando um Chamado seja Aberto/Fechado
+            allClient: Todos os clientes receberão um SMS quando houver modificacões nos Chamados
+        voice:
+            open: Quero receber uma ligação de voz com a informação do SMS após abrirem um Chamado
+            all: Quero receber uma ligação de voz com a informação do SMS após um Chamado for modificado
+            openClient: Todos os clientes receberão uma ligação de voz com a informação do SMS após abrirem/fecharem um Chamado
+            allClient: Todos os clientes receberão uma ligação de voz com a informação do SMS após um Chamado for modificado
+            

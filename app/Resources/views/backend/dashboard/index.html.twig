@@ -1,0 +1,189 @@
+{% extends 'backend/layout.dashboard.html.twig' %}
+{% block title %}{{ titulo }}{% endblock %}
+{% block dashboard %}
+    {% if weather is not null %}
+        r-aside
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <!-- ============================================================== -->
+    <!-- Page Content -->
+    <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+
+        {{ include('backend/inc/_breadcrumb.html.twig') }}
+
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- Contenido  -->
+        <!-- ============================================================== -->
+        {% if render(controller('AppBundle:Backend:lastCallsLength')) >= 1 %}
+            {{ include('backend/dashboard/modules/m.last.calls.html.twig') }}
+            {% else %}
+            <div class="row">
+                <!-- column -->
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>{{ 'dashboard.noNewCalls'|trans }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {{ include('backend/dashboard/modules/m.stats.box.html.twig') }}
+        {#{{ include('backend/dashboard/modules/m.projects.html.twig') }}#}
+        {#{{ include('backend/dashboard/modules/m.chartjs.html.twig') }}#}
+        {{ include('backend/dashboard/modules/m.echart.html.twig') }}
+        <!-- ============================================================== -->
+        <!-- Fin Contenido -->
+        <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- End Page Content -->
+    <!-- ============================================================== -->
+
+{% endblock %}
+{% block js %}
+    <script src="{{ asset('assets/plugins/Chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/echarts/echarts-all.js') }}"></script>
+    <script>
+        // ==============================================================
+        // Bar chart option
+        // ==============================================================
+        var myChart = echarts.init(document.getElementById('dashboard'));
+
+        // specify chart configuration item and data
+        option = {
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['2016','2017','2018']
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    magicType : {show: true, type: ['line', 'bar']},
+                    {# restore : {show: true}, #}
+                    saveAsImage : {show: true}
+                }
+            },
+            color: ["#FF0000", "#55ce63", "#009efb"],
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'2016',
+                    type:'bar',
+                    data:{{ anoRetrassado.data }},
+                    markPoint : {
+                        data : [
+                            {type : 'max', name: 'Max'}
+                        ]
+                    },
+                    markLine : {
+                        symbol: ['circle', 'arrow'],
+                        itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    type: 'dashed',
+                                    width: 1.5
+                                }
+                            }
+                        },
+                        data: [
+                            [
+                                {xAxis: -1, yAxis: {{ anoRetrassado.average }}, name: 'Média', value: {{ anoRetrassado.average|number_format(1)}} },
+                                {xAxis: 12, yAxis: {{ anoRetrassado.average }} }
+                            ]
+                        ]
+                    }
+                },
+                {
+                    name:'2017',
+                    type:'bar',
+                    data:{{ anoPassado.data }},
+                    markPoint : {
+                        data : [
+                            {type : 'max', name: 'Max'}
+                        ]
+                    },
+                    markLine : {
+                        symbol: ['square', 'arrow'],
+                        itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    type: 'dashed',
+                                    width: 1.5
+                                }
+                            }
+                        },
+                        data: [
+                            [
+                                {xAxis: -1, yAxis: {{ anoPassado.average }}, name: 'Média', value: {{ anoPassado.average|number_format(1) }} },
+                                {xAxis: 12, yAxis: {{ anoPassado.average }} }
+                            ]
+                        ]
+                    }
+                },
+                {
+                    name:'2018',
+                    type:'bar',
+                    data:{{ esteAno.data }},
+                    markPoint : {
+                        data : [
+                            {type : 'max', name: 'Max'}
+                        ]
+                    },
+                    markLine : {
+                        symbol: ['triangle', 'arrow'],
+                        itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    type: 'dashed',
+                                    width: 1.5
+                                }
+                            }
+                        },
+                        data: [
+                            [
+                                {xAxis: -1, yAxis: {{ esteAno.average }}, name: 'Média', value: {{ esteAno.average|number_format(1) }} },
+                                {xAxis: 12, yAxis: {{ esteAno.average }} }
+                            ]
+                        ]
+                    }
+                }
+            ]
+        };
+
+
+        // use configuration item and data specified to show chart
+        myChart.setOption(option, true), $(function() {
+            function resize() {
+                setTimeout(function() {
+                    myChart.resize()
+                }, 100)
+            }
+            $(window).on("resize", resize), $(".sidebartoggler").on("click", resize)
+        });
+    </script>
+
+{% endblock %}

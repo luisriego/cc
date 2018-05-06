@@ -1,0 +1,80 @@
+{% extends 'backend/layout.html.twig' %}
+
+{% block head %}
+    <link href="{{ asset('assets/css/pages/file-upload.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/rating/rating.css') }}" />
+{% endblock %}
+
+{% block content %}
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+
+    {#{{ include('dashboard/inc/_breadcrumb.html.twig') }}#}
+
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+
+
+    <!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    {{ include('backend/inc/_breadcrumb.html.twig') }}
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+
+    {{ include('backend/dashboard/modules/m.last.calls.html.twig') }}
+
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+
+
+
+
+
+    <!-- ============================================================== -->
+    <!-- End Page Content -->
+    <!-- ============================================================== -->
+
+
+{% endblock %}
+
+{% block js %}
+    <script src="{{ asset('assets/js/custom/my.jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rating.js') }}"></script>
+    <!-- start - This is for export functionality only -->
+    {#<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>#}
+    {#<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>#}
+    {#<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>#}
+    {#<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>#}
+    {#<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>#}
+    {#<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>#}
+    {#<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>#}
+    <script>
+        $(document).ready(function() {
+            $(document).ready(function() {
+                var table = $('#myTable').DataTable({
+                    // Deixa uma ou varias colunas invisiveis
+//                    "columnDefs": [{
+//                        "visible": false,
+//                        "targets": 2
+//                    }],
+                    "order": [
+                        [1, 'desc']
+                    ],
+                    "displayLength": 10,
+                });
+            });
+        });
+    </script>
+{% endblock %}

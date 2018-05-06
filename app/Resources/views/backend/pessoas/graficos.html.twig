@@ -1,0 +1,115 @@
+{% extends 'backend/layout.html.twig' %}
+
+{% block head %}
+    <link href="{{ asset('assets/css/pages/file-upload.css') }}" rel="stylesheet">
+{% endblock %}
+{% block title %}{{ titulo|capitalize }}{% endblock %}
+{% block content %}
+    {% if referrer is not defined %}
+        {% set referrer = "dashboard" %}
+    {% endif %}
+
+
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        {{ include('backend/inc/_breadcrumb.html.twig') }}
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <h3>{{ cliente.nome|upper }}</h3>
+        <div class="row">
+
+            {{ include('backend/pessoas/modules/m.echart-cliente.html.twig') }}
+            {{ include('backend/pessoas/modules/m.list-client.html.twig') }}
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+
+
+
+{% endblock %}
+{% block js %}
+    <script src="{{ asset('assets/plugins/Chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/echarts/echarts-all.js') }}"></script>
+    <script>
+        // ==============================================================
+        // Bar chart option
+        // ==============================================================
+        var myChart = echarts.init(document.getElementById('cliente'));
+
+        // specify chart configuration item and data
+        option = {
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:[
+                    {% for key, value in dados %}
+                        '{{ key }}',
+                    {% endfor %}
+                ]
+            },
+            toolbox: {
+                show : true,
+                feature : {
+
+                    magicType : {show: true, type: ['line', 'bar']},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            color: ["#FF0000", "#55ce63", "#009efb"],
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {% for key, value in dados %}
+                {
+                    name:{{ key }},
+                    type:'bar',
+                    data:{{ value }},
+                    markPoint : {
+                        data : [
+                            {type : 'max', name: 'Max'},
+                            {type : 'min', name: 'Min'}
+                        ]
+                    },
+//                    markLine : {
+//                        data : [{type : 'average', name: 'Average'}]
+//                    }
+                },
+                {% endfor %}
+            ]
+        };
+
+        // use configuration item and data specified to show chart
+        myChart.setOption(option, true), $(function() {
+            function resize() {
+                setTimeout(function() {
+                    myChart.resize()
+                }, 100)
+            }
+            $(window).on("resize", resize), $(".sidebartoggler").on("click", resize)
+        });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex no-block">
+                    <div class="m-r-20 align-self-center">
+                        <span class="lstick m-r-20"></span>
+                        <img src="{{ asset('assets/images/icon/assets.png') }}" alt="Income" />
+                    </div>
+                    <div class="align-self-center">
+                        <h6 class="text-muted m-t-10 m-b-0">Chamados realizados até hoje</h6>
+                        <h2 class="m-t-0">{{ todosChamados|length }}</h2></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex no-block">
+                    <div class="m-r-20 align-self-center">
+                        <span class="lstick m-r-20"></span>
+                        <img src="{{ asset('assets/images/icon/assets.png') }}" alt="Income" />
+                    </div>
+                    <div class="align-self-center">
+                        <h6 class="text-muted m-t-10 m-b-0">Total Chamados Finalizados</h6>
+                        <h2 class="m-t-0">{{ chamadosFinalizados|length }}</h2></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex no-block">
+                    <div class="m-r-20 align-self-center">
+                        <span class="lstick m-r-20"></span>
+                        <img src="{{ asset('assets/images/icon/assets.png') }}" alt="Income" />
+                    </div>
+                    <div class="align-self-center">
+                        <h6 class="text-muted m-t-10 m-b-0">Total Chamados em Aberto</h6>
+                        <h2 class="m-t-0">{{ chamadosAbertos|length }}
+                            {#<small><small>({{ chamadosReprovados }}) Reprovados pelo cliente</small></small>#}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex no-block">
+                    <div class="m-r-20 align-self-center">
+                        <span class="lstick m-r-20"></span>
+                        <img src="{{ asset('assets/images/icon/staff.png') }}" alt="Income" />
+                    </div>
+                    <div class="align-self-center">
+                        <h6 class="text-muted m-t-10 m-b-0">Total de Técnicos</h6>
+                        <h2 class="m-t-0">{{ todosTecnicos|length }}</h2></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex no-block">
+                    <div class="m-r-20 align-self-center">
+                        <span class="lstick m-r-20"></span>
+                        <img src="{{ asset('assets/images/icon/staff.png') }}" alt="Income" />
+                    </div>
+                    <div class="align-self-center">
+                        <h6 class="text-muted m-t-10 m-b-0">Total de Usuários</h6>
+                        <h2 class="m-t-0">{{ todosUsuarios|length }}</h2></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex no-block">
+                    <div class="m-r-20 align-self-center">
+                        <span class="lstick m-r-20"></span>
+                        <img src="{{ asset('assets/images/icon/staff.png') }}" alt="Income" />
+                    </div>
+                    <div class="align-self-center">
+                        <h6 class="text-muted m-t-10 m-b-0">Total de Clientes</h6>
+                        <h2 class="m-t-0">{{ todosClientes|length }}</h2></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

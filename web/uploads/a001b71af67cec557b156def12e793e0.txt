@@ -1,0 +1,13 @@
+abrir o outollok 2010 > menu arquivo > configuração de conta > 
+clicar 2 x na conta do gmail IMAP > e na janela de configuração 
+efetuar as seguintes alterações na seção "INFORMAÇÕES DO SERVIDOR": 
+
+1-  Onde está  servidor de entrada "imap.gmail.com" substituir por  
+"imap.googlemail.com" (sem aspas) 
+
+2 - Em servidor de saída trocar "stmp.gmail.com" por "smtp.googlemail.com" 
+(sem aspas) 
+
+No botão "configurações avançadas" da mesma janela abrir a aba "avançado" 
+e ter certeza que a porta de entrada IMAP está "993" com opção de criptografia 
+"SSL" e  a porta de saída SMTP "587" com opção de criptografia TLS. 

@@ -1,0 +1,275 @@
+<nav class="navbar top-navbar navbar-expand-md navbar-light">
+
+    <!-- ============================================================== -->
+    <!-- Logo -->
+    <!-- ============================================================== -->
+    <div class="navbar-header">
+        <a class="navbar-brand" href="{{ path('dashboard') }}">
+            <!-- Logo icon -->
+            <b>
+                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                <!-- Dark Logo icon -->
+                <img src="{{ asset('assets/images/logo-novo.png') }}"
+                     alt="homepage"
+                     width="40px"
+                     height="40px"
+                     class="dark-logo" />
+                <!-- Light Logo icon -->
+                <img src="{{ asset('assets/images/logo-light-icon.png') }}" alt="homepage" class="light-logo" />
+            </b>
+            <!--End Logo icon -->
+            <!-- Logo text -->
+            <span>
+                <!-- dark Logo text -->
+                <img src="{{ asset('assets/images/logo-text-2.png') }}" alt="homepage" class="dark-logo" />
+                <!-- Light Logo text -->
+                <img src="{{ asset('assets/images/logo-light-text.png') }}" class="light-logo" alt="homepage" />
+            </span>
+        </a>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Logo -->
+    <!-- ============================================================== -->
+
+    <div class="navbar-collapse">
+        <!-- ============================================================== -->
+        <!-- toggle and nav items -->
+        <!-- ============================================================== -->
+        <ul class="navbar-nav mr-auto">
+            <!-- This is  -->
+            <li class="nav-item">
+                <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)">
+                    <i class="ti-menu"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+                    <i class="ti-menu"></i>
+                </a>
+            </li>
+
+        </ul>
+        <!-- ============================================================== -->
+        <!-- User profile and search -->
+        <!-- ============================================================== -->
+        <ul class="navbar-nav my-lg-0">
+            <!-- ============================================================== -->
+            <!-- Search -->
+            <!-- ============================================================== -->
+            {#<li class="nav-item">#}
+                {#<a class="nav-link dropdown-toggle waves-effect waves-dark"#}
+                   {#href="{{ path('chamado') }}">#}
+                    {#<i class="ti-settings"></i>#}
+                {#</a>#}
+            {#</li>#}
+            <li class="nav-item hidden-xs-down search-box">
+                <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+                    <i class="ti-search"></i>
+                </a>
+                <form class="app-search">
+                    <input type="text" class="form-control" placeholder="Buscar e Enter">
+                    <a class="srh-btn">
+                        <i class="ti-close"></i>
+                    </a>
+                </form>
+            </li>
+            <!-- ============================================================== -->
+            <!-- Comment -->
+            <!-- ============================================================== -->
+            <li class="nav-item dropdown">
+                <a
+                        class="nav-link dropdown-toggle waves-effect waves-dark"
+                        href=""
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                    <i class="mdi mdi-message"></i>
+                    <div class="">
+                        <span class="heartbit"></span>
+                        <span class="point"></span>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
+                    <ul>
+                        <li>
+                            <div class="drop-title">Mensagens</div>
+                        </li>
+                        <li>
+                            <div class="message-center">
+                                <!-- Message  repeat here all the messages-->
+                                <a href="#">
+                                    <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
+                                    <div class="mail-contnet">
+                                        <h5>Luanch Admin</h5>
+                                        <span class="mail-desc">Just see the my new admin!</span>
+                                        <span class="time">9:30 AM</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link text-center" href="javascript:void(0);">
+                                <strong>Veja todas as mensagens</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- ============================================================== -->
+            <!-- End Comment -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+            <!-- emails -->
+            <!-- ============================================================== -->
+            <li class="nav-item dropdown">
+                <a
+                        class="nav-link dropdown-toggle waves-effect waves-dark"
+                        href=""
+                        id="2"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                    <i class="mdi mdi-bullhorn"></i>
+                    <div class="{{ (render(controller('AppBundle:Backend:lastCallsLength')) >= 1) ? 'notify' : '' }}">
+                        <span class="heartbit"></span>
+                        <span class="point"></span>
+                    </div>
+                </a>
+                <div class="dropdown-menu mailbox dropdown-menu-right animated bounceInDown" aria-labelledby="2">
+                    <ul>
+                        <li>
+                            {% if render(controller('AppBundle:Backend:lastCallsLength')) <= 0 %}
+                                <div class="drop-title">Você não tem Novos Chamados</div>
+                            {% elseif render(controller('AppBundle:Backend:lastCallsLength')) == 1 %}
+                                <div class="drop-title">
+                                    Você tem {{ render(controller('AppBundle:Backend:lastCallsLength')) }} Novo Chamado
+                                </div>
+                            {% else %}
+                                <div class="drop-title">
+                                    Você tem {{ render(controller('AppBundle:Backend:lastCallsLength')) }} Novos Chamados
+                                </div>
+                            {% endif %}
+                        </li>
+                        <li>
+                            <div class="message-center">
+                                <!-- Message Repeat here all the emails-->
+                                {{ render(controller('AppBundle:Backend:lastCalls')) }}
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link text-center" href="{{ path('chamados-abertos') }}">
+                                <strong>Veja todos seus Chamados</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- ============================================================== -->
+            <!-- End emails -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+            <!-- mega menu -->
+            <!-- ============================================================== -->
+            {#{{ include('dashboard/inc/_mega.menu.html.twig') }}#}
+            <!-- ============================================================== -->
+            <!-- End mega menu -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+            <!-- Language -->
+            <!-- ============================================================== -->
+                {#{{ include('backend/inc/_idioma.html.twig') }}#}
+            <!-- ============================================================== -->
+            <!-- end Language -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+            <!-- Profile -->
+            <!-- ============================================================== -->
+            <li class="nav-item dropdown">
+                {% if app.user %}
+                    {% if app.user.nome is not null or app.user.sobrenome is not null  %}
+                        {% set nome = app.user.nomeCompleto %}
+                    {% elseif app.user.profile.nomeCompleto is defined and app.user.profile.nomeCompleto is not null %}
+                        {% set nome = app.user.profile.nomeCompleto %}
+                    {% else %}
+                        {% set nome = app.user.username %}
+                    {% endif %}
+                    {% if app.user.avatar %}
+                        {% set imagem = app.user.avatar %}
+                    {% else %}
+                        {% set imagem = 'default.jpg' %}
+                    {% endif %}
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark"
+                       href=""
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        <img src="{{ asset('assets/images/users/'~imagem) }}" alt="user" class="profile-pic" />
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                        <ul class="dropdown-user">
+                            <li>
+                                <div class="dw-user-box">
+                                    <div class="u-img"><img src="{{ asset('assets/images/users/'~imagem) }}" alt="user"></div>
+                                    <div class="u-text"> <!-- Get values form actual user -->
+                                        <h4>{{ nome|truncate(18) }}</h4>
+                                        <p class="text-muted">{{ app.user.email }}</p>
+                                        <a href="{{ path('perfil') }}" class="btn btn-rounded btn-danger btn-sm">
+                                            {{ 'header.viewProfile'|trans|capitalize }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="{{ path('perfil') }}">
+                                    <i class="ti-user"></i>
+                                    {{ 'header.profile'|trans|capitalize }}
+                                </a>
+                            </li>
+                            {#<li>#}
+                                {#<a>#}
+                                    {#<i class="ti-face-smile"></i>#}
+                                    {#{{ 'header.role'|trans|capitalize }}#}
+                                {#</a>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a>#}
+                                    {#<i class="ti-wallet"></i>#}
+                                    {#{{ 'header.account'|trans|capitalize }}#}
+                                {#</a>#}
+                            {#</li>#}
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="{{ path('config') }}">
+                                    <i class="ti-settings"></i>
+                                    {{ 'header.custom'|trans|capitalize }}
+                                </a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="{{ path('fos_user_security_logout') }}">
+                                    <i class="fa fa-power-off"></i>
+                                    {{ 'left.account.logout'|trans|capitalize }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <li class="nav-item hidden-xs-down search-box">
+                        <a class="nav-link hidden-sm-down waves-effect waves-dark"
+                           href="{{ path('fos_user_security_login') }}">
+                            <i class="ti-user"></i>
+                            {{ 'auth.login.action'|trans|capitalize }}
+                        </a>
+                    </li>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>

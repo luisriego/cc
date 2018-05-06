@@ -1,0 +1,86 @@
+NASS
+https://192.168.0.200:446
+login: openfiler
+senha: Pantone 1911 
+____________________________________________
+SERVIDOR 
+login: root
+senha: 91579965 
+uptime=tempo
+halt=desligar
+____________________________________________
+BACKUP HD DIÁRIO
+Programa PUTTY
+login: root
+senha: 91579965 
+cd /
+cd etc
+cd cron.daily
+. / usb_backup.sh
+____________________________________________
+SERVIDOR DE BACKUP - LINUX
+192.168.0.101
+root
+getulio54
+usuario:usrbkp
+getulio54
+____________________________________________
+MOLDEM NET
+login: admin
+senha: 4cd08abc00a8
+____________________________________________
+ADMINISTRADOR BANCO DE DADOS
+https://192.168.0.200/phpmyadmin
+login: root
+senha: pantone 1911
+____________________________________________
+COMPARTILHAMENTO AGENDA
+login: cmicro
+senha: vargas54
+____________________________________________
+MOTOROLA
+192.168.100.1
+wireless / primary network
+login: admin
+senha: motorola
+____________________________________________
+ENDEREÇO DNS
+obah.dyndns.org
+www.obah.dyndns.org
+____________________________________________
+net use * /del /yes
+net use l: \\192.168.0.200\artefinal /user:socio1
+net use p: \\192.168.0.200\publico /user:socio1
+net use s: \\192.168.0.200\clientes /user:socio1
+net use m: \\192.168.0.200\adm /user:socio1
+net use o: \\192.168.0.200\plano /user:socio1
+net use r: \\192.168.0.200\banco_imagens /user:socio1
+JAQUE
+login: administrativo
+senha: 1220
+
+BRENDA E POLY
+login: gerente
+senha: 1220
+
+ANTÔNIO
+login: socio1
+senha: 1220
+
+FLÁVIA
+login: design
+senha: obah
+____________________________________________
+PRINTSERVER
+ip: 192.168.0.51
+login: hpa3
+senha: 123
+____________________________________________
+PRO 8100
+ip: 192.168.0.26
+____________________________________________
+ROTIADOR
+ip: 192.168.0.254
+____________________________________________
+
+

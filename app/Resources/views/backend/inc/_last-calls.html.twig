@@ -1,0 +1,21 @@
+{% for uc in ultimosChamados %}
+    <a href="{{ path('edit-chamados-abertos', { chamado: uc.id }) }}">
+        <div class="user-img">
+            {% if uc.cliente.image is not empty %}
+                <img src="{{ asset('assets/images/users/'~uc.cliente.image) }}"
+                     alt="user"
+                     class="profile-pic">
+            {% else %}
+                <img src="{{ asset('assets/images/users/default.png') }}"
+                     alt="user"
+                     class="profile-pic">
+            {% endif %}
+            <span class="profile-status online pull-right"></span>
+        </div>
+        <div class="mail-contnet">
+            <h5>{{ uc.empresa|truncate(12) }}</h5>
+            <span class="mail-desc">{{ uc.mensagem }}</span>
+            <span class="time">{{ uc.data|date('H:i') }}</span>
+        </div>
+    </a>
+{% endfor %}

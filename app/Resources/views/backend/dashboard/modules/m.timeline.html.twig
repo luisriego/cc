@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                {% if eventos is empty %}
+                    <h3>Nenhum registro ainda</h3>
+                {% else %}
+                    <ul class="timeline">
+                        {% for evento in eventos %}
+                            <li class="{{ cycle(['', 'timeline-inverted'], loop.index0) }}">
+                                <div class="timeline-badge success">
+                                    <div class="timeline-badge {{ evento.tipo|timelineColour }}">
+                                        <i class="{{ evento.tipo }}"></i>
+                                    </div>
+                                </div>
+                                <div class="timeline-panel" style="background-color: #f4f6f9">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">{{ evento.que }}</h4>
+                                        <p><small class="text-muted">
+                                                <i class="fa fa-clock-o"></i>
+                                                {{ evento.data|date('d/m/Y H:i') }}
+                                            </small>
+                                        </p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>{{ evento.como }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+        {{ include('backend/inc/_botones.accion.html.twig', {'printAction': false}) }}
+    </div>
+</div>

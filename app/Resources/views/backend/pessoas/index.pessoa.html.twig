@@ -1,0 +1,233 @@
+{% extends 'backend/layout.html.twig' %}
+
+{% block head %}
+    <link href="{{ asset('assets/css/pages/file-upload.css') }}" rel="stylesheet">
+{% endblock %}
+{% block title %}{{ titulo|capitalize }}{% endblock %}
+{% block content %}
+    {% if referrer is not defined %}
+        {% set referrer = "dashboard" %}
+    {% endif %}
+
+
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        {{ include('backend/inc/_breadcrumb.html.twig') }}
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        {% if titulo is not empty and alerta is null %}
+                            {#<h3 class="card-title text-center">Listagem de {{ titulo|capitalize }}s</h3>#}
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <div class="form-group">
+                                        {% if titulo == 'tecnico' %}
+                                            <button type="button"
+                                                    class="btn btn-primary"
+                                                    data-toggle="modal"
+                                                    data-target="#novoTecnico"
+                                                    data-whatever="@mdo">
+                                                <i class="mdi mdi-tag-plus" aria-hidden="true"></i>
+                                                Criar novo Técnico
+                                            </button>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="novoTecnico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title" id="exampleModalLabel1">Nome do novo Técnico</h4>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            {{ form_start(form, {'attr': {'class': 'm-t-30'}}) }}
+                                                            {{ form_errors(form) }}
+
+                                                            <div class="form-group">
+                                                                {{ form_label(form.nome, '', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                                                                {{ form_widget(form.nome, {'attr': {'class': 'form-control form-control-line'}}) }}
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                {{ include('backend/inc/_botones.accion.html.twig', {'referrer': 'chamados-abertos' }) }}
+                                                            </div>
+
+                                                            {{ form_widget(form._token) }}
+                                                            {{ form_end(form, {'render_rest': false}) }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal -->
+                                        {% else %}
+                                            <a href="{{ path('admin_'~ titulo ~'_new') }}" id="demo-btn-addrow" class="btn btn-primary">
+                                                <i class="mdi mdi-tag-plus" aria-hidden="true"></i>
+                                                Criar novo {{ tituloAcentuado }}
+                                            </a>
+                                            {% if titulo == 'usuario' %}
+                                                <small>Por favor considere seriamente utilizar o sistema regular de criaçao de novos usuarios.</small>
+                                                {#{% else %}#}
+                                                {#<small>Novo {{ titulo }} sera incluido.</small>#}
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-warning" role="alert">
+                                <h3><strong>Atenção!</strong> {{ alerta }}.</h3>
+                            </div>
+                        {% endif %}
+
+                        <table class="table table-striped table-bordered hidden-sm-down" id="myTable">
+                            <thead>
+                            <tr>
+                                <th class="text-nowrap">Action</th>
+                                {% for campo in campos %}
+                                    {% if campo == 'enabled' %}
+                                        <th>Ativado?</th>
+                                    {% else %}
+                                        <th>{{ campo|capitalize }}</th>
+                                    {% endif %}
+                                {% endfor %}
+                                {#<th data-toggle="true">Nome</th>#}
+                                {#<th>Cor</th>#}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {#{% if dados|length != 0 %}#}
+                            {% for dado in dados %}
+                                <tr>
+                                    <td class="text-nowrap">
+                                        <a href="{{ path('admin_'~ titulo ~'_edit', {'id': dado.id}) }}"
+                                           class="disabled"
+                                           data-toggle="tooltip"
+                                           data-original-title="Editar">
+                                            <i class="fa fa-pencil text-inverse m-r-10"></i>
+                                        </a>
+                                        {% if titulo == 'usuario' %}
+                                        <a href="{{ path('chart-user', {'id': dado.id, 'ref': 'user'}) }}"
+                                        {% else %}
+                                        <a href="{{ path('chart-client', {'id': dado.id, 'ref': titulo}) }}"
+                                                {% endif %}
+
+                                           data-toggle="tooltip"
+                                           data-original-title="{{ 'call.open.icon.graphic'|trans|capitalize }}">
+                                            <i class="mdi mdi-chart-line text-inverse m-r-10"></i>
+                                        </a>
+                                        <a class=""
+                                           href="javascript:void(0)"
+                                           onclick="if(confirm('Tem certeza que deseja apagar este {{ titulo }} definitivamente?'))
+                                                   {window.location=
+                                                   '{{ path('admin_'~ titulo ~'_delete', {'id': dado.id}) }}';
+                                                   }">
+                                            <i class="mdi mdi-delete text-danger"></i>
+                                        </a>
+                                    </td>
+                                    {% for campo in campos %}
+                                        {% if campo == 'roles' %}
+                                            {#<td>{{ dump(dado.roles) }}</td>#}
+                                            {% if dado.roles[0] == 'ROLE_ADMIN' or dado.roles[0] == 'ROLE_SUPER_ADMIN' %}
+                                                <td>Administrador</td>
+                                            {% elseif dado.roles[0] == 'ROLE_TECNICO' %}
+                                                <td>Técnico</td>
+                                            {% else %}
+                                                <td>Usuário</td>
+                                            {% endif %}
+                                        {% elseif campo == 'cor' %}
+                                            <td style="background-color: {{ attribute(dado, campo) }};"></td>
+                                        {% elseif campo == 'email' or campo == 'username' or campo == 'nome' %}
+                                            <td>{{ attribute(dado, campo)|wordwrap(20) }}</td>
+                                        {% elseif campo == 'enabled' %}
+                                            {% if attribute(dado, campo) == 1 %}
+                                                <td>Sim</td>
+                                            {% else %}
+                                                <td>Não</td>
+                                            {% endif %}
+                                        {% elseif campo == 'raiox' %}
+                                            <td title="{{ attribute(dado, campo) }}">
+                                                {{ attribute(dado, campo)|truncate(40) }}
+                                            </td>
+                                        {% elseif campo == 'chamados' %}
+                                            <td>{{ attribute(dado, campo)|length }}</td>
+                                        {% else %}
+                                            <td>{{ attribute(dado, campo)|capitalize }}</td>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {#<td>{{ status.nome|capitalize }}</td>#}
+                                    {#<td style="background-color: {{ status.cor }};"></td>#}
+                                </tr>
+                            {% endfor %}
+                            {#{% else %}#}
+                            {#<h3>Sem dados que mostrar</h3>#}
+                            {#{% endif %}#}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+
+
+
+
+
+    <!-- ============================================================== -->
+    <!-- End Page Content -->
+    <!-- ============================================================== -->
+
+
+{% endblock %}
+
+{% block js %}
+    <script src="{{ asset('assets/js/custom/my.jquery.dataTables.min.js') }}"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+            $(document).ready(function() {
+                var table = $('#example').DataTable({
+                    "columnDefs": [{
+                        "visible": false,
+                        "targets": 2
+                    }],
+                    "order": [
+                        [2, 'asc']
+                    ],
+                    "displayLength": 25,
+                    "drawCallback": function(settings) {
+                        var api = this.api();
+                        var rows = api.rows({
+                            page: 'current'
+                        }).nodes();
+                        var last = null;
+                        api.column(2, {
+                            page: 'current'
+                        }).data().each(function(group, i) {
+                            if (last !== group) {
+                                $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                                last = group;
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

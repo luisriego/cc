@@ -1,0 +1,109 @@
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    {{ include('dashboard/inc/_breadcrumb.html.twig') }}
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <!-- column -->
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                        <h3 class="card-title">Listagem de {{ titulo|capitalize }}</h3>
+                        {#<div class="d-flex">#}
+                            {#<div class="mr-auto">#}
+                                {#<div class="form-group">#}
+                                    {#<a href="{{ path('admin_status_new') }}" id="demo-btn-addrow" class="btn btn-primary">#}
+                                        {#<i class="mdi mdi-tag-plus" aria-hidden="true"></i>#}
+                                        {#Criar novo {{ titulo }}#}
+                                    {#</a>#}
+                                    {#<small>Novo {{ titulo }} sera incluido.</small>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                    <table class="table table-striped table-bordered" id="editable-datatable">
+                        <thead>
+                        <tr>
+                            <th class="text-nowrap">Action</th>
+                            {% for campo in campos %}
+                                <th>{{ campo|capitalize }}</th>
+                            {% endfor %}
+                            {#<th data-toggle="true">Nome</th>#}
+                            {#<th>Cor</th>#}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% if statuses|length != 0 %}
+                            {% for status in statuses %}
+                                <tr>
+                                    <td class="text-nowrap">
+                                        {#<a href="#" data-toggle="tooltip" data-original-title="Editar">#}
+                                            {#<i class="fa fa-pencil text-inverse m-r-10"></i>#}
+                                        {#</a>#}
+                                        <a href="#" data-toggle="tooltip" data-original-title="Apagar">
+                                            <i class="fa fa-close text-danger"></i>
+                                        </a>
+                                    </td>
+                                    {% for campo in campos %}
+                                        {% if campo == 'cor' %}
+                                            <td style="background-color: {{ attribute(status, campo) }};"></td>
+                                        {% else %}
+                                            <td>{{ attribute(status, campo)|capitalize }}</td>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {#<td>{{ status.nome|capitalize }}</td>#}
+                                    {#<td style="background-color: {{ status.cor }};"></td>#}
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <h3>Sem dados que mostrar</h3>
+                        {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card card-body">
+                <h3 class="box-title m-b-30">Criar um novo {{ titulo|title }}</h3>
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        {{ form_start(form) }}
+                        {{ form_errors(form) }}
+                        <div class="form-group">
+                            {{ form_widget(form) }}
+                        </div>
+                        {#<div class="form-group">#}
+                            {#{{ form_label(form.nome, 'Nome') }}#}
+                            {#{{ form_widget(form.nome, {#}
+                                {#'attr': {#}
+                                    {#'class': 'form-control', 'placeholder': 'Nome que o novo status vai ter...'}#}
+                            {#}) }}#}
+                        {#</div>#}
+                        {#<div class="form-group">#}
+                            {#{{ form_label(form.cor, 'Cor') }}#}
+                            {#{{ form_widget(form.cor, {#}
+                                {#'attr': {#}
+                                    {#'class': 'form-control'}#}
+                            {#}) }}#}
+                        {#</div>#}
+                        {{ include('inc/_botones.accion.html.twig') }}
+                        {{ form_widget(form._token) }}
+                        {{ form_end(form, {'render_rest': false}) }}
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+

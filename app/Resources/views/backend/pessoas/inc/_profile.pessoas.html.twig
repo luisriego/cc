@@ -1,0 +1,282 @@
+{% if pessoa.image %}
+    {% set imagem = pessoa.image %}
+{% else %}
+    {% set imagem = 'default-empresa.jpg' %}
+{% endif %}
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<!-- Row -->
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-4 col-xlg-3 col-md-5">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text-center text-primary">
+                    {{ (pessoa.nome) ? pessoa.nome|upper : 'Sem nome ainda'|capitalize }}
+                </h3>
+
+                <div><hr></div>
+                <div class="text-center justify-content-md-center m-t-30">
+                    <img src="{{ asset('assets/images/clients/'~imagem) }}"
+                         {#class="img-circle"#}
+                         height="150"
+                         {#class="img-circle"#}
+                         data-toggle="modal" data-target=".bs-example-modal-lg"/>
+
+                    {#<h4 class="card-title m-t-10">{{ pessoa.nome }}</h4>#}
+                    {#<h6 class="card-subtitle">{{ usuario.profile.titulo }}</h6>#}
+                    {#<h6 class="card-subtitle">{{ usuario.profile.mensagem|capitalize }}</h6>#}
+                    <div class="row">
+                        <div class="col-2"></div> <!-- Este div solo sirve de offset -->
+                        <div class="col-4">
+                            <a href="javascript:void(0)"
+                               title="Usuarios cadastrados em este Cliente"
+                               class="link">
+                                <i class="icon-people"></i>
+                                <font class="font-medium">{{ (usuarios is defined) ? usuarios.cantidad : '0' }}</font>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="javascript:void(0)"
+                               title="Chamados realizados por este Cliente"
+                               class="link">
+                                <i class="icon-earphones-alt"></i>
+                                <font class="font-medium">{{ (chamados is defined) ? chamados.cantidad : '0' }}</font>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {#Modal que se ejecuta para cambiar el avatar del usuario#}
+                {{ include('backend/dashboard/_modal.Profile.html.twig') }}
+            </div>
+            <div><hr></div>
+
+            <div class="card">
+                <div class="card-body" style="padding-top: 0px">
+                    {{ form_start(uploadForm, {'attr': {'class': ''}}) }}
+                    {{ form_errors(uploadForm) }}
+                    <fieldset>
+                        <br>
+                        <div class="control-group span12">
+                            {{ form_label(uploadForm.file) }}
+                            <div class="controls">
+                                {{ form_widget(uploadForm.file, {'attr': {'': '', 'class': 'dropify'}}) }}
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <button class="btn btn-outline-primary btn-block" type="submit">Subir Arquivo!</button>
+
+                    {{ form_widget(uploadForm._token) }}
+                    {{ form_end(uploadForm, {'render_rest': false}) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-8 col-xlg-9 col-md-7">
+        <div class="card">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs profile-tab" role="tablist">
+                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile" role="tab">Dados Cadastrais</a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#estacoes" role="tab">Estaçoes de Trabalho</a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#data" role="tab">Dados Tecnicos</a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Endereço Comercial</a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#uploads" role="tab">Arquivos Subidos</a> </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <!--second tab-->
+                <div class="tab-pane active" id="profile" role="tabpanel">
+                    <div class="card-body">
+                        {{ form_start(form, {'attr': {'class': 'form-material m-t-30 row'}}) }}
+                        {{ form_errors(form) }}
+                        <div class="clearfix"></div>
+                        <div class="form-group col-md-8">
+                            {{ form_label(form.nome, 'Nome', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {{ form_widget(form.nome, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group col-md-4">
+                            {{ form_label(form.contato, 'Contato', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {{ form_widget(form.contato, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {{ form_label(form.email, 'E-mail', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {{ form_label(form.emailOculto, 'E-mail Oculto', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {{ form_widget(form.emailOculto, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group col-md-4">
+                            {{ form_label(form.telefone, 'Telefone', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {{ form_widget(form.telefone, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group col-md-4">
+                            {{ form_label(form.celular, 'Celular', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {{ form_widget(form.celular, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        {% if form.sms is defined %}
+                        <div class="form-group col-md-12 p-t-10">
+                            <h4 class="text-secondary">Mensagens SMS</h4>
+                            {{ form_widget(form.sms, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
+                            {{ form_label(form.sms, ' Habilitar SMS para os Chamados deste Cliente', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            <i class="icon-info"
+                               style="cursor: help"
+                               data-container="body"
+                               data-toggle="popover"
+                               data-placement="top"
+                               data-content="Esta opção habilita o envio de SMS sempre que este cliente abra um Chamado Técnico.">
+                            </i>
+                        </div>
+                        {% endif %}
+                        {{ include('backend/inc/_botones.accion.html.twig', {'action': 'Salvar Modifizaçoes', 'print': false}) }}
+                        {#{{ include('backend/inc/_botones.accion.html.twig') }}#}
+                        {{ form_widget(form._token) }}
+                        {{ form_end(form, {'render_rest': false}) }}
+                        {#<div class="form-group row">#}
+                            {#<div class="col-md-12">#}
+                                {#<div class="checkbox checkbox-primary pull-left p-t-0">#}
+                                    {#<input id="checkbox-signup" type="checkbox" class="filled-in chk-col-light-blue" name="_remember_me" value="on">#}
+                                    {#<label for="checkbox-signup"> {{ 'auth.login.remember-me'|trans|capitalize }} </label>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                    </div>
+                </div>
+                <div class="tab-pane" id="settings" role="tabpanel">
+                    <div class="card-body">
+                        {{ form_start(formDir, {'attr': {'class': 'form-material m-t-30'}}) }}
+                        {{ form_errors(formDir) }}
+                        <div class="col-md-12">
+                            {{ form_widget(formDir) }}
+                        </div>
+                        {{ include('backend/inc/_botones.accion.html.twig') }}
+                        {{ form_widget(formDir._token) }}
+                        {{ form_end(formDir, {'render_rest': false}) }}
+                    </div>
+                </div>
+                <div class="tab-pane" id="estacoes" role="tabpanel">
+                    <div class="card-body col-sm-12 col-xs-12">
+                        <div class="card-body row">
+                            <div class="col-sm-8 col-xs-12">
+                                <h4 class="card-title">Estacoes Cadastradas </h4>
+                                <div class="table-responsive">
+                                    <table class="table full-color-table full-info-table hover-table">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-center">Quantidade</th>
+                                            <th>Tipo de Estacao</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% if estacoes is defined %}
+                                            {% for e in estacoes %}
+                                            <tr>
+                                                <td class="text-center">{{ e.qtd }}</td>
+                                                <td>{{ e.tipo.nome }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        {% endif %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 col-xs-12">
+                                <h4 class="card-title">Cadastrar nova Estacao </h4>
+                                {{ form_start(formEstacao, {'attr': {'class': 'form-material m-t-30'}}) }}
+                                {{ form_errors(formEstacao) }}
+                                <div class="clearfix"></div>
+                                <div class="form-group col-md-12">
+                                    {{ form_label(formEstacao.tipo, 'Tipo de Estaçao', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                                    {{ form_widget(formEstacao.tipo, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                                <div class="form-group col-md-12">
+                                    {{ form_label(formEstacao.qtd, 'Quantidades de Estaçoes', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                                    {{ form_widget(formEstacao.qtd, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                                {{ include('backend/inc/_botones.accion.html.twig', {'action': 'Asignar estacoes', 'print': false}) }}
+                                {{ form_widget(formEstacao._token) }}
+                                {{ form_end(formEstacao, {'render_rest': false}) }}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="data" role="tabpanel">
+                    <div class="card-body col-sm-12 col-xs-12">
+                        {{ form_start(formDados, {'attr': {'class': 'm-t-30 row'}}) }}
+                        {{ form_errors(formDados) }}
+                        <div class="clearfix"></div>
+                        <div class="form-group col-md-6">
+                            {{ form_label(formDados.servidores, 'Servidores', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {#{{ form_widget(formDados.servidores, {'attr': {'class': 'form-control'}}) }}#}
+                            {{ form_widget(formDados.servidores, {'attr': {'style': 'width: 100%', 'multiple': 'multiple', 'class': 'select2 m-b-10 select2-multiple'}}) }}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {{ form_label(formDados.virtuais, 'Servidores Virtuais', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {{ form_widget(formDados.virtuais, {'attr': {'style': 'width: 100%', 'multiple': 'multiple', 'class': 'select2 m-b-10 select2-multiple'}}) }}
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-md-4">
+                            {{ form_label(formDados.internets, 'Provedores de Internet', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {#{{ form_widget(formDados.internets, {'attr': {'class': 'form-control'}}) }}#}
+                            {{ form_widget(formDados.internets, {'attr': {'style': 'width: 100%', 'multiple': 'multiple', 'class': 'select2 m-b-10 select2-multiple'}}) }}
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            {{ form_label(formDados.impressoras, 'Impressoras', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {{ form_widget(formDados.impressoras, {'attr': {'style': 'width: 100%', 'multiple': 'multiple', 'class': 'select2 m-b-10 select2-multiple'}}) }}
+                        </div>
+                        <div class="form-group col-md-4">
+                            {{ form_label(formDados.proveedores, 'Provedores', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {{ form_widget(formDados.proveedores, {'attr': {'style': 'width: 100%', 'multiple': 'multiple', 'class': 'select2 m-b-10 select2-multiple'}}) }}
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-md-12">
+                            {{ form_label(formDados.raiox, 'Raio-X', { 'label_attr': {'class': 'control-label etiqueta'} }) }}
+                            {{ form_widget(formDados.raiox, {'attr': {'class': 'form-control', 'rows': '10'}}) }}
+                        </div>
+                        {{ include('backend/inc/_botones.accion.html.twig') }}
+                        {{ form_widget(formDados._token) }}
+                        {{ form_end(formDados, {'render_rest': false}) }}
+                    </div>
+                </div>
+                <div class="tab-pane" id="uploads" role="tabpanel">
+                    <div class="card-body col-sm-12 col-xs-12">
+                        {#<div class="card">#}
+                            {#<div class="card-body">#}
+                                {#<h4 class="card-title">Arquivos subidos</h4>#}
+                                {% for upload in uploads %}
+                                    <a href="{{ asset('./uploads/' ~ upload.nome) }}">
+                                        {{ upload.nomeOriginal|lower|truncate(255) }}
+                                    </a>
+                                    <a title="Apagar este arquivo"
+                                       class="btn btn-sm btn-outline-danger pull-right"
+                                       href="javascript:void(0)"
+                                       onclick="if(confirm('Tem certeza que deseja apagar definitivamente?'))
+                                               {window.location=
+                                               '{{ path('admin_upload_apagar', { id: upload.id }) }}';
+                                               }">
+                                        <i class="halflings-icon trash"></i> Apagar</a>
+                                    {% if not loop.last %}
+                                        <hr>
+                                    {% endif %}
+                                {% endfor %}
+                            {#</div>#}
+                        {#</div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+</div>
+<!-- Row -->
+<!-- ============================================================== -->
+<!-- End PAge Content -->
+<!-- ============================================================== -->

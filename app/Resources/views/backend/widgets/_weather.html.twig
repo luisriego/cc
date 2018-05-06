@@ -1,0 +1,27 @@
+<div class="col-md-12 m-t-10">
+    <h5 class="text-muted m-b-0">Belo Horizonte - MG</h5>
+    <h3><small>Atualizado as</small> {{ weather.results.time }}h.</h3>
+    <div class="d-flex m-t-20">
+        <div class="display-5 text-info"><i class="{{ weather.results.condition_code|weather_icon }}"></i></div>
+        <div class="m-l-20">
+            <h2 class="m-b-0">{{ weather.results.temp }}°</h2>
+            <h6>{{ weather.results.description }}</h6>
+        </div>
+    </div>
+    <hr>
+    <table class="table">
+        <tr>
+            <td><i class="{{ weather.results.forecast.1.condition|weather_icon }}"></i> {{ weather.results.forecast.1.weekday }}</td>
+            <td class="text-right font-medium">{{ weather.results.forecast.1.min }}° - {{ weather.results.forecast.1.max }}°</td>
+        </tr>
+        <tr>
+            <td><i class="{{ weather.results.forecast.2.condition|weather_icon }}"></i> {{ weather.results.forecast.2.weekday }}</td>
+            <td class="text-right font-medium">{{ weather.results.forecast.2.min }}° - {{ weather.results.forecast.2.max }}°</td>
+        </tr>
+        <tr>
+            <td><i class="{{ weather.results.forecast.3.condition|weather_icon }}"></i> {{ weather.results.forecast.3.weekday }}</td>
+            <td class="text-right font-medium">{{ weather.results.forecast.3.min }}° - {{ weather.results.forecast.3.max }}°</td>
+        </tr>
+    </table>
+    <hr>
+</div>

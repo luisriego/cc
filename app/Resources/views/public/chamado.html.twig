@@ -1,0 +1,293 @@
+{% extends (':public:base.html.twig') %}
+{% block body %}.
+    <div class="container aire-inf">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div id="header" class="row">
+                    <div class="col-sm-3 hidden-xs">
+                        <img class="" style="width: 130px; margin: 15px 0 0 15px" src="{{ asset('assets/images/logo-novo.png') }}" alt="Logomarca">
+                        {#<img style="width: 130px; margin-left: 10px" src="{{ asset('assets/images/texto.png') }}" alt="Logomarca">#}
+                    </div>
+                    <div class="col-sm-6">
+                        {#<h2 style="font-size: 6rem" class="text-center">CHAMADO TÉCNICO</h2>#}
+                        <img
+                            class=""
+                            style="width: 390px; margin-left: -15px"
+                            src="{{ asset('assets/images/abrir.png') }}"
+                            alt="chamado tecnico">
+                    </div>
+                    <div class="col-sm-3 hidden-xs">
+                        {% if is_granted('ROLE_TECNICO') %}
+                            <a href="{{ path('dashboard') }}">
+                                <img
+                                    class=""
+                                    style="width: 170px"
+                                    src="{{ asset('assets/images/tecnicos-logo.png') }}"
+                                    alt="Técnico trabalhando">
+                            </a>
+                            {% else %}
+                                <img
+                                    class=""
+                                    style="width: 170px"
+                                    src="{{ asset('assets/images/tecnicos-logo.png') }}"
+                                    alt="Técnico trabalhando">
+                        {% endif %}
+
+                    </div>
+
+                </div>
+                {#<br>#}
+                {% if cliente.nome is defined and cliente.nome is not null %}
+                    {% set semCliente = false %}
+                    <h3 class="text-center text-primary">{{ cliente.nome }}</h3>
+                    <hr>
+                    {% if app.session.flashBag.has('sucesso') %}
+                        <div class="alert alert-success">
+                            {% for msg in app.session.flashBag.get('sucesso') %}
+                                {{ msg }}
+                                <br>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{ form_start(form, {'attr': {'class': ''}}) }}
+                            {{ form_errors(form.telefone) }}
+
+                            <div class="form-group col-md-6">
+                                {{ form_label(form.nome) }}
+                                {{ form_widget(form.nome, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Introduza seu nome'}})
+                                }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                {{ form_label(form.email) }}
+                                {{ form_widget(form.email, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Introduza seu email'}})
+                                }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                {{ form_label(form.defeito) }}
+                                {{ form_widget(form.defeito, {'attr': {
+                                    'class': 'form-control defeito',
+                                    'placeholder': 'Tipo de Problema'}})
+                                }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                {{ form_label(form.telefone) }}
+                                {{ form_widget(form.telefone, {'attr': {
+                                    'class': 'form-control telefone',
+                                    'placeholder': 'Introduza seu telefone'}})
+                                }}
+                            </div>
+                            <div class="form-group col-md-4 ">
+                                {{ form_label(form.status) }}
+                                <input class="form-control status" type="text" disabled value="Abrir novo chamado">
+                                {#{{ form_widget(form.status, {'attr': {
+                                    'class': 'form-control'}})
+                                }}#}
+                            </div>
+                            <div class="form-group col-md-12">
+                                {{ form_label(form.mensagem) }}
+                                {{ form_widget(form.mensagem, {'attr': {
+                                    'class': 'form-control',
+                                    'rows': '5',
+                                    'placeholder': 'Introduza a natureza da sua solicitação ou os dados da sua empresa'}})
+                                }}
+                            </div>
+                            <div class="col-md-5">
+                                {{ form_widget(form.enviar, {'attr': {
+                                    'class': 'btn btn-primary btn-lg btn-block'}})
+                                }}
+                            </div>
+                            <div class="col-md-offset-4 col-md-3">
+                                <a href="{{ path('homepage') }}" type="button" class="btn btn-default btn-lg btn-block">Retornar</a>
+                            </div>
+
+                            {{ form_widget(form._token) }}
+                            {{ form_end(form, {'render_rest': false}) }}
+                        </div>
+                    </div>{# /ROW #}
+                {% else %}
+                    {% set semCliente = true %}
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="text-center">
+                            Atenção!!
+                        </h4>
+                        <p class="text-center">
+                            Para o correto funcionamento do sistema cada usuário deve estar relacionado à sua empresa
+                        </p>
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        <p>
+                            Os <b>Administradores do seu Sistema</b> já estão trabalhando na sua devida
+                            <b>autenticação</b>, em pouco tempo você terá <b>pleno Acesso ao Sistema!</b>
+                        </p>
+                        {#<p>#}
+                            {#Recomendamos que primeiro <b>abra um chamado</b> solicitando que <i>o seu usuario seja#}
+                            {#regularizado</i>, selecionando a opçao <b>"Asignar Cliente"</b> no desplegavel#}
+                            {#<b>Defeito</b> e depois <b>realize outro chamado</b> com o seu <i>Problema Tecnico</i>#}
+                        {#</p>#}
+                    </div>
+                {% endif %}
+
+
+                {% if app.session.flashBag.has('problem') %}
+                <br>
+                    <div class="alert alert-danger">
+                        {% for msg in app.session.flashBag.get('problem') %}
+                             {{ msg }}
+                            <br>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <hr>
+                <h3 class="text-center">SOFTWARE DE APOIO</h3>
+                {#<ul class="nav nav-pills">#}
+                    {#<li type="button">#}
+                        {#<a href="{{ asset('bundles/links/AA_v3.exe') }}">#}
+                            {#<img#}
+                                    {#src="{{ asset('bundles/app/img/ammy_logo.gif') }}"#}
+                                    {#style="width: 140px; height: 140px;"#}
+                                    {#alt="Show my PC"#}
+                                    {#class="img-rounded">#}
+                        {#</a>#}
+                    {#</li>#}
+                    {#<li type="button">#}
+                        {#<a href="{{ asset('bundles/links/TeamViewerQS_pt.exe') }}">#}
+                            {#<img#}
+                                {#src="{{ asset('bundles/app/img/teamviewer-logo-png-12.png') }}"#}
+                                {#style="width: 140px; height: 140px;"#}
+                                {#alt="Team Viewer"#}
+                                {#class="img-rounded">#}
+                        {#</a>#}
+                    {#</li>#}
+                    {#<li type="button">#}
+                        {#<a href="{{ asset('bundles/links/AeroAdmin.exe') }}">#}
+                            {#<img#}
+                                    {#src="{{ asset('bundles/app/img/aero_admin_logo.png') }}"#}
+                                    {#style="width: 140px; height: 140px;"#}
+                                    {#alt="Show my PC"#}
+                                    {#class="img-rounded">#}
+                        {#</a>#}
+                    {#</li>#}
+                    {#<li type="button">#}
+                        {#<a href="{{ asset('bundles/links/ShowMyPC3500.exe') }}">#}
+                            {#<img#}
+                                    {#src="{{ asset('bundles/app/img/showmypc_logo.png') }}"#}
+                                    {#style="width: 140px; height: 140px;"#}
+                                    {#alt="Show my PC"#}
+                                    {#class="img-rounded">#}
+                        {#</a>#}
+                    {#</li>#}
+                {#</ul>#}
+            {#</div>#}
+            <div class="col-sm-6 col-md-2 col-md-offset-2">
+                <div class="thumbnail">
+                    <a href="{{ asset('bundles/links/AA_v3.exe') }}">
+                        <img
+                                src="{{ asset('assets/images/ammy_logo.gif') }}"
+                                style="width: 100px; height: 100px;"
+                                alt="Show my PC"
+                                class="img-rounded">
+                        <div class="caption">
+                            <h5 class="text-center">Ammyy</h5>
+                            <p class="text-center">download</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-2">
+                <div class="thumbnail">
+                    <a href="{{ asset('bundles/links/TeamViewerQS_pt.exe') }}">
+                        <img
+                                src="{{ asset('assets/images/teamviewer-logo-png-12.png') }}"
+                                style="width: 100px; height: 100px;"
+                                alt="Show my PC"
+                                class="img-rounded">
+                        <div class="caption">
+                            <h5 class="text-center">TeamViewer</h5>
+                            <p class="text-center">download</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-2">
+                <div class="thumbnail">
+                    <a href="{{ asset('bundles/links/AeroAdmin.exe') }}">
+                        <img
+                                src="{{ asset('assets/images/aero_admin_logo.png') }}"
+                                style="width: 100px; height: 100px;"
+                                alt="Show my PC"
+                                class="img-rounded">
+                        <div class="caption">
+                            <h5 class="text-center">AeroAdmin</h5>
+                            <p class="text-center">download</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-2">
+                <div class="thumbnail">
+                    <a href="{{ asset('bundles/links/ShowMyPC3500.exe') }}">
+                    <img
+                        src="{{ asset('assets/images/showmypc_logo.png') }}"
+                        style="width: 100px; height: 100px;"
+                        alt="Show my PC"
+                        class="img-rounded">
+                    <div class="caption">
+                        <h5 class="text-center">ShowMyPC</h5>
+                        <p class="text-center">download</p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>{#/ROW#}
+    </div>{#/CONTAINER#}
+
+{% endblock %}
+{% block javascrpts %}
+    {{ parent() }}
+
+    {#<script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>#}
+    <script>
+        console.log("aqui llego");
+//        jQuery("#chamado_cliente_telefone")
+//            .mask("(99) 9999-9999?9")
+//            .focusout(function (event) {
+//                var target, phone, element;
+//                target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+//                phone = target.value.replace(/\D/g, '');
+//                element = $(target);
+//                element.unmask();
+//                if(phone.length > 10) {
+//                    element.mask("(99) 99999-999?9");
+//                } else {
+//                    element.mask("(99) 9999-9999?9");
+//                }
+//            });
+
+        $( ".defeito" ).selectmenu({
+          change: function( event, data ) {
+              console.log('funciono', event, data);
+//            circle.css({
+//              width: data.item.value,
+//              height: data.item.value
+//            });
+          }
+        });
+
+
+        $('#chamado_cliente_defeito').selectmenu();
+        $('#chamado_cliente_defeito').on('selectmenuchange',function() {
+            var options = $( "#chamado_cliente_defeito" ).selectmenu( "option" );
+            console.log(options);
+        });
+    </script>
+{% endblock %}

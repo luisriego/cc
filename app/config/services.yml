@@ -29,7 +29,30 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
-    # add more services, or override services that need manual wiring
-    # AppBundle\Service\ExampleService:
-    #     arguments:
-    #         $someArgument: 'some_value'
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
+
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }
+
+    AppBundle\EventListener\LogRegister:
+        arguments:
+            - "@security.token_storage"
+        tags:
+            - { name: doctrine.event_listener, event: preUpdate }
+            - { name: doctrine.event_listener, event: postUpdate }
+
+    AppBundle\EventListener\CallIncoming:
+        arguments:
+            - "@twilio.api"
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+
+#    AppBundle\EventListener\MessageIncoming:
+#        tags:
+#            - { name: doctrine.event_listener, event: postPersist }
+

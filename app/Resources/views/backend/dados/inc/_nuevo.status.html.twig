@@ -1,0 +1,47 @@
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    {{ include('dashboard/inc/_breadcrumb.html.twig') }}
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-body">
+                <h3 class="box-title m-b-30">{{ titulo|title }}</h3>
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        {{ form_start(form) }}
+                        {{ form_errors(form) }}
+                        <div class="form-group">
+                            {{ form_label(form.nome, 'Nome') }}
+                            {{ form_widget(form.nome, {
+                                'attr': {
+                                    'class': 'form-control', 'placeholder': 'Nome que o novo status vai ter...'}
+                            }) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.cor, 'Cor') }}
+                            {{ form_widget(form.cor, {
+                                'attr': {
+                                    'class': 'form-control'}
+                            }) }}
+                        </div>
+                        {{ include('inc/_botones.accion.html.twig') }}
+                        {{ form_widget(form._token) }}
+                        {{ form_end(form, {'render_rest': false}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->

@@ -1,0 +1,95 @@
+ARQUIVO DE RAIO-X
+ESTRUTURA RACK 
+DELL R420
+SERVIDOR DE ARQUIVOS
+SINAI ALUGUEL
+IP FINAL 254
+MAQUINA RACK 3 LINUX
+FIREWALL 
+SQUID - PLACA ONBOARD ETH0
+PROGRAMAR BACKUP
+BILHETADOR TELEFONICO
+DVR 
+IP 192.168.X.X
+MODENS DE INTERNET
+GVT
+	WIFI DA EMPRESA SEM PASSAR PELO PROXY
+	192.168.X.X
+NET
+	IP 192.168.25.254
+
+
+SERVIDOR LINUX
+ETH0: 190.168.0.XXX
+ETH1: 192.168.1.XXX
+EHT2: 192.168.2.XXX
+
+Group: Roteadores, Title: Roteadores, Password: ********, Creation Time: 14/06/2016 12:44:42, Last Modification: 28/10/2016 11:35:21, Last Access: 28/10/2016 11:35:21
+
+router senha padrao
+mdi
+30454545
+
+
+*************************************************************
+REDE ABERTA 
+*************************************************************
+
+LINK-ONE SALAO 2 ANDAR 
+REDE-MDI
+
+192.168.100.1
+30454545@
+
+TPLINK 3 ANDAR- FRANCISCO
+REDE-MDI
+CANAL 8
+192.168.100.3
+30454545@
+
+
+
+************************************************************
+
+TP-LINK 2 ANDAR LOC-MD
+192.168.0.201
+Canal 7
+locmdi4545
+
+
+TPLINK-2 ANDAR VENDAS
+192.168.0,199
+canal 5
+VENDAs-MDI
+gxw4545@
+
+TPLINK 3 ANDAR (CAPTAÇÃO)
+192.168.0.202
+CANAL 9
+gxw4545@
+
+
+CLIENTES-MDI
+192.168.2.1
+mdimdi3045
+
+
+192.168.25.254
+mdi-gvt
+admin
+30454545
+canal3
+sougvtmdi@
+
+MDI-NET
+canal2
+192.168.1.254
+sounetmdi@
+
+DNS
+rmsilva123
+dnscmicro@
+
+MODEM NET
+Usuário: admin
+Senha: mdinet4545

@@ -1,0 +1,151 @@
+<!-- Sidebar scroll-->
+<div class="scroll-sidebar">
+    <!-- Sidebar navigation-->
+    <nav class="sidebar-nav">
+        <ul id="sidebarnav">
+            <li class="user-profile">
+                {% if app.user %}
+                    {% if app.user.nome is not null or app.user.sobrenome is not null  %}
+                        {% set nome = app.user.nomeCompleto %}
+                    {% elseif app.user.profile.nomeCompleto is defined and app.user.profile.nomeCompleto is not null %}
+                        {% set nome = app.user.profile.nomeCompleto %}
+                    {% else %}
+                        {% set nome = app.user.username %}
+                    {% endif %}
+                    {% if app.user.avatar %}
+                        {% set imagem = app.user.avatar %}
+                    {% else %}
+                        {% set imagem = 'default.jpg' %}
+                    {% endif %}
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <img src="{{ asset('assets/images/users/'~imagem) }}" alt="user" />
+                        <span class="hide-menu">{{ nome }} </span>
+                    </a>
+                {% endif %}
+
+                {#<ul aria-expanded="false" class="collapse">#}
+                    {#<li><a href="{{ path('perfil') }}">{{ 'left.account.profile'|trans|title }} </a></li>#}
+                    {#<li><a href="{{ path('config') }}">{{ 'left.account.setting'|trans|title }}</a></li>#}
+                    {#<li><a>{{ 'left.account.balance'|trans|title }}</a></li>#}
+                    {#{% if app.user %}#}
+                        {#<li>#}
+                            {#<a href="{{ path('fos_user_security_logout') }}">#}
+                                {#{{ 'left.account.logout'|trans|title }}#}
+                            {#</a>#}
+                        {#</li>#}
+                    {#{% endif %}#}
+                {#</ul>#}
+            </li>
+            <li class="nav-devider"></li>
+            <li>
+                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                    <i class="mdi mdi-gauge"></i>
+                    <span class="hide-menu">{{ 'left.home'|trans|title }}</span>
+                </a>
+                <ul aria-expanded="false" class="collapse">
+                    <li><a href="{{ path('dashboard') }}">{{ 'left.dashboard'|trans|title }} </a></li>
+                    <li class="nav-devider"></li>
+                    <li><a href="{{ path('config') }}">{{ 'left.account.setting'|trans|title }}</a></li>
+                    <li><a>{{ 'left.account.balance'|trans|title }}</a></li>
+                    {% if app.user %}
+                        <li>
+                            <a href="{{ path('fos_user_security_logout') }}">
+                                {{ 'left.account.logout'|trans|title }}
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </li>
+            {#<li class="nav-small-cap">{{ 'left.home'|trans|title}}</li>#}
+            <li>
+                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                    <i class="mdi mdi-bullhorn"></i>
+                    <span class="hide-menu">{{ 'left.call.title'|trans|title }}</span>
+                </a>
+                <ul aria-expanded="false" class="collapse">
+                    <li>
+                        <a href="{{ path('chamados-abertos') }}">
+                            {{ 'left.call.open'|trans|title }}
+                            <span class="label label-rouded label-danger pull-right">
+                                <b>{{ chamadosAbertos|length }}</b>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('chamados-finalizados') }}">
+                            {{ 'left.call.close'|trans|title }}
+                            <span class="label label-rouded label-primary pull-right">
+                                <b>{{ chamadosFinalizados|length }}</b>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('chamados-reprovados') }}">
+                            {{ 'left.call.rejected'|trans|title }}
+                            <span class="label label-rouded label-warning pull-right text-dark">
+                                <b>{{ chamadosReprovados }}</b>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                    <i class="mdi mdi-human-greeting"></i>
+                    <span class="hide-menu">{{ 'left.person.title'|trans|title }}</span>
+                </a>
+                <ul aria-expanded="false" class="collapse">
+                    <li>
+                        <a href="{{ path('admin_user_index') }}">
+                            {{ 'left.person.users'|trans|title }}
+                            <span class="label label-rouded label-themecolor pull-right">{{ todosUsuarios|length }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_cliente_index') }}">
+                            {{ 'left.person.clients'|trans|title }}
+                            <span class="label label-rouded label-themecolor pull-right">{{ todosClientes|length }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_tecnico_index') }}">
+                            {{ 'left.person.thecnics'|trans|title }}
+                            <span class="label label-rouded label-themecolor pull-right">
+                                {{ todosTecnicos|length }}
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                    <i class="mdi mdi-chart-bubble"></i>
+                    <span class="hide-menu">{{ 'left.data.title'|trans|title }}</span>
+                </a>
+                <ul aria-expanded="false" class="collapse">
+                    <li><a href="{{ path('data_list', {'entity': 'Status'}) }}">{{ 'left.data.statuses'|trans|title }}</a></li>
+                    <li><a href="{{ path('data_list', {'entity': 'Servidor'}) }}">{{ 'left.data.servers'|trans|title }}</a></li>
+                    <li><a href="{{ path('data_list', {'entity': 'VServe'}) }}">{{ 'left.data.vServers'|trans|title }}</a></li>
+                    <li><a href="{{ path('data_list', {'entity': 'Internet'}) }}">{{ 'left.data.net'|trans|title }}</a></li>
+                    <li><a href="{{ path('data_list', {'entity': 'Sistema'}) }}">{{ 'left.data.systems'|trans|title }}</a></li>
+                    <li><a href="{{ path('data_list', {'entity': 'Impressora'}) }}">{{ 'left.data.printers'|trans|title }}</a></li>
+                    <li><a href="{{ path('data_list', {'entity': 'TipoEstacao'}) }}">{{ 'left.data.workstations'|trans|title }}</a></li>
+                    <li><a href="{{ path('data_list', {'entity': 'Roteador'}) }}">{{ 'left.data.routers'|trans|title }}</a></li>
+                    <li><a href="{{ path('data_list', {'entity': 'Defeito'}) }}">{{ 'left.data.bugs'|trans|title }}</a></li>
+                </ul>
+            </li>
+            {#<li>#}
+                {#<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">#}
+                    {#<i class="mdi mdi-trending-up"></i>#}
+                    {#<span class="hide-menu">{{ 'left.graph.title'|trans|title }}</span>#}
+                {#</a>#}
+                {#<ul aria-expanded="false" class="collapse">#}
+                    {#<li><a href="#">{{ 'left.graph.graphics'|trans|title }}</a></li>#}
+                    {#<li><a href="app-email-detail.html">{{ 'left.graph.reports'|trans|title }}</a></li>#}
+                {#</ul>#}
+            {#</li>#}
+        </ul>
+    </nav>
+    <!-- End Sidebar navigation -->
+</div>
+<!-- End Sidebar scroll-->

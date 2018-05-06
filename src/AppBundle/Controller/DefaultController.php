@@ -2,6 +2,8 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Chamado;
+use AppBundle\Services\Utiles;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -9,13 +11,196 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="public")
      */
-    public function indexAction(Request $request)
+    public function publicAction(Request $request)
     {
+
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        return $this->render('public/index.html.twig', []);
+    }
+
+    /**
+     * @Route("/chamado-tecnico", name="chamado")
+     */
+    public function chamadoAction(Request $request, Utiles $utiles)
+    {
+        $usuario = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+
+        $cliente = $usuario->getEmpresa();
+//        dump($usuario);
+//        $form = $this->createForm(OSType::class, $os);
+
+        // crear el formulario en el propio controlador
+        $chamado = new Chamado();
+//        $upload = new Upload();
+        $form = $this->createForm('AppBundle\Form\ChamadoClienteType', $chamado);
+//        $uploadForm = $this->createForm('AppBundle\Form\UploadType', $upload);
+
+        $form->handleRequest($request);
+//        $uploadForm->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $status = $em->getRepository('AppBundle:Status')->find(1);
+
+            $chamado->setData(new \DateTime('now'));
+            $chamado->setIp($request->getClientIp());
+            $chamado->setStatus($status);
+            if (!$cliente) {
+                dump('Alerta!! Nenhum Cliente relacionado com este usuario');
+                $request->getSession()
+                    ->getFlashBag()
+                    ->add('sucesso', 'Alerta!! Nenhum Cliente relacionado com este usuario');
+            }else {
+                $chamado->setCliente($cliente);
+                $chamado->setEmpresa($cliente->getNome());
+            }
+
+            if (!is_null($form["defeito"]->getData()) && $form["defeito"]->getData()->getNome() === 'Asignar Cliente'){
+                $request->getSession()
+                    ->getFlashBag()
+                    ->add('problem', 'Asignacion de cliente');
+            }
+
+            $chamado->setDefeito($form["defeito"]->getData());
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($chamado);
+            $em->flush();
+            $request->getSession()
+                ->getFlashBag()
+                ->add('sucesso', 'Novo Chamado criado com sucesso!');
+
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Chamado Técnico '.$chamado->getId().', '.$chamado->getStatus().' - '.$chamado->getEmpresa())
+                ->setFrom($chamado->getEmail())
+                ->setTo(array('manutencao@clinicadomicro.com.br', $chamado->getEmail()))
+                ->setBody(
+                    $this->renderView(
+                    // app/Resources/views/Emails/os.html.twig
+                        'emails/ordem_servico.html.twig',
+                        array('os' => $chamado)
+                    ),
+                    'text/html'
+                );
+            $this->get('mailer')->send($message);
+            $request->getSession()
+                ->getFlashBag()
+                ->add('sucesso', 'Email enviado com sucesso!')
+            ;
+
+            return $this->redirectToRoute('homepage');
+        }
+
+//        if ($uploadForm->isSubmitted() && $uploadForm->isValid())
+//        {
+//            $empresa = $uploadForm["cliente"]->getData();
+//            $file = $uploadForm["file"]->getData();
+//            $original = $file->getClientOriginalName();
+//            $fileGet = $upload->getFile();
+//
+//            $fileName = $this->get('app.upload_directory')->upload($fileGet);
+//
+//            $salvo = $this->get('app.upload_directory')->guardar($fileName, $original, $empresa);
+//
+//            if(!$salvo)
+//            {
+//                $request->getSession()
+//                    ->getFlashBag()
+//                    ->add('maldicion', 'Algo salió mal y no guardó el Upload!')
+//                ;
+//            }else{
+//                $request->getSession()
+//                    ->getFlashBag()
+//                    ->add('sucesso', 'Todo salió como lo planeamos!')
+//                ;
+//            }
+//            // Isto, não sei como evita que se duplique o arquivo guardado ao recarregar a página
+//            return $this->redirect($request->getUri());
+//        }
+
+        return $this->render('public/chamado.html.twig', array(
+            'form' => $form->createView(),
+//            'uploadForm' => $uploadForm->createView(),
+            'cliente' => $cliente,
+        ));
+    }
+
+    /**
+     * @Route("/admin", name="homepage")
+     */
+    public function indexAction(Request $request, Utiles $utiles)
+    {
+        $usuario = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+
+        // Primero guradamos en data los valores obtenidos de la api weather con el servicio Utiles
+        $weather = $utiles->weather();
+
+        $todosChamados = $em->getRepository('AppBundle:Chamado')->findAll();
+        $todosTecnicos = $em->getRepository('AppBundle:Tecnico')->findAll();
+        $todosUsuarios = $em->getRepository('AppBundle:User')->findBy(array(), array('lastLogin' => 'DESC'));
+        $todosClientes = $em->getRepository('AppBundle:Cliente')->findAll();
+        $chamadosFinalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
+        $abertos = $em->getRepository('AppBundle:Chamado')->chamadosAbertos();
+
+        $cabeceras = ['id', 'status', 'nome', 'cliente', 'inicio', 'mensagem'];
+
+        // dados del breadcrumb
+        $breadcrumbs = [
+            'home' => [
+                'name' => 'Painel Principal',
+                'url'  => 'homepage',
+                'is_root' => true
+            ],
+        ];
+dump($cabeceras);
+        // replace this example code with whatever you need
+        return $this->render('dashboard/index.html.twig', [
+            'usuario'               => $usuario,
+            'weather'               => $weather,
+            'breadcrumbs'           => $breadcrumbs,
+            'todosChamados'         => $todosChamados,
+            'todosTecnicos'         => $todosTecnicos,
+            'todosUsuarios'         => $todosUsuarios,
+            'todosClientes'         => $todosClientes,
+            'chamadosFinalizados'   => $chamadosFinalizados,
+            'chamados'              => $abertos,
+            'cabeceras'             => $cabeceras,
         ]);
+    }
+
+
+
+
+//    /**
+//     * @Route("/login", name="login")
+//     */
+//    public function loginAction(Request $request)
+//    {
+//        // replace this example code with whatever you need
+//        return $this->render('@FOSUser/layout.html.twig', []);
+//    }
+
+    /**
+     * @Route("/register", name="register")
+     */
+    public function registerAction(Request $request)
+    {
+
+        // replace this example code with whatever you need
+        return $this->render('auth/register.html.twig', []);
+    }
+
+    /**
+     * @Route("/termos-e-condicoes", name="terms")
+     */
+    public function termsAction(Request $request)
+    {
+
+        // replace this example code with whatever you need
+        return $this->render('auth/terms.html.twig', []);
     }
 }

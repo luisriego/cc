@@ -1,0 +1,84 @@
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    {{ include('dashboard/inc/_breadcrumb.html.twig') }}
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <!-- column -->
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="m-t-40">
+                        <h4 class="card-title"><small>Listagem de </small>{{ titulo|capitalize }}</h4>
+                        <div class="d-flex">
+                            <div class="mr-auto">
+                                <div class="form-group">
+                                    <button id="demo-btn-addrow" class="btn btn-primary">
+                                        <i class="mdi mdi-tag-plus" aria-hidden="true"></i>
+                                        Criar novo {{ titulo }}
+                                    </button>
+                                    <small>Novo {{ titulo }} sera incluido.</small>
+                                </div>
+                            </div>
+                            <div class="ml-auto">
+                                <div class="form-group">
+                                    <input id="demo-input-search2" type="text" placeholder="Search" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
+                            <thead>
+                                <tr>
+                                    <th class="text-nowrap">Action</th>
+                                    <th>#</th>
+                                    <th data-toggle="true">Nome</th>
+                                    <th>Cor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% if statuses|length != 0 %}
+                                {% for status in statuses %}
+                                    <tr>
+                                        <td class="text-nowrap">
+                                            <a href="#" data-toggle="tooltip" data-original-title="Editar">
+                                                <i class="fa fa-pencil text-inverse m-r-10"></i>
+                                            </a>
+                                            <a href="#" data-toggle="tooltip" data-original-title="Apagar">
+                                                <i class="fa fa-close text-danger"></i>
+                                            </a>
+                                        </td>
+                                        <td>{{ status.id }}</td>
+                                        <td>{{ status.nome }}</td>
+                                        <td style="background-color: {{ status.cor }};"></td>
+                                    </tr>
+                                {% endfor %}
+                            {% else %}
+                                <h3>Sem dados que mostrar</h3>
+                            {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body"></div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+

@@ -13,4 +13,6 @@ web_profiler:
     intercept_redirects: false
 
 swiftmailer:
-    disable_delivery: true
+#    intercept_redirects: true
+#    disable_delivery: true
+#    delivery_addresses: ['dev@expresate.com.br']

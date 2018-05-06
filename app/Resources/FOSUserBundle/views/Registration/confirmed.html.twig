@@ -1,0 +1,44 @@
+{% extends '@FOSUser/layout.html.twig' %}
+
+{% block fos_user_content %}
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url({{ asset('assets/images/background/login-register.jpg') }});">
+            <div class="login-box card">
+                <div class="card-body">
+                    <h3 class="text-center"> Parabens {{ user.username }}. </h3>
+                    <p class="text-center">A sua conta foi criada com sucesso</p>
+                    {#<p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>#}
+                    {#{% if targetUrl %}#}
+                        {#<p><a href="{{ targetUrl }}">volver{{ 'registration.back'|trans }}</a></p>#}
+                    {#{% endif %}#}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <div class="text-center">
+                            <a class="btn btn-rounded btn-success" href="{{ path('homepage') }}">
+                                ir ao panel principal
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="text-center">
+
+                            <p class="text-center">
+                                Por questões de segurança e controle, só poderá enviar chamados após autorização dos
+                                administradores.
+                            </p>
+                            <p class="text-center">Concluido este procedimento, receberá instruções no seu e-mail</p>
+                            <h4>Obrigados pela sua compreensão!</h4>
+                        </div>
+                    {% endif %}
+                    <div class="text-right">
+                        <a href="{{ path('public') }}">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+{% endblock %}

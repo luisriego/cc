@@ -1,0 +1,39 @@
+<div id="formulario">
+    <h3 class="text-left"><strong>CLÍNICA DO MICRO</strong></h3>
+    <h4 class="text-left">PROTOCOLO Nº <span>{{ os.id }} -- STATUS:</span> <span style="color: red"> ABERTO</span></h4>
+    <p class="text-left"><span>{{ os.data | date('d/m/Y H:i') }}</span></p>
+    <table style="padding:0;margin: 0;padding: 3px;width: 100%;border: 1px solid #000000;border-collapse: collapse;border-spacing: 0;">
+        <tr>
+            <td style="width:20%;background:#1775ca;color:#FFF;padding:3px;">Campo</td>
+            <td style="width:80%;background:#1775ca;color:#FFF;padding:3px;">Dados</td>
+        </tr>
+        <tr>
+            <td>Nome:</td><td>{{ os.nome }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td><td>{{ os.email }}</td>
+        </tr>
+        <tr>
+            <td>Empresa:</td><td>{{ os.empresa }}</td>
+        </tr>
+        <tr>
+            <td>Telefone:</td><td>{{ os.telefone }}</td>
+        </tr>
+        <tr>
+            <td>Solicitação:</td>
+            <td>
+                <div style="height: 400px">
+                    <p>{{ os.mensagem }}</p>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <p>Não responder este email, qualquer inconformidade usar o Sistema de Chamados ou pelos nossos telefones</p>
+    <img src="{{ absolute_url(asset('banners/footer-ana-paula.jpg')) }}" alt="{{ absolute_url(asset('banners/footer-ana-paula.jpg')) }}">
+{% if os.ip is not null %}
+    <p>Foi registrado no IP {{ os.ip }}</p>
+{% else %}
+    <p>Nenhun IP foi registrado</p>
+{% endif %}
+</div>

@@ -1,0 +1,30 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        {#{% for breadcrumb in breadcrumbs if breadcrumb.is_root %}#}
+            {##}
+        {#{% else %}#}
+
+        {#{% endfor %}#}
+        {% if subtitulo is defined and subtitulo is not null %}
+            <h3 class="text-themecolor">{{ subtitulo|title }}</h3>
+        {% else %}
+            <h3 class="text-themecolor">{{ titulo|title }}</h3>
+        {% endif %}
+    </div>
+    <div class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
+            {% for breadcrumb in breadcrumbs %}
+                {% if breadcrumb.is_root %}
+                    <li class="breadcrumb-item">{{ breadcrumb.name }}</li>
+                {% else %}
+                    <li class="breadcrumb-item"><a href="{{ path(breadcrumb.url) }}">{{ breadcrumb.name }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </div>
+
+    <!-- esto permite visualizar la rueda dentada que da acceso a las 'settings' -->
+    {#<div class="">#}
+        {#<button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>#}
+    {#</div>#}
+</div>

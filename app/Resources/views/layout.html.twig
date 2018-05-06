@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {{ include('dashboard/inc/_header.html.twig') }}
+{% endblock %}
+
+{% block l_aside %}
+    {#{{ include('dashboard/inc/_left.aside.html.twig') }}#}
+    {{ render(controller('AppBundle:Backend:left')) }}
+{% endblock %}
+
+{#{% block settings %}#}
+    {#{{ include('dashboard/inc/_settings.html.twig') }}#}
+{#{% endblock %}#}
