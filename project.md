@@ -13,3 +13,6 @@
 * Realizar paginacion en finalizados para acelerar su entrada
 * Preciso garantizar que cada status siempre corresponda a un codigo, independientemente del cliente que lo cree
 
+
+* Quiero crear un evento en el FOSUserBundle para ue compruebe si existe algun usuario ya registrado.
+ caso exista, crearlo como usuario, caso no exista crearlo como administrador.
