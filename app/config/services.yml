@@ -52,6 +52,15 @@ services:
         tags:
             - { name: doctrine.event_listener, event: prePersist }
 
+    AppBundle\EventListener\UserRegister:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+
+    AppBunle\EventListener\AsignarProvilegiosPrimerusuarioSubscriber:
+        autowire: true
+        tags:
+            - { name: kernell.event_subscriber }
+
 #    AppBundle\EventListener\MessageIncoming:
 #        tags:
 #            - { name: doctrine.event_listener, event: postPersist }
