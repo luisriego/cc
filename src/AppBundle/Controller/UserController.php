@@ -170,7 +170,7 @@ dump($request);
     public function editAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
-//        $pessoa = $em->getRepository('AppBundle:User')->findOneBy(['id' => $usuario]);
+
         $pessoa = $em->getRepository('AppBundle:User')->findOneBy(['id' => $id]);
 
         // checks if a parameter is defined
@@ -200,13 +200,13 @@ dump($request);
             ],
         ];
 
-        $form = $this->createForm(UserEditType::class, $pessoa);
+        $form = $this->createForm('AppBundle\Form\UserEditType', $pessoa);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $rol = $request->request->get('roles');
 //            $rol = $this->get('request')->request->get('rol');
-            $plainPassword = $form["password"]->getData();
+//            $plainPassword = $form["password"]->getData();
             $pessoa->setRoles(array($rol));
 
             $em->persist($pessoa);

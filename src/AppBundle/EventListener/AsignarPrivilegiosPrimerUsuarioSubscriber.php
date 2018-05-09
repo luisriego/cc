@@ -10,7 +10,6 @@ namespace AppBundle\EventListener;
 
 
 use AppBundle\Services\UserManager;
-use Doctrine\ORM\EntityManager;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\FOSUserEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

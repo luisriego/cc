@@ -21,7 +21,8 @@ class UserEditType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('enabled', HiddenType::class)
+//            ->add('enabled', HiddenType::class)
+//            ->add('password', HiddenType::class)
             ->add('nome', TextType::class, array(
                 'label' => 'Nome'
             ))
@@ -34,9 +35,9 @@ class UserEditType extends AbstractType
             ->add('email', EmailType::class, array(
                 'label' => 'Email'
             ))
-            ->add('password', TextType::class, array(
-                'label' => 'Password'
-            ))
+//            ->add('password', TextType::class, array(
+//                'label' => 'Password'
+//            ))
             ->add('roles')
 //            ->add('roles', ChoiceType::class, array(
 //                'choices' => array(
