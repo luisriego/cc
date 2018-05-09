@@ -225,9 +225,7 @@ class ClienteController extends Controller
         } else {
             $cliente = $em->getRepository('AppBundle:Cliente')->findLike($id);
         }
-//         $raiz = $this->$request()->getBasePath();
-//         // $raiz = $this->Kernel::getProjectDir();
-// dump($raiz);
+
         $chamados = $em->getRepository('AppBundle:Cliente')->findChamadosXCliente($cliente);
         $usuarios = $em->getRepository('AppBundle:Cliente')->findUsuariosXCliente($cliente);
         $clienteUploads = $em->getRepository('AppBundle:Upload')->findAllByCliente($cliente);
@@ -240,7 +238,7 @@ class ClienteController extends Controller
         } else {
             $campos = ['nome', 'email', 'telefone', 'contato', 'ip', 'raiox'];
             $titulo = '';
-            $alerta = 'Por favor, solicite a um tecnico que reconfigure o seu sistema';
+            $alerta = 'Por favor, solicite a um técnico que reconfigure o seu sistema';
         }
         $breadcrumbs = [
             'home' => [
@@ -330,18 +328,25 @@ class ClienteController extends Controller
             $fileGet = $cliente->getImageFile();
             $fileName = $uploads->upload($fileGet, 'assets/images/clients');
 
-            $salvo = $uploads->guardar($fileName, $fileName, $cliente);
+            if ($this->_isMimeImage($file->getClientMimeType())) {
+                $salvo = $uploads->guardar($fileName, $fileName, $cliente);
 
-            if(!$salvo)
-            {
+                if(!$salvo)
+                {
+                    $this->addFlash(
+                        'error',
+                        'maldicion, Algo salió mal y no guardó el Upload!'
+                    );
+                }else{
+                    $this->addFlash(
+                        'success',
+                        'Todo salió como lo planeamos!'
+                    );
+                }
+            } else {
                 $this->addFlash(
-                    'error',
-                    'maldicion, Algo salió mal y no guardó el Upload!'
-                );
-            }else{
-                $this->addFlash(
-                    'success',
-                    'Todo salió como lo planeamos!'
+                    'danger',
+                    'Você deve selecionar uma imagem, por isso no guardó!'
                 );
             }
 
@@ -352,15 +357,17 @@ class ClienteController extends Controller
             $file = $uploadForm["file"]->getData();
             $original = $file->getClientOriginalName();
             $fileGet = $upload->getFile();
+
             $fileName = $uploads->upload($fileGet, 'uploads');
 
             $salvo = $uploads->subir($fileName, $original, $upload, $cliente);
+dump($salvo);die();
 
             if(!$salvo)
             {
                 $request->getSession()
                     ->getFlashBag()
-                    ->add('maldicion', 'Algo salió mal y no guardó el Upload!')
+                    ->add('sucesso', 'Algo salió mal y no guardó el Upload!')
                 ;
             }else{
                 $request->getSession()
@@ -514,5 +521,28 @@ class ClienteController extends Controller
             ->setMethod('DELETE')
             ->getForm()
             ;
+    }
+
+    private function _isMimeImage($text)
+    {
+        switch ($text) {
+            case 'image/gif':
+                $respuesta = true;
+                break;
+            case 'image/jpeg':
+                $respuesta = true;
+                break;
+            case 'image/png':
+                $respuesta = true;
+                break;
+            case 'image/svg+xml':
+                $respuesta = true;
+                break;
+            default:
+                $respuesta = false;
+                break;
+
+        }
+        return $respuesta;
     }
 }

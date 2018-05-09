@@ -90,6 +90,8 @@ Class Uploads
             $usuario->setAvatar($originalName);
         } elseif ($usuario instanceof Settings) {
             $usuario->setLogo($originalName);
+        } elseif ($usuario instanceof Cliente) {
+            $usuario->setImage($originalName);
         }
 
 //        if (property_exists($usuario, 'avatar')) {
