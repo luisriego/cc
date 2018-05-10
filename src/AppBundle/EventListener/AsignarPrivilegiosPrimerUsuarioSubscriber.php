@@ -29,11 +29,11 @@ class AsignarPrivilegiosPrimerUsuarioSubscriber implements EventSubscriberInterf
 
     public function onRegistrationSuccess(FormEvent $event)
     {
-        dump($event->getForm()->getData());die();
+//        dump($event->getForm()->getData());die();
         $esPrimerUsuario = $this->userManager->primerUsuario();
 
         if ($esPrimerUsuario) {
-            $url = $this->router->generate('homepage');
+            $url = $this->router->generate('config');
             $response = new RedirectResponse($url);
             $event->setResponse($response);
         }

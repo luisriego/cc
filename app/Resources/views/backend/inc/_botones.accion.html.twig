@@ -18,7 +18,7 @@
     </button>
 {% endif %}
 {% if printReturn %}
-    <a href="{{ app.request.headers.get('referer') }}" type="button" class="btn btn-inverse waves-effect waves-light">
+    <a href="{{ app.request.headers.get('referer') }}" type="button" class="btn btn-outline-info waves-effect waves-light text-dark">
         <i class="mdi mdi-keyboard-return"></i> {{ return }}
     </a>
 {% endif %}

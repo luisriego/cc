@@ -324,11 +324,12 @@ class ClienteController extends Controller
         if ($formAvatar->isSubmitted() && $formAvatar->isValid()) {
 
             $file = $formAvatar["imageFile"]->getData();
-            $original = $file->getClientOriginalName();
-            $fileGet = $cliente->getImageFile();
-            $fileName = $uploads->upload($fileGet, 'assets/images/clients');
 
             if ($this->_isMimeImage($file->getClientMimeType())) {
+                $original = $file->getClientOriginalName();
+                $fileGet = $cliente->getImageFile();
+                $fileName = $uploads->upload($fileGet, 'assets/images/clients');
+
                 $salvo = $uploads->guardar($fileName, $fileName, $cliente);
 
                 if(!$salvo)
@@ -361,7 +362,6 @@ class ClienteController extends Controller
             $fileName = $uploads->upload($fileGet, 'uploads');
 
             $salvo = $uploads->subir($fileName, $original, $upload, $cliente);
-dump($salvo);die();
 
             if(!$salvo)
             {

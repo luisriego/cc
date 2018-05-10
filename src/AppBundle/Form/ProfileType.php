@@ -17,7 +17,7 @@ class ProfileType extends AbstractType
     {
         $builder
             ->add('nome', TextType::class, array(
-                'label' => '',
+                'label' => 'Nome',
                 'required' => false,
                 'attr'  => array(
                     'class' => 'form-control form-control-line m-b-30')

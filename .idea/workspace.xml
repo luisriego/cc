@@ -2,17 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdddeb2d-15a1-4b37-a797-4937d9bf5918" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Services/Inicialization.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/backend/pessoas/profile.pessoa.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/backend/pessoas/profile.pessoa.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/backend/inc/_botones.accion.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/backend/inc/_botones.accion.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/backend/pessoas/inc/_profile.pessoas.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/backend/pessoas/inc/_profile.pessoas.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.md" beforeDir="false" afterPath="$PROJECT_DIR$/project.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ClienteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ClienteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Services/Uploads.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Services/Uploads.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/1188d8cdc86a0d8b771e74409663c616.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/12e4fd3d107e447ccc960299a21fa05a.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/1d58cda2b0ea10f143227fa5809dacea.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/5301db99e277fe9cae6f897461530d49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/68e6895be188b37eaa8b00b885924105.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/d670fe6afed3dd91af6f6c7a5bba7fd1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/f12b1f7f7ed06101c3bd1d3981b3e693.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/EventListener/AsignarPrivilegiosPrimerUsuarioSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/AsignarPrivilegiosPrimerUsuarioSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/EventListener/UserRegister.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/UserRegister.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/ProfileType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ProfileType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Services/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Services/UserManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/0c3abae7b2bb39f873b5aa2f03c1bdb2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/2faa7a9f81a0fbfbd0b853d313459705.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/3202803108559d3dacb5b1b85fbe104a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/44b9ec08e4236b1739d1ab691c714efa.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/4d994e6c7859d8af563b2b5e6cde02b0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/55ea91949941c22504860e46ac9b1cda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/571f6fc932156cf394ec6e708a23619a.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/6da6a40a0f1f52a189a2d3035252b2fa.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/8c406fa4ebf385bc4f210980c99d7724.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/a6420e43325531437f02a75cefd844ed.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/db3f6a8d86d4f32311dc6da602cf10be.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/dcf2fc78c930b38c9a34f1c1a7d417b2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/dd4c38aad03e53c18fa58e5ef2277b61.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/e1d73e4db480bd82335d2c0dfe81541c.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/f448954b63b47c4823b5a446c8671f44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/images/clients/f846ea30da8c4163bd80733033833f63.pdf" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,35 +53,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClienteController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ClienteController.php">
+      <file leaf-file-name="project.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor>
+                <caret column="6" selection-end-line="17" selection-end-column="80" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/UserManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="332" lean-forward="true" selection-start-line="332" selection-end-line="332" />
+            <state relative-caret-position="464">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
               <folding>
-                <element signature="e#13860#13902#0#PHP" expanded="true" />
+                <element signature="e#125#151#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.pessoa.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/backend/pessoas/profile.pessoa.html.twig">
+      <file leaf-file-name="Inicialization.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/Inicialization.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+            <state relative-caret-position="235">
+              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
               <folding>
-                <element signature="e#12#36#0#Twig" expanded="true" />
+                <element signature="e#125#154#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Uploads.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/Uploads.php">
+      <file leaf-file-name="UserRegister.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/UserRegister.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="87" column="36" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
+            <state relative-caret-position="477">
+              <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+              <folding>
+                <element signature="e#130#156#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,20 +116,25 @@
         <option value="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error503.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error403.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error400.html.twig" />
-        <option value="$PROJECT_DIR$/project.md" />
         <option value="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/EventListener/RedirectAfterRegistrationSubscriber.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/EventListener/UserRegister.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Services/UserManager.php" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/EventListener/AsignarPrivilegiosPrimerUsuarioSubscriber.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/UserEditType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Services/Uploads.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/backend/pessoas/profile.pessoa.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ClienteController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/backend/pessoas/inc/_profile.pessoas.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/ProfileType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/backend/dashboard/inc/_config.html.twig" />
+        <option value="$PROJECT_DIR$/project.md" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Services/UserManager.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/backend/inc/_botones.accion.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/EventListener/AsignarPrivilegiosPrimerUsuarioSubscriber.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Services/Inicialization.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/EventListener/UserRegister.php" />
       </list>
     </option>
   </component>
@@ -223,6 +258,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -252,30 +288,6 @@
               <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="FOSUserBundle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="FOSUserBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="FOSUserBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Registration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -289,6 +301,34 @@
             <path>
               <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
               <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="pessoas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="pessoas" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -296,13 +336,6 @@
               <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
@@ -316,57 +349,12 @@
               <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
-              <item name="var" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
-              <item name="var" type="462c0819:PsiDirectoryNode" />
-              <item name="cache" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="clients" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -485,12 +473,13 @@
       <workItem from="1525711456285" duration="415000" />
       <workItem from="1525711879216" duration="19000" />
       <workItem from="1525713106591" duration="4405000" />
-      <workItem from="1525787198016" duration="15416000" />
+      <workItem from="1525787198016" duration="17237000" />
+      <workItem from="1525957418366" duration="8719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27398000" />
+    <option name="totallyTimeSpent" value="37938000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -510,12 +499,11 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32801822" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32801822" />
       <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24494143" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24760383" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32915717" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -525,6 +513,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32915717" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,13 +523,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
@@ -640,16 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="255">
-            <caret line="17" column="78" selection-start-line="17" selection-start-column="78" selection-end-line="17" selection-end-column="78" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error503.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -699,39 +671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/RedirectAfterRegistrationSubscriber.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="41" column="3" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="41" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/RedirectAfterRegistrationSubscriber.php" />
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ChamadoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1154" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/MailManager.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/MessageIncoming.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/UserRegister.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="44" column="64" selection-start-line="44" selection-start-column="64" selection-end-line="44" selection-end-column="64" />
-          <folding>
-            <element signature="e#130#156#0#PHP" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/CallIncoming.php">
@@ -751,17 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/UserManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding>
-            <element signature="e#125#151#0#PHP" expanded="true" />
-            <element signature="e#532#548#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
@@ -774,37 +706,12 @@
         <state relative-caret-position="-378" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/AsignarPrivilegiosPrimerUsuarioSubscriber.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#130#165#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/images/clients/68e6895be188b37eaa8b00b885924105.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/images/clients/1188d8cdc86a0d8b771e74409663c616.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ClienteAvatarType.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ClienteDadosType.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/UserType.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/UserEditType.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -832,32 +739,153 @@
         <state relative-caret-position="-727" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ClienteType.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/Uploads.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
+        <state relative-caret-position="1309">
           <caret line="87" column="36" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/backend/pessoas/profile.pessoa.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        <state relative-caret-position="379">
+          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/backend/dashboard/config.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
           <folding>
-            <element signature="e#12#36#0#Twig" expanded="true" />
+            <element signature="e#12#46#0#Twig" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ProfileType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/backend/dashboard/_modal.Profile.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/backend/inc/_profile.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-294" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/backend/dashboard/profile.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding>
+            <element signature="e#12#46#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/backend/pessoas/inc/_profile.pessoas.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="50" column="57" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/backend/dashboard/inc/_config.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ClienteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="332" lean-forward="true" selection-start-line="332" selection-end-line="332" />
+        <state relative-caret-position="548">
+          <caret line="363" column="78" selection-start-line="363" selection-start-column="78" selection-end-line="363" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor>
+            <caret column="6" selection-end-line="17" selection-end-column="80" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="424">
+            <caret line="63" column="46" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="50" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/backend/inc/_botones.accion.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="96" selection-start-line="20" selection-start-column="96" selection-end-line="20" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/AsignarPrivilegiosPrimerUsuarioSubscriber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
           <folding>
-            <element signature="e#13860#13902#0#PHP" expanded="true" />
+            <element signature="e#130#165#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/Inicialization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding>
+            <element signature="e#125#154#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/UserManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#125#151#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/UserRegister.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+          <folding>
+            <element signature="e#130#156#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
