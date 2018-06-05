@@ -303,14 +303,29 @@ class ClienteController extends Controller
             ($formDir->isSubmitted() && $formDir->isValid()) ||
             ($formDados->isSubmitted() && $formDados->isValid())
             ) {
-//            $em = $this->getDoctrine()->getManager();
-            $em->persist($cliente);
             $em->flush();
             $this->addFlash(
                 'success',
                 'Mudanças guardadas com sucesso!'
             );
         }
+
+        // Si el formulario se envía pero es inválido... manda mensajes a través del 'flash'
+        if ($form->isSubmitted() && !$form->isValid()) {
+            $validator = $this->get('validator');
+            $errors = $validator->validate($cliente);
+            if (count($errors) > 0) {
+                foreach ($errors as $error) {
+                    $this->addFlash(
+                        'danger',
+                        'Os dados não foram salvos porque... o campo "' . $error->getPropertyPath() . '" ' . $error->getMessage()
+                    );
+                    dump('Formulário inválido porque '.$error->getPropertyPath().' '.$error->getMessage());
+                }
+            }
+
+        }
+
         if ($formEstacao->isSubmitted() && $formEstacao->isValid()) {
             $em->persist($estacao);
             $estacao->setCliente($cliente);
@@ -335,7 +350,7 @@ class ClienteController extends Controller
                 if(!$salvo)
                 {
                     $this->addFlash(
-                        'error',
+                        'danger',
                         'maldicion, Algo salió mal y no guardó el Upload!'
                     );
                 }else{

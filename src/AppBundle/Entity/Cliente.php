@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Cliente
@@ -29,6 +30,8 @@ class Cliente
      * @var string
      *
      * @ORM\Column(name="nome", type="string", length=255, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=5, max=255)
      */
     private $nome;
 
@@ -52,6 +55,7 @@ class Cliente
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @Assert\Email()
      */
     private $email;
 
@@ -59,6 +63,7 @@ class Cliente
      * @var string
      *
      * @ORM\Column(name="emailoculto", type="string", length=255, nullable=true)
+     * @Assert\Email()
      */
     private $emailOculto;
 
@@ -66,6 +71,9 @@ class Cliente
      * @var string
      *
      * @ORM\Column(name="telefone", type="string", length=19, nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\Length(min = 8, max = 19, minMessage = "é curto demais", maxMessage = "é longo demais")
+     * @Assert\Regex(pattern="/\(?\d{2}\)?\s?\d{4}\-?\d{4}/", message="tem um formato inválido")
      */
     private $telefone;
 
@@ -73,6 +81,8 @@ class Cliente
      * @var string
      *
      * @ORM\Column(name="celular", type="string", length=19, nullable=true)
+     * @Assert\Length(min = 8, max = 20, minMessage = "é curto demais", maxMessage = "é longo demais")
+     * @Assert\Regex(pattern="/\(?\d{2}\)?\s?\d{5}\-?\d{4}/", message="tem um formato inválido")
      */
     private $celular;
 

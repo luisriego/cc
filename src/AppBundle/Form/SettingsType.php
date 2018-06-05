@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -48,66 +49,24 @@ class SettingsType extends AbstractType
                     'class' => 'form-control form-control-line m-b-20 celular',
                     'data-mask' => '(99) 99999-9999')
             ))
-            ->add('emailTodos', CheckboxType::class, array(
-//                'label' => 'Quero receber um Email sempre que houver modificacões nos Chamados',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ))
-            ->add('emailAbertos', CheckboxType::class, array(
-//                'label' => 'Quero receber um Email sempre que um Chamado seja Aberto',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ))
-            ->add('emailTodosCliente', CheckboxType::class, array(
-//                'label' => 'Todos os clientes receberão um Email quando houver modificacões nos Chamados',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ))
-            ->add('emailAbertosCliente', CheckboxType::class, array(
-//                'label' => 'Todos os clientes receberão um Email quando um Chamado seja Aberto/Fechado',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ))
-            ->add('smsTodos', CheckboxType::class, array(
-//                'label' => 'Quero receber um SMS sempre que houver modificacões nos Chamados',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ))
-            ->add('smsAbertos', CheckboxType::class, array(
-//                'label' => 'Quero receber um SMS sempre que um Chamado seja Aberto/Fechado',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ))
-            ->add('smsTodosCliente', CheckboxType::class, array(
-//                'label' => 'Todos os clientes receberão um SMS quando houver modificacões nos Chamados',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ))
-            ->add('smsAbertosCliente', CheckboxType::class, array(
-//                'label' => 'Todos os clientes receberão um SMS quando um Chamado seja Aberto/Fechado',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ))
-            ->add('vozTodos', CheckboxType::class, array(
-//                'label' => 'Quero receber uma ligação de voz com a informação do SMS após um Chamado for modificado',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ))
-            ->add('vozAbertos', CheckboxType::class, array(
-//                'label' => 'Quero receber uma ligação de voz com a informação do SMS após abrirem um Chamado',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ))
-            ->add('vozTodosCliente', CheckboxType::class, array(
-//                'label' => 'Todos os clientes receberão uma ligação de voz com a informação do SMS após um Chamado for modificado',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ))
-            ->add('vozAbertosCliente', CheckboxType::class, array(
-//                'label' => 'Todos os clientes receberão uma ligação de voz com a informação do SMS após abrirem/fecharem um Chamado',
-                'required' => false,
-                'attr'=> array('class' => 'form-check chk-col-light-blue'),
-            ));
+//            ->add('emailTodos', CheckboxType::class, array(
+////                'label' => 'Quero receber um Email sempre que houver modificacões nos Chamados',
+//                'required' => false,
+//                'attr'=> array('class' => 'form-check chk-col-light-blue'),
+//            ))
+            ->add('emailTodos',HiddenType::class)
+            ->add('emailAbertos',HiddenType::class)
+            ->add('emailTodosCliente',HiddenType::class)
+            ->add('emailAbertosCliente',HiddenType::class)
+            ->add('smsTodos',HiddenType::class)
+            ->add('smsAbertos',HiddenType::class)
+            ->add('smsTodosCliente',HiddenType::class)
+            ->add('smsAbertosCliente',HiddenType::class)
+            ->add('vozTodos',HiddenType::class)
+            ->add('vozAbertos',HiddenType::class)
+            ->add('vozTodosCliente',HiddenType::class)
+            ->add('vozAbertosCliente',HiddenType::class)
+        ;
     }
 
     /**
@@ -119,14 +78,14 @@ class SettingsType extends AbstractType
             'data_class' => 'AppBundle\Entity\Settings'
         ));
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return 'appbundle_settings';
-    }
+//
+//    /**
+//     * {@inheritdoc}
+//     */
+//    public function getBlockPrefix()
+//    {
+//        return 'appbundle_settings';
+//    }
 
 
 }

@@ -84,8 +84,8 @@
                             {{ form_widget(form.titulo, {'attr': {'class': 'form-control form-control-line m-b-20'}}) }}
                         </div>
                         {{ include('backend/inc/_botones.accion.html.twig') }}
-                        {#{{ form_widget(form._token) }}#}
-                        {#{{ form_end(form, {'render_rest': false}) }}#}
+                        {{ form_widget(form._token) }}
+                        {{ form_end(form, {'render_rest': false}) }}
                     </div>
                 </div>
 
@@ -93,12 +93,15 @@
                 <div class="tab-pane" id="profile" role="tabpanel">
                     <div class="card-body">
                         <h3>Opções de Mensagens</h3>
-                        {#{{ form_start(form, {'attr': {'class': 'form-material m-t-30'}}) }}#}
-                        {#{{ form_errors(form) }}#}
+                        {{ form_start(formMessage, {'attr': {'class': 'form-material m-t-30'}}) }}
+                        {{ form_errors(formMessage) }}
+
+                            {#{{ form_widget(formMessage) }}#}
+                            {#{{ form_label(formMessage) }}#}
                         <div class="form-group col-md-12 m-t-20">
                             <h4>Envio/Recepção de Emails</h4>
 
-                            {{ form_widget(form.emailAbertos,
+                            {{ form_widget(formMessage.emailAbertos,
                                 {'attr':
                                     {
                                         'class': 'form-check chk-col-gray',
@@ -107,9 +110,9 @@
                                     }
                                 })
                             }}
-                            {{ form_label(form.emailAbertos, 'settings.type.email.open'|trans) }} -opção sempre ativada-
+                            {{ form_label(formMessage.emailAbertos, 'settings.type.email.open'|trans) }} -opção sempre ativada-
 
-                            {{ form_widget(form.emailTodos,
+                            {{ form_widget(formMessage.emailTodos,
                                 {'attr':
                                     {
                                         'class': 'form-check chk-col-gray',
@@ -118,47 +121,47 @@
                                     }
                                 })
                             }}
-                            {{ form_label(form.emailTodos, 'settings.type.email.all'|trans) }} -opção sempre ativada-
+                            {{ form_label(formMessage.emailTodos, 'settings.type.email.all'|trans) }} -opção sempre ativada-
 
-                            {{ form_widget(form.emailAbertosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
-                            {{ form_label(form.emailAbertosCliente, 'settings.type.email.openClient'|trans) }}
+                            {{ form_widget(formMessage.emailAbertosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
+                            {{ form_label(formMessage.emailAbertosCliente, 'settings.type.email.openClient'|trans) }}
 
-                            {{ form_widget(form.emailTodosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
-                            {{ form_label(form.emailTodosCliente, 'settings.type.email.allClient'|trans) }}
+                            {{ form_widget(formMessage.emailTodosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
+                            {{ form_label(formMessage.emailTodosCliente, 'settings.type.email.allClient'|trans) }}
                         </div>
                         <div class="form-group col-md-12 m-t-20">
                             <h4>Envio/Recepção de SMS</h4>
                             <p>Nas fichas de cada Cliente existe a opção de secionar-lho para o envio de SMS sempre que abram um Chamado</p>
-                            {{ form_widget(form.smsAbertos, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
-                            {{ form_label(form.smsAbertos, 'settings.type.sms.open'|trans) }}
+                            {{ form_widget(formMessage.smsAbertos, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
+                            {{ form_label(formMessage.smsAbertos, 'settings.type.sms.open'|trans) }}
 
-                            {{ form_widget(form.smsTodos, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
-                            {{ form_label(form.smsTodos, 'settings.type.sms.all'|trans) }}
+                            {{ form_widget(formMessage.smsTodos, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
+                            {{ form_label(formMessage.smsTodos, 'settings.type.sms.all'|trans) }}
 
-                            {{ form_widget(form.smsAbertosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
-                            {{ form_label(form.smsAbertosCliente, 'settings.type.sms.openClient'|trans) }}
+                            {{ form_widget(formMessage.smsAbertosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
+                            {{ form_label(formMessage.smsAbertosCliente, 'settings.type.sms.openClient'|trans) }}
 
-                            {{ form_widget(form.smsTodosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
-                            {{ form_label(form.smsTodosCliente, 'settings.type.sms.allClient'|trans) }}
+                            {{ form_widget(formMessage.smsTodosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
+                            {{ form_label(formMessage.smsTodosCliente, 'settings.type.sms.allClient'|trans) }}
                         </div>
                         <div class="form-group col-md-12 m-t-20">
                             <h4>Envio/Recepção de Voz</h4>
-                            {#<p>Nas fichas de cada Cliente existe a opção de secionar-lho para o envio de SMS sempre que Abram um Chamado</p>#}
-                            {{ form_widget(form.vozAbertos, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
-                            {{ form_label(form.vozAbertos, 'settings.type.voice.open'|trans) }}
+                            <p>Nas fichas de cada Cliente existe a opção de secionar-lho para o envio de SMS sempre que Abram um Chamado</p>
+                            {{ form_widget(formMessage.vozAbertos, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
+                            {{ form_label(formMessage.vozAbertos, 'settings.type.voice.open'|trans) }}
 
-                            {{ form_widget(form.vozTodos, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
-                            {{ form_label(form.vozTodos, 'settings.type.voice.all'|trans) }}
+                            {{ form_widget(formMessage.vozTodos, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
+                            {{ form_label(formMessage.vozTodos, 'settings.type.voice.all'|trans) }}
 
-                            {{ form_widget(form.vozAbertosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
-                            {{ form_label(form.vozAbertosCliente, 'settings.type.voice.openClient'|trans) }}
+                            {{ form_widget(formMessage.vozAbertosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
+                            {{ form_label(formMessage.vozAbertosCliente, 'settings.type.voice.openClient'|trans) }}
 
-                            {{ form_widget(form.vozTodosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
-                            {{ form_label(form.vozTodosCliente, 'settings.type.voice.allClient'|trans) }}
+                            {{ form_widget(formMessage.vozTodosCliente, {'attr': {'class': 'form-check chk-col-light-blue'}}) }}
+                            {{ form_label(formMessage.vozTodosCliente, 'settings.type.voice.allClient'|trans) }}
                         </div>
                         {{ include('backend/inc/_botones.accion.html.twig') }}
-                        {{ form_widget(form._token) }}
-                        {{ form_end(form, {'render_rest': false}) }}
+                        {{ form_widget(formMessage._token) }}
+                        {{ form_end(formMessage, {'render_rest': false}) }}
                     </div>
                 </div>
 

@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Profile
@@ -25,6 +26,8 @@ class Profile
      * @var string|null
      *
      * @ORM\Column(name="nome", type="string", length=100, nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=5, max=255)
      */
     private $nome;
 
@@ -32,6 +35,8 @@ class Profile
      * @var string|null
      *
      * @ORM\Column(name="sobrenome", type="string", length=100, nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=5, max=255)
      */
     private $sobrenome;
 
@@ -39,6 +44,9 @@ class Profile
      * @var string|null
      *
      * @ORM\Column(name="telefone", type="string", length=25, nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\Length(min = 8, max = 19, minMessage = "é curto demais", maxMessage = "é longo demais")
+     * @Assert\Regex(pattern="/\(?\d{2}\)?\s?\d{4}\-?\d{4}/", message="tem um formato inválido")
      */
     private $telefone;
 
@@ -46,6 +54,8 @@ class Profile
      * @var string|null
      *
      * @ORM\Column(name="celular", type="string", length=25, nullable=true)
+     * @Assert\Length(min = 8, max = 20, minMessage = "é curto demais", maxMessage = "é longo demais")
+     * @Assert\Regex(pattern="/\(?\d{2}\)?\s?\d{5}\-?\d{4}/", message="tem um formato inválido")
      */
     private $celular;
 

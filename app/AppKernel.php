@@ -22,7 +22,6 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\RestBundle\FOSRestBundle(),
-            new Vresh\TwilioBundle\VreshTwilioBundle(),
             new AppBundle\AppBundle(),
         ];
 

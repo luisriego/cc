@@ -47,8 +47,6 @@ services:
             - { name: doctrine.event_listener, event: postUpdate }
 
     AppBundle\EventListener\CallIncoming:
-        arguments:
-            - "@twilio.api"
         tags:
             - { name: doctrine.event_listener, event: prePersist }
 

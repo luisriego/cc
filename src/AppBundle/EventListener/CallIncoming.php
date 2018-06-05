@@ -11,12 +11,10 @@ use Vresh\TwilioBundle\Service\TwilioWrapper;
 
 class CallIncoming
 {
-    private $twilio;
     private $_smsManager;
 
-    public function __construct(TwilioWrapper $twilioWrapper, SMSManager $smsManager)
+    public function __construct(SMSManager $smsManager)
     {
-        $this->twilio = $twilioWrapper;
         $this->_smsManager = $smsManager;
     }
 
@@ -70,21 +68,6 @@ class CallIncoming
 //            dump($retorno);
 
         }
-    }
-
-    function enviarTwilio()
-    {
-        $message = $this->twilio->account->messages->sendMessage(
-            '+552120180746', // From a Twilio number in your account
-            '+5531992366226', // Text any number
-            "Hello monkey!"
-        );
-
-        //get an instance of \Service_Twilio
-        $otherInstance = $this->twilio->createInstance('BBBB', 'CCCCC');
-
-        return $message;
-
     }
 
 

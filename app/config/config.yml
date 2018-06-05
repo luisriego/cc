@@ -131,13 +131,3 @@ fos_rest:
                 enabled: true
                 parameter_name: version
             custom_header: true
-
-vresh_twilio:
-    #(Required) Your Account SID from www.twilio.com/user/account
-    sid: 'AC935432d03f2f7ee4da548c5e4ac861d7'
-    #(Required) Your Auth Token from www.twilio.com/user/account
-    authToken: '14113629238a9c7d37faea1b8d9a568f'
-    #(Optional, default: '2010-04-01') Twilio API version
-    version: '2010-04-01'
-    #(Optional, default: 1) Number of times to retry failed requests
-    retryAttempts: 3

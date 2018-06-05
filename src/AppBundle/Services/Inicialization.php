@@ -11,6 +11,7 @@ namespace AppBundle\Services;
 
 use AppBundle\Entity\Cliente;
 use AppBundle\Entity\Defeito;
+use AppBundle\Entity\Settings;
 use AppBundle\Entity\Status;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -53,6 +54,15 @@ class Inicialization
         $nenhum->setNome('Desconhecido');
         $nenhum->setPrioridade(3);
         $this->em->persist($nenhum);
+
+        // Para probar voy a inicializar también ca configuración general
+        $config = new Settings();
+
+        $config->setNome('Por favor Coloque aquí o nome de sua Empresa');
+        $config->setEmail($email);
+        $config->setEmailTodos(true);
+        $config->setEmailAbertos(true);
+        $this->em->persist($config);
 
         $this->em->flush();
 

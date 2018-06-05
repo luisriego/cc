@@ -119,7 +119,8 @@ class ProfileController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $settings = $em->getRepository('AppBundle:Settings')->findOneBy(array('id' => 1));
-        $settings = ($settings) ? $settings : new Settings();
+//        $messages = $em->getRepository('AppBundle:Settings')->findOneBy(array('id' => 1));
+//        $settings = ($settings) ? $settings : new Settings();
         $titulo = 'Configuração Geral';
 
         $weather = $utiles->weather();
@@ -139,11 +140,16 @@ class ProfileController extends Controller
         ];
 
         $form = $this->createForm('AppBundle\Form\SettingsType', $settings);
+        $formMessage = $this->createForm('AppBundle\Form\SettingsMessageType', $settings);
         $formAvatar = $this->createForm('AppBundle\Form\SettingsLogoType', $settings);
         $form->handleRequest($request);
+        $formMessage->handleRequest($request);
         $formAvatar->handleRequest($request);
 
-
+//        if (
+//            ($form->isSubmitted() && $form->isValid()) ||
+//            ($formMessage->isSubmitted() && $formMessage->isValid())
+//        ) {
         if ($form->isSubmitted() && $form->isValid()) {
             if ($form["telefone"]->getData()) {
                 $telefone = preg_replace("/[^0-9,.]/", "", $form["telefone"]->getData());
@@ -154,13 +160,35 @@ class ProfileController extends Controller
                 $settings->setCelular($celular);
             }
 
-            $em->persist($settings);
+//            $em->persist($settings);
+
+            $em->flush();
+        }
+
+        if ($formMessage->isSubmitted() && $formMessage->isValid()) {
+            $settings->setEmailTodos(true);
+            $settings->setEmailAbertos(true);
 
             $em->flush();
         }
 
         if ($formAvatar->isSubmitted() && $formAvatar->isValid()) {
             $this->procesarAvatar($request, $uploads, $formAvatar,$settings, 'assets/images/clients');
+        }
+
+        // Si el formulario se envía pero es inválido... manda mensajes a través del 'flash'
+        if ($form->isSubmitted() && !$form->isValid()) {
+            $validator = $this->get('validator');
+            $errors = $validator->validate($settings);
+            if (count($errors) > 0) {
+                foreach ($errors as $error) {
+                    $this->addFlash(
+                        'danger',
+                        'Os dados não foram salvos porque... o campo "' . $error->getPropertyPath() . '" ' . $error->getMessage()
+                    );
+                    dump('Formulário inválido porque '.$error->getPropertyPath().' '.$error->getMessage());
+                }
+            }
         }
         
 
@@ -173,6 +201,7 @@ class ProfileController extends Controller
             'action'        => 'Guardar',
             'settings'      => $settings,
             'form'          => $form->createView(),
+            'formMessage'   => $formMessage->createView(),
             'formAvatar'    => $formAvatar->createView(),
         ]);
     }
@@ -180,22 +209,25 @@ class ProfileController extends Controller
     function procesarAvatar(Request $request, Uploads $uploads, $formAvatar, $usuario, $targetDir = null) {
 
         $file = $formAvatar["imageFile"]->getData();
-        $original = $file->getClientOriginalName();
+        if ($file) {
+            $original = $file->getClientOriginalName();
 //        $fileGet = $usuario->getImageFile();
-        $fileName = $uploads->upload($file, $targetDir);
-        $salvo = $uploads->guardar($fileName, $fileName, $usuario);
+            $fileName = $uploads->upload($file, $targetDir);
+            $salvo = $uploads->guardar($fileName, $fileName, $usuario);
 //dump($salvo, $original, $fileName);
-        if(!$salvo)
-        {
-            $request->getSession()
-                ->getFlashBag()
-                ->add('maldicion', 'Algo salió mal y no guardó el Upload!')
-            ;
-        }else{
-            $request->getSession()
-                ->getFlashBag()
-                ->add('sucesso', 'Todo salió como lo planeamos!')
-            ;
+            if(!$salvo)
+            {
+                $request->getSession()
+                    ->getFlashBag()
+                    ->add('maldicion', 'Algo salió mal y no guardó el Upload!')
+                ;
+            }else{
+                $request->getSession()
+                    ->getFlashBag()
+                    ->add('sucesso', 'Todo salió como lo planeamos!')
+                ;
+            }
         }
+
     }
 }
