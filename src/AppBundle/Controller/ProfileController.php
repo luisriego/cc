@@ -61,27 +61,7 @@ class ProfileController extends Controller
 //        }
 
         if ($formAvatar->isSubmitted() && $formAvatar->isValid()) {
-
-            $file = $formAvatar["imageFile"]->getData();
-            $original = $file->getClientOriginalName();
-            $fileGet = $usuario->getImageFile();
-            $fileName = $uploads->upload($fileGet);
-
-            $salvo = $uploads->guardar($fileName, $original, $usuario);
-
-            if(!$salvo)
-            {
-                $request->getSession()
-                    ->getFlashBag()
-                    ->add('maldicion', 'Algo salió mal y no guardó el Upload!')
-                ;
-            }else{
-                $request->getSession()
-                    ->getFlashBag()
-                    ->add('sucesso', 'Todo salió como lo planeamos!')
-                ;
-            }
-
+            $this->procesarAvatar($request, $uploads, $formAvatar,$usuario);
         }
 
         // dados del breadcrumb
@@ -206,25 +186,46 @@ class ProfileController extends Controller
         ]);
     }
 
-    function procesarAvatar(Request $request, Uploads $uploads, $formAvatar, $usuario, $targetDir = null) {
+    /**
+     * @param Request $request
+     * @param Uploads $uploads
+     * @param $formAvatar
+     * @param $usuario
+     * @param null $targetDir
+     * @param bool $nomeOriginal
+     */
+    function procesarAvatar(Request $request, Uploads $uploads, $formAvatar, $usuario, $targetDir = null, $nomeOriginal = false) {
+        $apagado = $uploads->delete($usuario->getAvatar(), 'assets/images/users');
 
         $file = $formAvatar["imageFile"]->getData();
         if ($file) {
             $original = $file->getClientOriginalName();
-//        $fileGet = $usuario->getImageFile();
+
             $fileName = $uploads->upload($file, $targetDir);
-            $salvo = $uploads->guardar($fileName, $fileName, $usuario);
-//dump($salvo, $original, $fileName);
+            if ($nomeOriginal) {
+                $salvo = $uploads->guardar($fileName, $original, $usuario);
+            } else {
+                $salvo = $uploads->guardar($fileName, $fileName, $usuario);
+            }
+
+            if(!$apagado)
+            {
+                $request->getSession()
+                    ->getFlashBag()
+                    ->add('warning', 'O avatar anterior não foi apagado corretamente')
+                ;
+            }
+
             if(!$salvo)
             {
                 $request->getSession()
                     ->getFlashBag()
-                    ->add('maldicion', 'Algo salió mal y no guardó el Upload!')
+                    ->add('warning', 'Algo salió mal y no guardó el Upload!')
                 ;
             }else{
                 $request->getSession()
                     ->getFlashBag()
-                    ->add('sucesso', 'Todo salió como lo planeamos!')
+                    ->add('success', 'A troca do Avatar foi um sucesso!')
                 ;
             }
         }

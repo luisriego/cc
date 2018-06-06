@@ -66,15 +66,27 @@ Class Uploads
 
     /**
      * @param $fileName
+     * @param $targetDir
+     * @return bool
      */
     public function delete($fileName, $targetDir)
     {
+        if (is_string($fileName)) {
+            $nome = $fileName;
+        } else {
+            $nome = $fileName->getNome();
+        }
+
         if ($targetDir == null) {
             $targetDir = $this->targetDir;
         }
-        $file = $targetDir.'/'.$fileName->getNome();
+
+        $file = $targetDir.'/'.$nome;
         if($file){
             unlink($file);
+            return true;
+        } else {
+            return false;
         }
     }
 //

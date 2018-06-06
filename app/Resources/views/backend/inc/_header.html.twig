@@ -218,7 +218,7 @@
                                     <div class="u-img"><img src="{{ asset('assets/images/users/'~imagem) }}" alt="user"></div>
                                     <div class="u-text"> <!-- Get values form actual user -->
                                         <h4>{{ nome|truncate(18) }}</h4>
-                                        <p class="text-muted">{{ app.user.email }}</p>
+                                        <p class="text-muted">{{ app.user.email|truncate(20) }}</p>
                                         <a href="{{ path('perfil') }}" class="btn btn-rounded btn-danger btn-sm">
                                             {{ 'header.viewProfile'|trans|capitalize }}
                                         </a>

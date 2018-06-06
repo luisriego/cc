@@ -20,6 +20,14 @@
     <!-- End Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
 
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                <strong>Atenção!</strong>  {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
     {{ include('backend/inc/_profile.html.twig') }}
 
     <!-- ============================================================== -->
