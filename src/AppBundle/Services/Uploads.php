@@ -73,7 +73,10 @@ Class Uploads
     {
         if (is_string($fileName)) {
             $nome = $fileName;
+        } elseif (!$fileName) {
+            return false;
         } else {
+            dump($fileName);
             $nome = $fileName->getNome();
         }
 

@@ -19,6 +19,7 @@ class TecnicoNewType extends AbstractType
         $builder
             ->add('nome', TextType::class)
             ->add('slug', HiddenType::class)
+            ->add('especialidades')
         ;
     }
 

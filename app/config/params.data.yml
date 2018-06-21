@@ -29,6 +29,8 @@ parameters:
 # Cliente
     cliente.campos: ['nome', 'email', 'telefone', 'contato', 'raiox']
     cliente.titulo: 'cliente'
+    cliente.tituloPlano: 'cliente'
+    cliente.subtitulo: 'Listagem de Clientes'
     cliente.titulo.nuevo: 'novo cliente'
     cliente.alerta: null
     cliente.graficos: graficas
@@ -42,12 +44,13 @@ parameters:
     usuario.titulo.nuevo: 'novo usuário'
     usuario.alerta: null
 
-# Tecnico
+# Técnico
     tecnico.campos: ['nome', 'username', 'chamados']
     tecnico.titulo: 'técnico'
     tecnico.tituloPlano: 'tecnico'
-    tecnico.subtitulo: 'novo técnico'
-#    usuario.titulo.nuevo: 'novo usuário'
+    tecnico.subtitulo: 'Listagem de técnicos'
+    tecnico.subtitulo.nuevo: 'novo técnico'
+    tecnico.titulo.nuevo: 'novo técnico'
     tecnico.alerta: null
 
 # Dashboard

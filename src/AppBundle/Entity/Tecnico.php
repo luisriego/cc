@@ -50,10 +50,16 @@ class Tecnico
      */
     protected $chamados;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Especialidade", mappedBy="tecnico")
+     */
+    private $especialidades;
+
 
     public function __construct()
     {
         $this->chamados = new ArrayCollection();
+        $this->especialidades = new ArrayCollection();
     }
 
     public function __toString()
@@ -220,5 +226,13 @@ class Tecnico
     public function removeChamado(\AppBundle\Entity\Chamado $chamados)
     {
         $this->chamados->removeElement($chamados);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEspecialidades()
+    {
+        return $this->especialidades;
     }
 }
