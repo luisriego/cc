@@ -54,6 +54,15 @@
                             {{ form_start(form, {'attr': {'class': ''}}) }}
                             {{ form_errors(form.telefone) }}
 
+                            {% if is_granted('ROLE_TECNICO') %}
+                                <div class="form-group col-md-12">
+                                    {{ form_widget(form.cliente, {'attr': {
+                                        'class': 'form-control text-uppercase',
+                                        'placeholder': 'Selecione um cliente'}})
+                                    }}
+                                </div>
+                            {% endif %}
+
                             <div class="form-group col-md-6">
                                 {{ form_label(form.nome) }}
                                 {{ form_widget(form.nome, {'attr': {

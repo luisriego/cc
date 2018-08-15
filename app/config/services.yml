@@ -59,6 +59,13 @@ services:
         tags:
             - { name: kernell.event_subscriber }
 
+    console_command.csv_import:
+        class: AppBundle\Command\CsvImportCommand
+        arguments:
+            - "@doctrine.orm.entity_manager"
+        tags:
+            - { name: console.command }
+
 #    AppBundle\EventListener\MessageIncoming:
 #        tags:
 #            - { name: doctrine.event_listener, event: postPersist }

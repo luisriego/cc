@@ -195,7 +195,9 @@ class ProfileController extends Controller
      * @param bool $nomeOriginal
      */
     function procesarAvatar(Request $request, Uploads $uploads, $formAvatar, $usuario, $targetDir = null, $nomeOriginal = false) {
-        $apagado = $uploads->delete($usuario->getAvatar(), 'assets/images/users');
+        if (null === $targetDir) {
+            $apagado = $uploads->delete($usuario->getAvatar(), 'assets/images/users');
+        } 
 
         $file = $formAvatar["imageFile"]->getData();
         if ($file) {

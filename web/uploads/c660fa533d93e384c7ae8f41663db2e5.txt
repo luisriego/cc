@@ -1,1 +1,0 @@
-xcopy "c:\documents and settings\usuario\meus documentos" "g:\dados\meusdocs" /s /f /y /r /e /c /d

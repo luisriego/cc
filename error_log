@@ -1,0 +1,43 @@
+[08-Aug-2018 13:51:21 America/Chicago] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "SensioGeneratorBundle" from namespace "Sensio\Bundle\GeneratorBundle".
+Did you forget a "use" statement for another namespace? in /home/softw463/customer-connect/app/AppKernel.php:34
+Stack trace:
+#0 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(492): AppKernel->registerBundles()
+#1 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(132): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Console/Application.php(64): Symfony\Component\HttpKernel\Kernel->boot()
+#3 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/Console/Application.php(148): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOu in /home/softw463/customer-connect/app/AppKernel.php on line 34
+[08-Aug-2018 15:43:28 America/Chicago] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "SensioGeneratorBundle" from namespace "Sensio\Bundle\GeneratorBundle".
+Did you forget a "use" statement for another namespace? in /home/softw463/customer-connect/app/AppKernel.php:34
+Stack trace:
+#0 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(492): AppKernel->registerBundles()
+#1 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(132): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Console/Application.php(64): Symfony\Component\HttpKernel\Kernel->boot()
+#3 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/Console/Application.php(148): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOu in /home/softw463/customer-connect/app/AppKernel.php on line 34
+[08-Aug-2018 15:46:22 America/Chicago] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "SensioGeneratorBundle" from namespace "Sensio\Bundle\GeneratorBundle".
+Did you forget a "use" statement for another namespace? in /home/softw463/customer-connect/app/AppKernel.php:34
+Stack trace:
+#0 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(492): AppKernel->registerBundles()
+#1 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(132): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Console/Application.php(64): Symfony\Component\HttpKernel\Kernel->boot()
+#3 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/Console/Application.php(148): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOu in /home/softw463/customer-connect/app/AppKernel.php on line 34
+[08-Aug-2018 15:50:46 America/Chicago] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "SensioGeneratorBundle" from namespace "Sensio\Bundle\GeneratorBundle".
+Did you forget a "use" statement for another namespace? in /home/softw463/customer-connect/app/AppKernel.php:34
+Stack trace:
+#0 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(492): AppKernel->registerBundles()
+#1 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(132): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Console/Application.php(64): Symfony\Component\HttpKernel\Kernel->boot()
+#3 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/Console/Application.php(148): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOu in /home/softw463/customer-connect/app/AppKernel.php on line 34
+[08-Aug-2018 15:58:36 America/Chicago] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "DoctrineFixturesBundle" from namespace "Doctrine\Bundle\FixturesBundle".
+Did you forget a "use" statement for another namespace? in /home/softw463/customer-connect/app/AppKernel.php:36
+Stack trace:
+#0 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(492): AppKernel->registerBundles()
+#1 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(132): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Console/Application.php(64): Symfony\Component\HttpKernel\Kernel->boot()
+#3 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/Console/Application.php(148): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Console in /home/softw463/customer-connect/app/AppKernel.php on line 36
+[08-Aug-2018 16:05:02 America/Chicago] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "SensioGeneratorBundle" from namespace "Sensio\Bundle\GeneratorBundle".
+Did you forget a "use" statement for another namespace? in /home/softw463/customer-connect/app/AppKernel.php:34
+Stack trace:
+#0 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(492): AppKernel->registerBundles()
+#1 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(132): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Console/Application.php(64): Symfony\Component\HttpKernel\Kernel->boot()
+#3 /home/softw463/customer-connect/vendor/symfony/symfony/src/Symfony/Component/Console/Application.php(148): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOu in /home/softw463/customer-connect/app/AppKernel.php on line 34
+[14-Aug-2018 14:43:22 America/Chicago] PHP Fatal error:  Class 'AppBundle\Command\Commmand' not found in /home/softw463/customer-connect/src/AppBundle/Command/CsvImportCommand.php on line 11

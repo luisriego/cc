@@ -76,7 +76,7 @@ Class Uploads
         } elseif (!$fileName) {
             return false;
         } else {
-            dump($fileName);
+//            dump($fileName);
             $nome = $fileName->getNome();
         }
 
