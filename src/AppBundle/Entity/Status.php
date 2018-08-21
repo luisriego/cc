@@ -78,6 +78,7 @@ class Status
         return $this->id;
     }
 
+
     /**
      * Set nome
      *

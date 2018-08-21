@@ -1,0 +1,602 @@
+"id","nome","email","emailoculto","telefone","contato","endereco","raiox","invisible","ip","proveedores"
+"1","PRUMO CONSULTORIA","rogerio@prumoconsultoria.com.br",NULL,"2535-3321","ROGERIO","AVENIDA AMAZONAS 641 SALA 610 CENTRO BH","USUARIO E SENHA CHAMADO ONLINE
+prumo
+familiaprumo
+
+=========================================
+Dropbox
+senha: rogerio@prumoconsultoria.com.br
+contrasenha: 401724
+
+=========================================
+
+1 - SERVIDOR WINDOWS 2008
+     SERVIDOR DE ARQUIVO
+     SERVIDOR SQL BANCO DE DADOS MASTERMAQ
+
+X - ESTACOES DE TRABALHO  WINDOWS 7
+
+
+IMPRESSORA DE REDE FINAL .22
+
+IMPRESSORA LOCAL
+
+EMAIL NO TERRA EMPRESAS
+
+INTERNET GVT
+
+PENDENCIAS
+********************
+VERIFICAR BACKUPS
+CONFIGURAÇÃO DO EMAIL DO TERRA:
+imap.terra.com.br
+smtp.terra.com.br
+ENTRADA PADRAO IMAP:143
+SAIDA SMPT: 587.
+
+Acesso remoto teamviewer
+ID: 776 585 651 Senha: CMicro54@
+
+Acesso ao modem OI
+admin
+prumo601
+
+Wifi
+Prumo
+prumo601",NULL,NULL,"1"
+"2","Utopia Consultoria","camilagomes.tst@utopiaconsultoria.com.br",NULL,"(31) 3390-1062","Camila Gomes/Debora","Rua Alfredina Amaral, 278  Milionarios - Belo Horizonte",">> Usuário para Abrir Chamados <<
+
+Usuário: utopia Senha: utopia2016
+servidor usuario administrator senha: gxw0383.55
+IP servidor: 192.168.25.241
+senha padrao load balance: vargas54
+Router 192.168.25.1
+admin
+vargas54
+
+
+
+Clinar
+telefones:
+33911059 Rosana 
+25655225 Marta",NULL,NULL,NULL
+"3","MINAS EQUIPAMENTOS LOCADORA PARA CONSTRUCAO LTDA","rodrigo@minaslocforte.com.br",NULL,"33340066","rodrigo","rua carmelita prates da silva 501","Responsavel: Rodrigo 31 9 9122-4973",NULL,NULL,NULL
+"4","INTEGRA SOLUCAO CONTABIL LTDA","mauriciobaptista@integrabh.com.br",NULL,"3132414797","Mauricio","RUA PLOMBAGINA 92 COLEGIO BATISTA BH MG","QUALIDADETOTAL@INTEGRABH.COM.BR
+OpenFire
+http://127.0.0.1:9090/index.jsp
+admin
+admin
+============================================
+Servidor: 192.168.0.2
+Usuario: administrador
+senha: gxw0383.55
+usuario: cmicro
+senha: gxw0383.55
+usuario: tributario2
+senha: ttt.2020",NULL,NULL,NULL
+"5","OBAH DESIGN","obah@obahdesign.com.br",NULL,"(31) 3309-3099","Eduardo / Antonio","Rua Ulhoa Cintra, 95 - SL 301  - Santa Efigênia","NASS https://192.168.0.200:446
+login: openfiler
+senha: Pantone 1911 
+____________________________________________
+SERVIDOR 
+login: root senha: 91579965 
+uptime=tempo halt=desligar
+____________________________________________
+BACKUP HD DIÁRIO
+Programa PUTTY
+login: root senha: 91579965 
+cd /
+cd etc
+cd cron.daily
+. / usb_backup.sh
+____________________________________________
+SERVIDOR DE BACKUP - LINUX
+192.168.0.101 root getulio54
+usuario:usrbkp getulio54
+____________________________________________
+MOLDEM NET
+login: admin senha: 4cd08abc00a8
+____________________________________________
+ADMINISTRADOR BANCO DE DADOS
+https://192.168.0.200/phpmyadmin
+login: root senha: pantone 1911
+____________________________________________
+COMPARTILHAMENTO AGENDA
+login: cmicro senha: vargas54
+____________________________________________
+MOTOROLA
+192.168.100.1 wireless / primary network
+login: admin senha: motorola
+____________________________________________
+ENDEREÇO DNS
+obah.dyndns.org",NULL,NULL,NULL
+"6","Rodna Travel Viagens e Turismo Ltda","adm@rodnatravel.com.br",NULL,"(31) 3337-9800","Claudio Motter / Daniella","Rua Santa Catarina, 1630 - SL 201 -  Lourdes BH MG","RODNATRAVEL@RODNATRAVEL.COM.BR",NULL,NULL,NULL
+"7","NOVA GERACAO PAVIMENTACAO ASFALTICA LTDA - EPP","nfe@jmcpavi.com.br",NULL,"(31) 3374-4459 ou 3","Andre","Rua das Quaresmeiras, 650 - Marajó BH MG.","Sistema de chamados: jmc / familiajmc
+ANDRE 99119-4459
+servidor= 192.168.1.200 / administrador / gxw0383.55
+DVR = 192.168.1.190 / 33744459 e 192.168.1.191 / 12345
+Roteador TP-Link = 192.168.1.1 / admin / vargas54
+Modem VIVO = 192.168.15.1 / admin / d31c9569 wifi desabilitado
+Modem NET = 192.168.0.1 / NET_0CFAFC / E820E20CFAFC 
+
+ftp
+jmcpa176
+w2uPIryMFPH=
+
+Links de acesso ao painel de controle cPanel
+
+Endereço do Painel de controle (cPanel): http://216.172.172.215/cpanel
+Uma vez que seu domínio for propagado, você poderá usar o http://www.jmcpavi.com.br/cpanel
+Usuário: jmcpa176
+Senha: x3rF1J10ix
+servidor entrada e saida imap: 216.172.172.217 porta: imap:143 smtp:587
+
+Informações sobre as configurações de DNS
+
+Nome do Servidor: br484.hostgator.com.br
+IP do Servidor: 216.172.172.215
+
+Se você estiver usando um domínio existente com a sua nova conta de hospedagem, você precisará atualizá-los para apontar para os DNS listados abaixo.
+
+Nameserver 1: ns484.hostgator.com.br (216.172.172.215)
+Nameserver 2: ns485.hostgator.com.br (216.172.172.216)
+
+
+ns1.pleskcl0109.hospedagemdesites.ws
+ns2.pleskcl0109.hospedagemdesites.ws",NULL,NULL,NULL
+"8","Assercon Assessoria e Serviços Contábeis","victor@assercon.com",NULL,"(31) 3226-3509","Victor","R. Camões, 244 - São Lucas","Usuario de Chamados: vbc senha: familiavbc
+*empresa não possuem dhcp 
+*ips fixo*
+dhcp ativo mais nao funciona set para rede velha.
+padrao de ip 
+ip clientes: 192.168.0.2 ~253
+gateway: 192.168.0.254
+dns preferencial: 192.168.0.250
+dns alternativo: 192.168.0.254
+
+
+Senha dos Servidores
+1) Linux Servidor 192.168.0.1 Senha: getulio54
+2) SQL - ServerWin - ip 192.168.0.100 Senha: gxw0383.76
+3) Arquivo - FileServer - IP 192.168.0.250 Senha: gxw0383.55
+vbcbh.dyndns.org
+
+Wifi :VBC
+Browser : admin
+Senha: vargas54
+Senha Wifi: Vargas54@
+
+Wifi: VBC_CLINETES
+Senha Wifi: VBC12345
+Usuario: admin
+Senha: a6bb38a2
+
+Wifi: VBC_VIVO
+Senha Wifi: 31122014
+Usuario: admin
+senha: d33fa73e
+
+Minas Online Provedor 
+Segunda a Sexta Horário: 8:00 às 18:00 horas
+Belo Horizonte:
+(31) 3261-5151",NULL,NULL,"MINAS ONLINE"
+"9","Mirian Dayrell Imoveis - Cid. Nova","leidi@mdimoveis.com.br",NULL,"(31) 3025-2323","caique","Rua Júlio Otaviano Ferreira , 615 - Cidade Nova","===============================================
+Servidor-hp - servidor de arquivos e terminal service - 192.168.200.25 usuario: administrador/CMicro54@ 
+TS - mdinova.dyndns.org
+===============================================
+Usuarios ativos
+servidor-hp\mdicidadenova : mdi.123456
+servidor-hp\gerencia : mdi.8080
+servidor-hp\locacao : mdi.4545
+===============================================
+Modens e Roteadores
+Modem NET - Login= MDI-Net Senha= 30252323@ Wireless= QFTRUJ9E IP: 192.168.24.1 usuario: admin/vargas54
+Modem GVT - Login= GVT Senha= gvt12345 Wireless= 5703001707 IP: 192.168.24.1 usuario: admin/vargas54
+Rede MDI SL Reuniao = Login= admin Senha= admin Wireless= 0123456789
+===============================================
+Suporte Externos
+Sinai: telefone suporte - 3225-8810 ou email: ti@sistemasinaionline.com.br
+===============================================
+Airytec Switch off para o desligamento dos computadores as 19:30.",NULL,NULL,NULL
+"10","RADIO IMAGEM SETE LAGOAS LTDA - ME","nataliaradioimagem7@gmail.com",NULL,"31 3773-0554","NATALIA / FLAVIO","RUA PLACIDO DE CASTRO  132 LJ 02 E 03 CENTRO SETE LAGOAS MG","Telefones para contato:
+Natália: 03131996088216
+Flavio: 03131998837814
+
+MODEM TECNICOLOR USUÁRIO admin senha radioleo
+
+01 SERVIDOR LINUX CENTOS 6.5
+192.168.1.100
+SSH NA PORTA 2200
+DVD INTELBRAS - CAMERAS  leo - radioelo
+192.168.1.190
+MAQUINA VIRTUAL  WINDOWS 7 PRO 64
+RODANDO WAMP
+192.168.1.200
+SERVIDOR FILESERVER SAMBA 192.168.100.1
+
+************
+SCOPO
+************
+01 SERVIDOR I7 16GB  2X  HD 2TB
+03  ESTACOES DELL I3
+01 SCANNER DE MESA BROTHER ADS-2000
+01 HP  M1005 MULTIFUNCIONAL
+01 MATRICIAL  LX 300+ II
+usuario: radio
+senha: radio7
+
+DVR - 
+usuario: leo
+senha: radioleo
+
+Server LINUX
+root
+CMicro54@
+
+roteador OI tecnicolor
+admin
+radioleo
+
+senha padrão rede
+radio7
+
+wireless
+radiosete7",NULL,NULL,NULL
+"11","NUCLEO RADIOLOGICO BRASIL LTDA","ANDREARADIOIMAGEM@GMAIL.COM",NULL,"3241-4423","ANDREIA / LEONARDO","AV. BRASIL 82 FUNCIONÁRIOS BH MG","leonardof.faria@hotmail.com 99311-4810
+USR radiobh - senha radioleo
+administrador senha: radiobrasil82
+Usuarios padrao: radio - leo.8282
+=======================================
+SRV-Radiocef 192.168.1.174 senha: padrao CMicro (VM Win7 - FireBird - RadioMemory/ RadioCef  - 192.168.1.150 radio - radioleo)
+Servidor Arquivos 192.168.1.114 senha:gxw0383.55
+Servidor WINBACKUP 192.168.1.28 senha: radiobrasil82 (Servidor TS radionetimg.dyndns.org)
+SERVIDOR IBM Linux CentOS - 192.168.1.106 senha: root - brasilradio82 (SAMBA)
+=======================================
+CFTV - 192.168.1.200 - admin admin
+ROTEADOR DUAL WAN ( 1 NET- 2 GVT ) - 192.168.1.1 - radioimgbh - radioleo
+Router Net - 192.168.0.1 radioimgbh - radioleo
+DVR 192.168.1.105:37777 admin admin
+========================================
+Group: CLIENTES, Title: RadioImagem BH, Password: ********, Creation Time: 28/04/2015 09:51:03, Last Modification Time: 08/05/2015 13:11:54
+CONTATO - Andreia ou Eula - 3241-4423",NULL,NULL,NULL
+"12","FACULDADE DE ODONTOLOGIA - UFMG","taniapamaral@uol.com.br",NULL,"3409-2489","PROF TANIA MARA PIMENTA","CAMPUS UFMG FACULDADE DE ODONTOLOGIA","FAZER BACKUP DAS MAQUINAS DE ULTRASSONOGRAFIA.
+k9000c server usuario: odonto senha:12345
+configuração trophy: servername: k9000c\trophyserver datarepository:\\k9000c\trophydata",NULL,"150.164.108.XXX",NULL
+"19","ETEMI","neida@etemi.com.br",NULL,"31-33857211","Neida","Rua Lecy Gomes Barbosa, 180 - Distrito Ind Vale do Jatobá, MG","Senha do Windows 2003 AD
+m4k4k1ll3r.x22
+Senha do Windows 2003 Backup
+m4k4k1ll3r.x22
+OI-VELOX – REDE SEM FIO
+USUARIO OI@OI
+SENHA OI
+Etemi teste = etemioii
+ETEMI_2 =
+
+https://www.google.com/intx/pt-BR/work/apps/business/
+email – administrador do domínio
+etemi = neider@etemi.com.br nei.2333
+fabriminas = neida@fabriminas  nei.1380
+
+
+LINKEDIN
+etemi@etemi.com.br
+338572
+
+Telefones uteis
+984512333 neider
+984511380 neida
+33857207 alternativo
+
+fabriminas@fabriminas.com.br fabri-neida
+etemi@etemi.com.br etemi-neida",NULL,NULL,NULL
+"20","Dominus Imobiliaria","contato@dominusimoveis.com",NULL,"3223-5522","Renato","Av. Getúlio Vargas 54 - Conj. 601/603 - Funcionários - BH - MG","#servidor Windows Server 2003 faixa 192.168.0.100 senha:gxw0383.99
+
+#senha no Sistema de Chamados: nome:dominus senha:dominus",NULL,NULL,NULL
+"21","Clinica do Micro","comercial@clinicadomicro.com.br",NULL,"3132218025","alexis","av. getulio vargas 54 lj 7","update do sistema:
+
+>> pedir a volta da opcao de excluir chamados ou resolver problema de abertura em duplicada.
+Wifi Loja:
+CMICRO
+Loja0754@
+JESSUS
+32218025@@@
+
+Hostgator
+108.179.252.75/cpanel
+softw463
+clinica!@#54",NULL,NULL,NULL
+"22","Mirian Dayrell Imóveis - SION","leide@mdimoveis.com.br","leidi@mdimoveis.com.br","30454545","IAGO","R. Washington, 634 - Sion, Belo Horizonte - MG","TS hhr8380.1502
+eth2 192.168.25.1
+eht1 192.168.1.1
+eth0 192.168.0.1
+==============matriz================
+
+NET MODEM NET  --- rede sem fio MDI NET -- SENHA 30454545
+default ip 192.168.0.1
+admin
+942cb302a9b0
+mdimoveisnet.dyndns.org 
+
+MODEM GVT 
+http://192.168.25.254/
+ADMIN
+gvt12345
+
+Moden Algar
+http://192.168.1.1/
+user
+zU@rah7t
+
+GVT
+179.184.216.34
+IP Reverso
+
+179.184.216.34.static.gvt.net.br
+
+----------------Firewall----------------------
+192.168.0.1 porta 22 usuario: root senha:getulio.54098
+
+--------------------servidor proxy----------------------
+servidor proxy ip: 192.168.0.1 porta 3128 login: cmicro senha: vargas54
+
+------------------------servidor WS2012-------------------
+ip servidor 192.168.0.254 senha gxw0383.55 = hhs8380.1502
+senhas criadas ou alteradas usadas:
+mdiloc mmm.9090
+mdivendas vvv.4545
+mdicap ccc.9090
+
+----------------------Suporte remoro-----------------
+
+instado vnc 1.2.0.9 senha: mdivnc3045
+
+--------------------Telefone uteis-------------------
+senha para ligacao no telefone: 434574
+
+IP impressora RICOH 192.168.0.74
+
+
+Painel de Controle Gmail
+
+https://admin.google.com/AdminHome?pli=1&fral=1#Home:
+ti@mdimoveis.com.br
+Senha: CMmicro54@@@
+
+https://admin.google.com/miriandayrellimoveis.com.br/AdminHome?pli=1&fral=1
+ti@miriandayrellimoveis.com.br
+Senha: CMmicro54@@@
+
+Sinai Vendas
+
+Usuário: rede.rede
+Senha: rede
+
+Sinai Aluguel
+Usuário: ALEXIS
+Senha: rede
+
+relogio de ponto
+ip: 192.168.0.120
+
+Senha maquina IAGO: 172839654
+
+==========Roteadores Sion==============
+MDI-VENDAS
+gxw4545@
+
+LOC-MDI
+locmdi4545
+
+MDI 3A
+mdi30454545@",NULL,NULL,NULL
+"23","VITACELULAS INDÚSTRIA E COM DE COSMETICOS LTDA","adm@vitacelulas.com.br",NULL,"31 33621548","JOYCE","MONSENHOR MESSIAS 656","https://www.centraldousuario.com.br/clientarea.php
+email adm@vitacelulas.com.br
+senha vita3362
+Terminal Service: vitaservidor.dyndns.org
+Cameras Fabrica: fabricalc.dyndns.org
+Cameras Filial: filiallc.dyndns.org
+33621522 fabrica - carla
+25576963 galpão - diego
+25651105 LC Distribuidora de Cosmeticos LTDA me
+
+===========email==========
+@vitacelulas.com.br pop3
+entrada: mail.vitacelulas.com.br
+saida: mail.vitacelulas.com.br
+portas servidor com criptografia SSL
+entrada: 995
+saida: 465
+
+===================================
+
+Modem Vivo Predio Administrativo
+User: VIVO-D000
+Senha: C6624ED000
+stefane 3362-1522
+joyce 3362-1548
+diego 25576963
+
+---------------------Senhas de rede---------------------
+Usuario: Joyce
+Senha: jjj.1434",NULL,NULL,"187.114.39.114"
+"24","CPS Contar Prestação de Servicos","cps@task.com.br",NULL,"3132848880","Cristiano","Av. Nossa Senhora do Carmo, 45, sala 303, Sion",NULL,NULL,NULL,NULL
+"25","Faculdade da Criança","izabela@faculdadedacrianca.com.br","pessoal@faculdadedacrianca.com.br","2526-4194","Izabela","Rua Genebra 1000 Nova Suiça","Acesso ao sistema de chamados
+fac
+fac1e2
+
+faculdadedacrianca.dyndns.org:4498
+Usuario: amdti
+Senha: fac123@@@
+Usuario: cmciro
+Senha: CMicro54@@@
+
+USUARIOS E SENHAS DA REDE
+Mariana	fac2017@!
+Claudia Lima ccc.2020
+Carina kkk.0284
+Izabela bela.2828
+julio jjj.0303
+sec1 sss.2017
+sec2 sss.2017
+fabiana fff.2626
+Eventos eee.2727
+coordenacao ccc.0707",NULL,NULL,NULL
+"26","M. Teixeira","madfinanceiro@hotmail.com",NULL,"32726371","Adolfo / Adão","Rua Tamoios, 1023, Bairro Barro Preto, BH, MG","Usuário do chamado.
+usuário: mtx
+senha: mad123456",NULL,NULL,NULL
+"27","NS&A Nucleo de Solucoes","carine.prado@nsamg.com.br",NULL,"25357333","Carine Prado","av. presidente carlos luz, 468, sala 05, Pedro II",NULL,NULL,NULL,NULL
+"28","rcm","kelly@rcmloc.com.br",NULL,"(31) 3852-1234","kelly","Av. Alberto Lima, 2554 - Sion, João Monlevade - MG, 35931-186","============Senhas WIFI==============
+SSID: Wireless
+Senha: 1234rcm1234
+SSID: RCMLOCACOES
+Senhas: 38521234
+HOST GATOR 
+
+Rcm123456
+rcmcompras3@gmail.com 
+rcmloc.dyndns.org
+servidor de maquina virtual host exi 192.168.2.254
+servidor sql its:192.168.2.254:3390 
+servidor firebird:192.168.2.251:3351
+servidor de arquivos:192.168.2.250:3389
+servidor msql:mastersistemas:192.168.2.252:3390
+senha administrador: gxw0383.55 ou CMicro54@
+link 10 megas ip fixo
+firewall - 192.168.2.251 root \ gxw0383.55
+usuario web cmicro vargas54
+contabil, compras, departamento pessoal, comercial, manutenção, controladoria, financeiro, diretoria, obras externas loco, atendimento.
+softwares gerenciais: 
+1. maxsolutions
+-lit
+-orçamento
+2 . mastersistemas
+-controle de cançambas
+3. alterdata
+-pack contabil
+-binner
+senha das estações, mega e vnc: adm123!@#
+verificar ips de impressoras.
+
+=====Hostgator=====
+http://br386.hostgator.com.br:2082/
+rcmlo764
+gxw0383.55
+
+=========Conta Microsoft Office==========
+financeiro@rcmloc.com.br
+Rcm@master
+************************************************************
+SITE
+
+      $user = ""rcmlo764_atelier"";
+      $senha = ""3984kdf78923jkfa"";
+    $banco = ""rcmlo764_bd"";
+
+=============LOCAWEB=============
+https://painel-email.locaweb.com.br/
+USUARIO: rcmloc
+SENHA: gxw0383.55
+Site adicionado:
+
+    Endereço: rcmloc.com.br
+    Plano: Hospedagem III
+    Plataforma: linux
+
+A instalação será concluída em alguns instantes e você poderá começar a construir seu site. Você receberá todas as instruções e acessos em seu e-mail.
+Uma última coisa...
+
+O domínio rcmloc.com.br já está registrado mas ainda não está configurado com os servidores de DNS da Locaweb. Você precisa alterar os apontamentos de DNS no provedor onde o domínio está registrado para os seguintes servidores:
+
+    ns1.locaweb.com.br
+    ns2.locaweb.com.br
+    ns3.locaweb.com.br
+[01:10, 8/2/2018] Alex Clinica Do Micro: SITE
+
+      $user = ""rcmlo764_atelier"";
+      $senha = ""gxw038355"";
+    $banco = ""rcmlo764_bd""
+rcmlo764_bd.mysql.dbaas.com.br (186.202.152.33);
+ http://rcmloc1.tempsite.ws
+https://painel-email.locaweb.com.br/domains/rcmloc.com.br
+https://painelhospedagem.locaweb.com.br/dashboard/0000000065480801
+
+------------------IP FIXO DE BARAO DE COCAIS-------------------------------------
+189.90.254.175
+************
+email 
+gerencia senha Gxw0383.76.123",NULL,"189.90.241.222","Vale net"
+"29","p7criativo","joaocastro@p7criativo.com.br","digor@fiemg.com.br","3246-5057/99489-370","João Castro","Afonso Pena 4000 4º Andar","CNPJ 26.001.007/0001-11
+
+LINK CEMIG TELECOM
+Junior, Gerson, Adriano FIEMG
+digor@fiemg.com.br
+3263-6895 32634275
+Rodrigo-OCETEC
+2138-7108
+Thiago Codemig
+3207-8830 / 99231-0896
+Joel Codemig
+3207-8845 / 998533275
+P7Criativo 3246-5057
+Joao Castro 99489-3704
+CEMIG TELECOM
+NUMERO DA INSTALAÇÃO: MTRCORP1819
+TELEFONE: 3003-3336
+
+IPS Reservados Cemig Telecom
+186.248.156.11 P7 Criativo backup
+186.248.156.12 ZUP
+186.248.156.13 P7 Criativo produção
+
+IPS Reservados Vogel Telecom
+186.249.3.51 Servidor principal
+186.249.3.52Servidor Bakcup
+Mascara de Rede 255.255.255.248
+Gateway 186.249.3.49
+Endereços Ips disponivel para utilização : 186.249.3.51 a 186.249.3.54
+DNS Primario: 187.1.80.253
+DNS Secundario: 187.1.80.254
+
+Numero do Circuito:
+7304
+Abrir chamados:
+0800 800 7878
+Gerente de contAS VOGEL
+31 33055604
+RELACIOLAMENTO DE CLIENTE
+NOME DO GERENTE DE CONTAS",NULL,NULL,NULL
+"30","SINDIFISCO NACIONAL - S.N.A.RF DO BRASIL","gerencia@dsbh.org.br",NULL,"313226-7721","ANGELA","RUA DOS GOITACAZES, 43, 3A SLA 301 A 306, Belo Horizonte, MG","==============================================================================
+Responsável: Ângela e-mail: gerencia@dsbh.org.br 
+
+==============================================================================
+Server.Sindfisco.local 192.168.0.2 login:administrador senha: admin@tec3 (Servidor AD + File Server)
+Firewall  IPCop v2.1.9 for i486 192.168.0.3 login: admin Senha: admin@sindfisco
+
+==============================================================================
+Modem Net Technicolor 10.1.1.1 - SSD: DSBHNET Login: dsbhnet - Senha: dsbh2016
+Roteador Tplink TL-WR740n - SSD: Sindfisco wifi login: admin Senha: dsbh2013
+Roteador Maxprint MWR-300E - SSD: Sindfisco3 login: admin Senha: dsbh2016
+Roteador Asus RT-N13U 192.168.0.128 - SSD: Sindfisco2 login: admin Senha: dsbh2013
+
+==============================================================================
+Impressoras
+Impressora Xerox Phaser 3260 192.168.0.122
+Impressora Ricoh Aficio MP C2550 192.168.0.145
+
+===============================================================================
+Gerenciamento de E-mails
+http://www.globalconn.com/portal/index.php
+Usuario: sindfis
+Senha: %rcFm]0_Bo;9
+
+===============================================================================
+Registro de Dominios
+Registro.br - manutenção do domínio dsbh.org.br no período de 18/05/2017 a 17/05/2020.
+R$ 112,00 em 18/04/2017.
+
+Registro.com - registro do domínio sindifisconacionalembh.com.br período 06/03/2018 a 05/03/2019	
+R$ 40,00 em 06/03/2018.
+
+===============================================================================",NULL,"201.80.0.158",NULL
+"31","Mega Consultoria Empresarial","mega@emcsistemas.com.br",NULL,"(31) 3852-2936","Junior","Rua Fernao Dias, 315 - sl.201 - Carneirinhos - Joao Monlevade - MG","Cliente adquiriu firewall 06/05/2018
+suporte finaliza em 06/08/2018",NULL,NULL,NULL

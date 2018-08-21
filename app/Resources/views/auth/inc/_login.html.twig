@@ -61,7 +61,7 @@
         </div>
     {#</form>#}
 
-        <div class="row">
+        <div class="row d-none">
             <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
                 <div class="social">
                     <a
@@ -84,9 +84,11 @@
         <div class="form-group m-b-0">
             <div class="col-sm-12 text-center">
                 {{ 'auth.login.haveAnAccount'|trans|capitalize }}
-                <a href="{{ path('fos_user_registration_register') }}" class="text-primary m-l-5">
-                    <b>{{ 'auth.login.signUp'|trans|capitalize }}</b>
-                </a>
+                <h2>
+                    <a href="{{ path('fos_user_registration_register') }}" class="text-primary m-l-5">
+                        {{ 'auth.login.signUp'|trans|capitalize }}
+                    </a>
+                </h2>
             </div>
         </div>
     </form>

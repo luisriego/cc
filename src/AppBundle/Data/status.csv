@@ -1,0 +1,10 @@
+"id","nome","slug","cor"
+"1","Aberto","aberto","greenDark"
+"2","Análise","analise","yellow"
+"3","Aprovação","aprovacao",NULL
+"4","Reprovado","reprovado","black"
+"5","Em Execução","em-execucao","blueDark"
+"6","Finalizado","finalizado","green"
+"7","Dependendo do Cliente","dependo-do-cliente","pinkDark"
+"8","Agendado","agendados",NULL
+"9","Dependo de Peças","dependo-de-pecas",NULL

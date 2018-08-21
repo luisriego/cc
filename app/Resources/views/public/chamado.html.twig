@@ -5,7 +5,20 @@
             <div class="col-md-8 col-md-offset-2">
                 <div id="header" class="row">
                     <div class="col-sm-3 hidden-xs">
-                        <img class="" style="width: 130px; margin: 15px 0 0 15px" src="{{ asset('assets/images/logo-novo.png') }}" alt="Logomarca">
+                    {% if cliente.image is defined and cliente.image is not null %}
+                        <img class=""
+                             style="width: 130px; margin: 35px 0 0 35px"
+                             src="{{ asset('assets/images/clients/'~cliente.image) }}"
+                             alt="Logomarca {{ cliente.nome }}"
+                         >
+                    {% else %}
+                        <img class=""
+                             style="width: 130px; margin: 15px 0 0 15px"
+                             src="{{ asset('assets/images/logo-novo.png') }}"
+                             alt="Logomarca"
+                         >
+                    {% endif %}
+
                         {#<img style="width: 130px; margin-left: 10px" src="{{ asset('assets/images/texto.png') }}" alt="Logomarca">#}
                     </div>
                     <div class="col-sm-6">

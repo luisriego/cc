@@ -2,7 +2,10 @@
 
 namespace AppBundle\Command;
 
+use AppBundle\Entity\Chamado;
 use AppBundle\Entity\Defeito;
+use AppBundle\Entity\Status;
+use League\Csv\Reader;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\inputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -33,11 +36,30 @@ class CsvImportCommand extends Command
 
         $io->title('Intentando importar...');
 
-        $defeito = (new Defeito())
-            ->setNome('petó feo')
-            ->setPrioridade(2);
+        $reader = Reader::createFromPath('%kernel.root_dir%/../src/AppBundle/Data/defeito.csv');
+//        $reader = Reader::createFromPath('%kernel.root_dir%/../src/AppBundle/Data/status.csv');
 
-        $this->em->persist($defeito);
+        $results = $reader->fetchAssoc();
+
+        foreach ($results as $row) {
+            $defeito = (new Defeito())
+                ->setNome($row['nome'])
+                ->setPrioridade($row['prioridade'])
+            ;
+
+            $this->em->persist($defeito);
+        }
+
+//        foreach ($results as $row) {
+//            $status = (new Status())
+//                ->setNome($row['nome'])
+//                ->setSlug($row['slug'])
+//                ->setCor($row['cor'])
+//                ->setAtivo(true)
+//            ;
+//
+//            $this->em->persist($status);
+//        }
 
         $this->em->flush();
 

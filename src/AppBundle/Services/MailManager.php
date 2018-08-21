@@ -41,7 +41,12 @@ class MailManager
         }
         $cliente = $this->em->getRepository('AppBundle:Cliente')->findBy(array('nome' => $chamado->getEmpresa()));
 
-        $chamadoOld = $log->getAnterior()->getNome();
+        if (null === $log->getAnterior()) {
+            $chamadoOld = '';
+        } else {
+            $chamadoOld = $log->getAnterior()->getNome();
+        }
+
 
         $getTemplate = $this->getTemplate($chamado);
 

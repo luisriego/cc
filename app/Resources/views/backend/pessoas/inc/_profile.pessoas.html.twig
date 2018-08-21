@@ -177,7 +177,9 @@
                                             {% for e in estacoes %}
                                             <tr>
                                                 <td class="text-center">{{ e.qtd }}</td>
+                                                {% if e.tipo is defined and e.tipo is not null %}
                                                 <td>{{ e.tipo.nome }}</td>
+                                                {% endif %}
                                             </tr>
                                             {% endfor %}
                                         {% endif %}
