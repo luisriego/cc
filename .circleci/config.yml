@@ -4,45 +4,36 @@
 #
 version: 2
 jobs:
-  build:
-    working_directory: ~/cmicro
-    docker:
-      # specify the version you desire here
-      - image: circleci/php:7.2-apache-stretch-node-browsers
-          environment:
-              APP_ENV: test
-              DATABASE_URL: mysql://root:root@127.0.0.1/cmicro
-              MAILER_FROM: cmicro@expresate.com.br
-              MAILER_URL: null://localhost
-      - image: circleci/mysql:5.7
-          environment:
-              MYSQL_ROOT_PASSWORD: 'root'
-              MYSQL_DATABASE: cmicro
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mysql:9.4
-
-
-
-    steps:
-      - checkout
-      - run:
-          name: Install PHP MySQL
-          command: sudo docker-php-ext-install pdo_mysql
-      - run:
-          name: Wait for MySQL
-          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
-      - run:
-          name: Composer
-          command: sudo composer self-update
-      - run:
-          name: Composer install
-          command: composer install -n --prefer-dist
-      - run:
-          name: Run migrations
-          command: php bin/console doctrine:migrations:migrate --env=test --no-interaction
+    build:
+        working_directory: ~/cmicro
+        docker:
+            - image: circleci/php:7.2.4-apache-stretch-node-browsers
+                environment:
+                    APP_ENV: test
+                    DATABASE_URL: mysql://root:root@127.0.0.1/cmicro
+                    MAILER_FROM: cmicro@expresate.com.br
+                    MAILER_URL: null://localhost
+            - image: circleci/mysql:5.7
+                environment:
+                    MYSQL_ROOT_PASSWORD: 'root'
+                    MYSQL_DATABASE: cmicro
+        steps:
+            - checkout
+            - run:
+                name: Install PHP MySQL
+                command: sudo docker-php-ext-install pdo_mysql
+            - run:
+                name: Wait for MySQL
+                command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
+            - run:
+                name: Composer
+                command: sudo composer self-update
+            - run:
+                name: Composer install
+                command: composer install -n --prefer-dist
+            - run:
+                name: Run migrations
+                command: php bin/console doctrine:migrations:migrate --env=test --no-interaction
 #      # Download and cache dependencies
 #      - restore_cache:
 #          keys:
