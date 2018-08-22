@@ -1,0 +1,32 @@
+@media only screen
+and (min-width : 1224px) {
+
+
+	.col-xs-12.col-sm-6 {
+	  width: 33.333333% !important;
+	  padding: 15px !important;
+	}
+
+	.col-xs-12.col-sm-6:nth-child(2) {padding: 15px 0 !important;}
+
+	#channel-list [class^="col-"] .base .copy .logo a {background-position: left !important;}
+
+	#channel-list [class^="col-"] .base .title {text-align: left !important;}
+
+	#channel-list [class^="col-"] .base .content-text .text {text-align: left !important;}
+
+	#channel-list [class^="col-"] .base .cta {
+		left: 0 !important;
+		right: inherit;
+		width:200px;
+	}
+
+	#channel-list [class^="col-"] .base .content-text {float: left !important;}
+
+	#channel-list [class^="col-"] .landing {border-radius: 3px !important;}
+
+	#site_128 .copy .logo{width: 85%;}
+
+
+}
+  /* Styles */

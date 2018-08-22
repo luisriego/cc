@@ -1,0 +1,15 @@
+
+#text-logo {
+	margin: 17px 0 0 20px;
+}
+
+/*FORMULARIOS*/
+.input-os {
+    width: 100%;
+    font-size: 1.8rem;
+}
+.form-espaco {
+    padding: 40px;
+    background-color: lightgray;
+    margin-bottom: 30px;
+}

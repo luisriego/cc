@@ -1,0 +1,14 @@
+.combo-status {
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,.5);
+    padding: 5px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.caixa-relatorio {
+    border: 1px solid green;
+    padding: 3px
+}
