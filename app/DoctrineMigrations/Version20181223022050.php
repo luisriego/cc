@@ -2,13 +2,13 @@
 
 namespace Application\Migrations;
 
-use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
 
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20180604021444 extends AbstractMigration
+final class Version20181223022050 extends AbstractMigration
 {
     public function up(Schema $schema) : void
     {
@@ -27,6 +27,7 @@ final class Version20180604021444 extends AbstractMigration
         $this->addSql('CREATE TABLE defeito (id INT AUTO_INCREMENT NOT NULL, nome VARCHAR(100) NOT NULL, prioridade INT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET UTF8 COLLATE UTF8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE empleado (id INT AUTO_INCREMENT NOT NULL, nome VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, telefone VARCHAR(19) DEFAULT NULL, endereco VARCHAR(150) DEFAULT NULL, cpf VARCHAR(255) DEFAULT NULL, UNIQUE INDEX UNIQ_D9D9BF5254BD530C (nome), UNIQUE INDEX UNIQ_D9D9BF52E7927C74 (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET UTF8 COLLATE UTF8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE endereco (id INT AUTO_INCREMENT NOT NULL, logradouro VARCHAR(255) DEFAULT NULL, numero VARCHAR(20) DEFAULT NULL, complemento VARCHAR(50) DEFAULT NULL, bairro VARCHAR(100) DEFAULT NULL, cidade VARCHAR(100) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET UTF8 COLLATE UTF8_unicode_ci ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE especialidade (id INT AUTO_INCREMENT NOT NULL, tecnico_id INT DEFAULT NULL, nome VARCHAR(100) NOT NULL, INDEX IDX_2B178086841DB1E7 (tecnico_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET UTF8 COLLATE UTF8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE estacao (id INT AUTO_INCREMENT NOT NULL, tipo_id INT DEFAULT NULL, cliente_id INT DEFAULT NULL, qtd INT NOT NULL, INDEX IDX_ADE6466CA9276E6C (tipo_id), INDEX IDX_ADE6466CDE734E51 (cliente_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET UTF8 COLLATE UTF8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE impressora (id INT AUTO_INCREMENT NOT NULL, nome VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_4F05BC8E54BD530C (nome), PRIMARY KEY(id)) DEFAULT CHARACTER SET UTF8 COLLATE UTF8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE internet (id INT AUTO_INCREMENT NOT NULL, nome VARCHAR(100) NOT NULL, telefone VARCHAR(100) DEFAULT NULL, obs LONGTEXT DEFAULT NULL, UNIQUE INDEX UNIQ_7CF3405154BD530C (nome), PRIMARY KEY(id)) DEFAULT CHARACTER SET UTF8 COLLATE UTF8_unicode_ci ENGINE = InnoDB');
@@ -62,6 +63,7 @@ final class Version20180604021444 extends AbstractMigration
         $this->addSql('ALTER TABLE clientes_internets ADD CONSTRAINT FK_5A1AEA02DFF26D68 FOREIGN KEY (internet_id) REFERENCES internet (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE cliente_sistema ADD CONSTRAINT FK_70733095DE734E51 FOREIGN KEY (cliente_id) REFERENCES cliente (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE cliente_sistema ADD CONSTRAINT FK_7073309517CDA208 FOREIGN KEY (sistema_id) REFERENCES sistema (id) ON DELETE CASCADE');
+        $this->addSql('ALTER TABLE especialidade ADD CONSTRAINT FK_2B178086841DB1E7 FOREIGN KEY (tecnico_id) REFERENCES tecnico (id)');
         $this->addSql('ALTER TABLE estacao ADD CONSTRAINT FK_ADE6466CA9276E6C FOREIGN KEY (tipo_id) REFERENCES tipo_estacao (id)');
         $this->addSql('ALTER TABLE estacao ADD CONSTRAINT FK_ADE6466CDE734E51 FOREIGN KEY (cliente_id) REFERENCES cliente (id)');
         $this->addSql('ALTER TABLE log ADD CONSTRAINT FK_8F3F68C5DB38439E FOREIGN KEY (usuario_id) REFERENCES fos_user (id)');
@@ -106,6 +108,7 @@ final class Version20180604021444 extends AbstractMigration
         $this->addSql('ALTER TABLE log DROP FOREIGN KEY FK_8F3F68C517EFFBE8');
         $this->addSql('ALTER TABLE log DROP FOREIGN KEY FK_8F3F68C576091D62');
         $this->addSql('ALTER TABLE chamados_tecnicos DROP FOREIGN KEY FK_9688DA06841DB1E7');
+        $this->addSql('ALTER TABLE especialidade DROP FOREIGN KEY FK_2B178086841DB1E7');
         $this->addSql('ALTER TABLE estacao DROP FOREIGN KEY FK_ADE6466CA9276E6C');
         $this->addSql('ALTER TABLE log DROP FOREIGN KEY FK_8F3F68C5DB38439E');
         $this->addSql('ALTER TABLE mensagem DROP FOREIGN KEY FK_9E4532B0FA0A674B');
@@ -123,6 +126,7 @@ final class Version20180604021444 extends AbstractMigration
         $this->addSql('DROP TABLE defeito');
         $this->addSql('DROP TABLE empleado');
         $this->addSql('DROP TABLE endereco');
+        $this->addSql('DROP TABLE especialidade');
         $this->addSql('DROP TABLE estacao');
         $this->addSql('DROP TABLE impressora');
         $this->addSql('DROP TABLE internet');

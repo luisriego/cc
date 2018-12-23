@@ -7,8 +7,7 @@ use AppBundle\Services\SMSManager;
 use AppBundle\Services\Stats;
 use AppBundle\Services\Uploads;
 use AppBundle\Services\Utiles;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 //use AppBundle\Entity\Status;
@@ -111,8 +110,7 @@ class BackendController extends Controller
      * Esta funcion intenta gestionar todas las entidades de tipo dato en una sola accion,recibiendo los parametros
      * desde 'params.data.yml' parametrizando las entradas y salidas.
      *
-     * @Route("/dados_utilizados/{entity}/", name="data_list")
-     * @Method({"GET", "POST"})
+     * @Route("/dados_utilizados/{entity}/", name="data_list", methods={"GET","POST"})
      */
     public function dataAction(Request $request, $entity)
     {

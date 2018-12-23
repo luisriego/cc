@@ -6,8 +6,7 @@ use AppBundle\Form\UserEditType;
 use AppBundle\Services\Utiles;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use AppBundle\Entity\User;
 use AppBundle\Form\UserType;
 use AppBundle\Form\UserListType;
@@ -22,8 +21,7 @@ class UserController extends Controller
     /**
      * Lists all user entities.
      *
-     * @Route("/", name="admin_user_index")
-     * @Method({"GET", "POST"})
+     * @Route("/", name="admin_user_index", methods={"GET", "POST"})
      */
     public function indexAction(Request $request)
     {
@@ -85,8 +83,7 @@ class UserController extends Controller
     /**
      * Criar um novo Usuario.
      *
-     * @Route("/novo/", name="admin_usuario_new")
-     * @Method({"GET", "POST"})
+     * @Route("/novo/", name="admin_usuario_new", methods={"GET", "POST"})
      */
     public function newAction(Request $request)
     {
@@ -164,8 +161,7 @@ dump($request);
     /**
      * Editar um Usuario.
      *
-     * @Route("/editar/{id}", name="admin_usuario_edit")
-     * @Method({"GET", "POST"})
+     * @Route("/editar/{id}", name="admin_usuario_edit", methods={"GET", "POST"})
      */
     public function editAction(Request $request, $id)
     {

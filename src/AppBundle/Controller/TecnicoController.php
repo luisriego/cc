@@ -4,8 +4,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use AppBundle\Entity\Tecnico;
 use AppBundle\Entity\Chamado;
 use AppBundle\Form\TecnicoType;
@@ -20,8 +19,7 @@ class TecnicoController extends Controller
     /**
      * Lists all Tecnico entities.
      *
-     * @Route("tecnicos/", name="admin_tecnico_index")
-     * @Method({"GET", "POST"})
+     * @Route("tecnicos/", name="admin_tecnico_index", methods={"GET", "POST"})
      */
     public function indexAction(Request $request)
     {
@@ -89,8 +87,7 @@ class TecnicoController extends Controller
     /**
      * Creates a new Tecnico entity.
      *
-     * @Route("tecnico/novo", name="admin_tecnico_new")
-     * @Method({"GET", "POST"})
+     * @Route("tecnico/novo", name="admin_tecnico_new", methods={"GET", "POST"})
      */
     public function newAction(Request $request)
     {
@@ -182,8 +179,7 @@ class TecnicoController extends Controller
     /**
      * Finds and displays a Tecnico entity.
      *
-     * @Route("tecnico/{slug}", name="admin_tecnico_show")
-     * @Method("GET")
+     * @Route("tecnico/{slug}", name="admin_tecnico_show", methods={"GET"})
      */
     public function showAction(Tecnico $tecnico)
     {
@@ -198,8 +194,7 @@ class TecnicoController extends Controller
     /**
      * Displays a form to edit an existing Tecnico entity.
      *
-     * @Route("tecnico/{id}/editar", name="admin_tecnico_edit")
-     * @Method({"GET", "POST"})
+     * @Route("tecnico/{id}/editar", name="admin_tecnico_edit", methods={"GET", "POST"})
      */
     public function editAction(Request $request, $id)
     {

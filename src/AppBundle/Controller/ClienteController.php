@@ -10,8 +10,7 @@ use AppBundle\Services\Uploads;
 use AppBundle\Services\Utiles;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use AppBundle\Entity\Cliente;
 use AppBundle\Form\ClienteNewType;
 use Symfony\Component\HttpKernel\Kernel;
@@ -26,8 +25,7 @@ class ClienteController extends Controller
     /**
      * Lists all Cliente entities.
      *
-     * @Route("/", name="admin_cliente_index")
-     * @Method({"GET", "POST"})
+     * @Route("/", name="admin_cliente_index", methods={"GET","POST"})
      */
     public function indexAction(Request $request)
     {
@@ -97,8 +95,7 @@ class ClienteController extends Controller
     /**
      * Cria um novo Cliente.
      *
-     * @Route("/novo/", name="admin_cliente_new")
-     * @Method({"GET", "POST"})
+     * @Route("/novo/", name="admin_cliente_new", methods={"GET","POST"})
      */
     public function newAction(Request $request, Uploads $uploads, Utiles $utiles)
     {
@@ -213,8 +210,7 @@ class ClienteController extends Controller
     /**
      * Editar um Cliente.
      *
-     * @Route("/editar/{id}", name="admin_cliente_edit")
-     * @Method({"GET", "POST"})
+     * @Route("/editar/{id}", name="admin_cliente_edit", methods={"GET","POST"})
      */
     public function editAction(Request $request, $id, Uploads $uploads, Utiles $utiles)
     {
@@ -505,8 +501,7 @@ class ClienteController extends Controller
     /**
      * Deletes a Cliente entity.
      *
-     * @Route("/{id}", name="admin_cliente_delete")
-     * @Method("DELETE")
+     * @Route("/{id}", name="admin_cliente_delete", methods={"DELETE"})
      */
     public function deleteAction(Request $request, Cliente $cliente)
     {

@@ -9,7 +9,7 @@ use AppBundle\Services\Uploads;
 use AppBundle\Services\Utiles;
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 class ProfileController extends Controller

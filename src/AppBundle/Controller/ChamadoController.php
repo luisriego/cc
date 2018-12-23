@@ -8,7 +8,7 @@ use AppBundle\Services\mailManager;
 use AppBundle\Services\Uploads;
 use AppBundle\Services\Utiles;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 class ChamadoController extends Controller

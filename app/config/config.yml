@@ -65,6 +65,15 @@ doctrine:
                 MONTH: DoctrineExtensions\Query\Mysql\Month
                 YEAR: DoctrineExtensions\Query\Mysql\Year
 
+sensio_framework_extra:
+    router:
+        annotations: false     # Deprecated; use routing annotations of Symfony core instead
+    # request:     { converters: true, auto_convert: true }
+    # view:        { annotations: true }
+    # cache:       { annotations: true }
+    # security:    { annotations: true }
+    # psr_message: { enabled: false } # Defaults to true if the PSR-7 bridge is installed
+
 doctrine_migrations:
     dir_name: "%kernel.root_dir%/DoctrineMigrations"
     namespace: Application\Migrations
