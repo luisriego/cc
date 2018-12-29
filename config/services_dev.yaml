@@ -1,0 +1,5 @@
+parameters:
+    cache_type: array
+swiftmailer:
+    delivery_addresses: ['dev@expresate.com.br']
+#    intercept_redirects: true
