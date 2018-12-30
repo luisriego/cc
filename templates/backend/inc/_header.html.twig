@@ -137,6 +137,7 @@
                         aria-expanded="false">
                     <i class="mdi mdi-bullhorn"></i>
                     <div class="{{ (render(controller('AppBundle:Backend:lastCallsLength')) >= 1) ? 'notify' : '' }}">
+                    {#<div class="{{ (render(controller('AppBundle\\Controller\\BackendController::lastCallsLengthAction')) >= 1) ? 'notify' : '' }}">#}
                         <span class="heartbit"></span>
                         <span class="point"></span>
                     </div>
