@@ -34,12 +34,12 @@ class MailManager
 
         $chamado = $params->getObject();
         if ($chamado->getStatus() == null) {
-            $newStatusentity = $this->em->getRepository('AppBundle:Status')->findOneBy(array('slug' => 'aberto'));
+            $newStatusentity = $this->em->getRepository('App:Status')->findOneBy(array('slug' => 'aberto'));
             $newStatus = $newStatusentity->getNome();
         } else {
             $newStatus = $chamado->getStatus()->getNome();
         }
-        $cliente = $this->em->getRepository('AppBundle:Cliente')->findBy(array('nome' => $chamado->getEmpresa()));
+        $cliente = $this->em->getRepository('App:Cliente')->findBy(array('nome' => $chamado->getEmpresa()));
 
         if (null === $log->getAnterior()) {
             $chamadoOld = '';
@@ -86,7 +86,7 @@ class MailManager
      */
     private function _sendTo(Chamado $chamado) {
         // Obtenemos las configuraciones generales guardadas en la base de datos
-        $settings = $this->em->getRepository('AppBundle:Settings')->findOneBy(array('id' => 1));
+        $settings = $this->em->getRepository('App:Settings')->findOneBy(array('id' => 1));
 
         $sendTo = [$settings->getEmail()];
 

@@ -35,7 +35,7 @@ class RoteadorType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Roteador'
+            'data_class' => 'App\Entity\Roteador'
         ));
     }
 
@@ -44,7 +44,7 @@ class RoteadorType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_roteador';
+        return 'App_roteador';
     }
 
 

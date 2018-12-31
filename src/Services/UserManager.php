@@ -28,7 +28,7 @@ class UserManager
 
     public function primerUsuario()
     {
-        $usuarios = $this->em->getRepository('AppBundle:User')->findAll();
+        $usuarios = $this->em->getRepository(User::class)->findAll();
         if (empty($usuarios)) {
             return true;
         } else {

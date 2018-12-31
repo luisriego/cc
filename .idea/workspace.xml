@@ -2,73 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdddeb2d-15a1-4b37-a797-4937d9bf5918" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/customer-connect.iml" afterPath="$PROJECT_DIR$/.idea/customer-connect.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/console" afterPath="$PROJECT_DIR$/bin/console" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/phpunit" afterPath="$PROJECT_DIR$/bin/phpunit" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/symfony_requirements" afterPath="$PROJECT_DIR$/bin/symfony_requirements" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles.md" afterPath="$PROJECT_DIR$/bundles.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.yaml" afterPath="$PROJECT_DIR$/config/routes.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.yaml" afterPath="$PROJECT_DIR$/config/services.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/packages/security.yaml" afterPath="$PROJECT_DIR$/config/packages/security.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/git.md" afterPath="$PROJECT_DIR$/git.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpunit.xml.dist" afterPath="$PROJECT_DIR$/phpunit.xml.dist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/problemas.md" afterPath="$PROJECT_DIR$/problemas.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/custom/dados.js" afterPath="$PROJECT_DIR$/public/assets/js/custom/dados.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/.htaccess" afterPath="$PROJECT_DIR$/src/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Command/CsvImportCommand.php" afterPath="$PROJECT_DIR$/src/Command/CsvImportCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ApiController.php" afterPath="$PROJECT_DIR$/src/Controller/ApiController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/BackendController.php" afterPath="$PROJECT_DIR$/src/Controller/BackendController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ChamadoController.php" afterPath="$PROJECT_DIR$/src/Controller/ChamadoController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ClienteController.php" afterPath="$PROJECT_DIR$/src/Controller/ClienteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/DefeitoController.php" afterPath="$PROJECT_DIR$/src/Controller/DefeitoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/EmpleadoController.php" afterPath="$PROJECT_DIR$/src/Controller/EmpleadoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/EstacaoController.php" afterPath="$PROJECT_DIR$/src/Controller/EstacaoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ImpressoraController.php" afterPath="$PROJECT_DIR$/src/Controller/ImpressoraController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/InternetController.php" afterPath="$PROJECT_DIR$/src/Controller/InternetController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ProfileController.php" afterPath="$PROJECT_DIR$/src/Controller/ProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/RoteadorController.php" afterPath="$PROJECT_DIR$/src/Controller/RoteadorController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ServidorController.php" afterPath="$PROJECT_DIR$/src/Controller/ServidorController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/SistemaController.php" afterPath="$PROJECT_DIR$/src/Controller/SistemaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/StatusController.php" afterPath="$PROJECT_DIR$/src/Controller/StatusController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TecnicoController.php" afterPath="$PROJECT_DIR$/src/Controller/TecnicoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/VirtualController.php" afterPath="$PROJECT_DIR$/src/Controller/VirtualController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Chamado.php" afterPath="$PROJECT_DIR$/src/Entity/Chamado.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Chart.php" afterPath="$PROJECT_DIR$/src/Entity/Chart.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Cliente.php" afterPath="$PROJECT_DIR$/src/Entity/Cliente.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Defeito.php" afterPath="$PROJECT_DIR$/src/Entity/Defeito.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Empleado.php" afterPath="$PROJECT_DIR$/src/Entity/Empleado.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Endereco.php" afterPath="$PROJECT_DIR$/src/Entity/Endereco.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Especialidade.php" afterPath="$PROJECT_DIR$/src/Entity/Especialidade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Estacao.php" afterPath="$PROJECT_DIR$/src/Entity/Estacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Impressora.php" afterPath="$PROJECT_DIR$/src/Entity/Impressora.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Internet.php" afterPath="$PROJECT_DIR$/src/Entity/Internet.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Log.php" afterPath="$PROJECT_DIR$/src/Entity/Log.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Mensagem.php" afterPath="$PROJECT_DIR$/src/Entity/Mensagem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Menu.php" afterPath="$PROJECT_DIR$/src/Entity/Menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Profile.php" afterPath="$PROJECT_DIR$/src/Entity/Profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Roteador.php" afterPath="$PROJECT_DIR$/src/Entity/Roteador.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Servidor.php" afterPath="$PROJECT_DIR$/src/Entity/Servidor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Settings.php" afterPath="$PROJECT_DIR$/src/Entity/Settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Sistema.php" afterPath="$PROJECT_DIR$/src/Entity/Sistema.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Status.php" afterPath="$PROJECT_DIR$/src/Entity/Status.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Tecnico.php" afterPath="$PROJECT_DIR$/src/Entity/Tecnico.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/TipoEstacao.php" afterPath="$PROJECT_DIR$/src/Entity/TipoEstacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Upload.php" afterPath="$PROJECT_DIR$/src/Entity/Upload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="$PROJECT_DIR$/src/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/VServe.php" afterPath="$PROJECT_DIR$/src/Entity/VServe.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/ChamadoRepository.php" afterPath="$PROJECT_DIR$/src/Repository/ChamadoRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" afterPath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/LogRepository.php" afterPath="$PROJECT_DIR$/src/Repository/LogRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/UploadRepository.php" afterPath="$PROJECT_DIR$/src/Repository/UploadRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EventListener/UserRegister.php" afterPath="$PROJECT_DIR$/src/EventListener/UserRegister.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ChamadoClienteType.php" afterPath="$PROJECT_DIR$/src/Form/ChamadoClienteType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ChamadoType.php" afterPath="$PROJECT_DIR$/src/Form/ChamadoType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ClienteAvatarType.php" afterPath="$PROJECT_DIR$/src/Form/ClienteAvatarType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ClienteDadosType.php" afterPath="$PROJECT_DIR$/src/Form/ClienteDadosType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ClienteNewType.php" afterPath="$PROJECT_DIR$/src/Form/ClienteNewType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ClienteType.php" afterPath="$PROJECT_DIR$/src/Form/ClienteType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/DefeitoType.php" afterPath="$PROJECT_DIR$/src/Form/DefeitoType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/EmpleadoType.php" afterPath="$PROJECT_DIR$/src/Form/EmpleadoType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/EstacaoType.php" afterPath="$PROJECT_DIR$/src/Form/EstacaoType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ImpressoraType.php" afterPath="$PROJECT_DIR$/src/Form/ImpressoraType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/InternetType.php" afterPath="$PROJECT_DIR$/src/Form/InternetType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ProfileDirType.php" afterPath="$PROJECT_DIR$/src/Form/ProfileDirType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ProfileType.php" afterPath="$PROJECT_DIR$/src/Form/ProfileType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/RoteadorType.php" afterPath="$PROJECT_DIR$/src/Form/RoteadorType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ServidorType.php" afterPath="$PROJECT_DIR$/src/Form/ServidorType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/SettingsDataType.php" afterPath="$PROJECT_DIR$/src/Form/SettingsDataType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/SettingsLogoType.php" afterPath="$PROJECT_DIR$/src/Form/SettingsLogoType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/SettingsMessageType.php" afterPath="$PROJECT_DIR$/src/Form/SettingsMessageType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/SettingsType.php" afterPath="$PROJECT_DIR$/src/Form/SettingsType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/SistemaType.php" afterPath="$PROJECT_DIR$/src/Form/SistemaType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/StatusType.php" afterPath="$PROJECT_DIR$/src/Form/StatusType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/TecnicoNewType.php" afterPath="$PROJECT_DIR$/src/Form/TecnicoNewType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/TecnicoType.php" afterPath="$PROJECT_DIR$/src/Form/TecnicoType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/TipoEstacaoType.php" afterPath="$PROJECT_DIR$/src/Form/TipoEstacaoType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UploadType.php" afterPath="$PROJECT_DIR$/src/Form/UploadType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UserAvatarType.php" afterPath="$PROJECT_DIR$/src/Form/UserAvatarType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UserEditType.php" afterPath="$PROJECT_DIR$/src/Form/UserEditType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UserListType.php" afterPath="$PROJECT_DIR$/src/Form/UserListType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UserNewType.php" afterPath="$PROJECT_DIR$/src/Form/UserNewType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UserType.php" afterPath="$PROJECT_DIR$/src/Form/UserType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/VServeType.php" afterPath="$PROJECT_DIR$/src/Form/VServeType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Services/MailManager.php" afterPath="$PROJECT_DIR$/src/Services/MailManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Services/SMSManager.php" afterPath="$PROJECT_DIR$/src/Services/SMSManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Services/UserManager.php" afterPath="$PROJECT_DIR$/src/Services/UserManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Services/Utiles.php" afterPath="$PROJECT_DIR$/src/Services/Utiles.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony.md" afterPath="$PROJECT_DIR$/symfony.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/backend/dashboard/index.html.twig" afterPath="$PROJECT_DIR$/templates/backend/dashboard/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/backend/inc/_header.html.twig" afterPath="$PROJECT_DIR$/templates/backend/inc/_header.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/backend/layout.dashboard.html.twig" afterPath="$PROJECT_DIR$/templates/backend/layout.dashboard.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/backend/layout.html.twig" afterPath="$PROJECT_DIR$/templates/backend/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layout.html.twig" afterPath="$PROJECT_DIR$/templates/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/public/chamado.html.twig" afterPath="$PROJECT_DIR$/templates/public/chamado.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" afterPath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/translations/messages.pt_BR.yml" afterPath="$PROJECT_DIR$/translations/messages.pt_BR.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,30 +90,7 @@
     <favorites_list name="customer-connect" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="_header.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/backend/inc/_header.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="141" column="51" lean-forward="false" selection-start-line="141" selection-start-column="51" selection-end-line="141" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CsvImportCommand.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Command/CsvImportCommand.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="819">
-              <caret line="39" column="72" lean-forward="true" selection-start-line="39" selection-start-column="72" selection-end-line="39" selection-end-column="72" />
-              <folding>
-                <element signature="e#31#54#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -135,57 +108,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/services.yaml" />
-        <option value="$PROJECT_DIR$/config/packages/doctrine.yaml" />
-        <option value="$PROJECT_DIR$/src/Controller/ApiController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/BackendController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/ChamadoController.php" />
         <option value="$PROJECT_DIR$/src/Controller/ClienteController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/DefeitoController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/EmpleadoController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/EstacaoController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/ImpressoraController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/InternetController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/ProfileController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/RoteadorController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/ServidorController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/SistemaController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/StatusController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/TecnicoController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/UserController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/VirtualController.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Chamado.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Chart.php" />
         <option value="$PROJECT_DIR$/src/Entity/Cliente.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Defeito.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Empleado.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Endereco.php" />
         <option value="$PROJECT_DIR$/src/Entity/Especialidade.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Estacao.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Impressora.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Internet.php" />
         <option value="$PROJECT_DIR$/src/Entity/Log.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Mensagem.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Menu.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Profile.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Roteador.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Servidor.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Settings.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Sistema.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Status.php" />
         <option value="$PROJECT_DIR$/src/Entity/Tecnico.php" />
-        <option value="$PROJECT_DIR$/src/Entity/TipoEstacao.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Upload.php" />
-        <option value="$PROJECT_DIR$/src/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/Entity/VServe.php" />
-        <option value="$PROJECT_DIR$/src/Command/CsvImportCommand.php" />
-        <option value="$PROJECT_DIR$/src/Repository/ChamadoRepository.php" />
-        <option value="$PROJECT_DIR$/src/Repository/ClienteRepository.php" />
-        <option value="$PROJECT_DIR$/src/Repository/LogRepository.php" />
-        <option value="$PROJECT_DIR$/src/Repository/UploadRepository.php" />
-        <option value="$PROJECT_DIR$/src/Repository/UserRepository.php" />
-        <option value="$PROJECT_DIR$/public/assets/js/custom/dados.js" />
+        <option value="$PROJECT_DIR$/src/Form/ClienteType.php" />
+        <option value="$PROJECT_DIR$/src/Form/ChamadoType.php" />
+        <option value="$PROJECT_DIR$/src/Form/ClienteAvatarType.php" />
+        <option value="$PROJECT_DIR$/src/Form/ClienteDadosType.php" />
+        <option value="$PROJECT_DIR$/src/Form/ClienteNewType.php" />
+        <option value="$PROJECT_DIR$/src/Form/ChamadoClienteType.php" />
+        <option value="$PROJECT_DIR$/src/Form/DefeitoType.php" />
+        <option value="$PROJECT_DIR$/src/Form/EmpleadoType.php" />
+        <option value="$PROJECT_DIR$/src/Form/EstacaoType.php" />
+        <option value="$PROJECT_DIR$/src/Form/ImpressoraType.php" />
+        <option value="$PROJECT_DIR$/src/Form/InternetType.php" />
+        <option value="$PROJECT_DIR$/src/Form/ProfileDirType.php" />
+        <option value="$PROJECT_DIR$/src/Form/ProfileType.php" />
+        <option value="$PROJECT_DIR$/src/Form/RoteadorType.php" />
+        <option value="$PROJECT_DIR$/src/Form/ServidorType.php" />
+        <option value="$PROJECT_DIR$/src/Form/SettingsDataType.php" />
+        <option value="$PROJECT_DIR$/src/Form/SettingsLogoType.php" />
+        <option value="$PROJECT_DIR$/src/Form/SettingsMessageType.php" />
+        <option value="$PROJECT_DIR$/src/Form/SettingsType.php" />
+        <option value="$PROJECT_DIR$/src/Form/SistemaType.php" />
+        <option value="$PROJECT_DIR$/src/Form/StatusType.php" />
+        <option value="$PROJECT_DIR$/src/Form/TecnicoNewType.php" />
+        <option value="$PROJECT_DIR$/src/Form/TecnicoType.php" />
+        <option value="$PROJECT_DIR$/src/Form/TipoEstacaoType.php" />
+        <option value="$PROJECT_DIR$/src/Form/UploadType.php" />
+        <option value="$PROJECT_DIR$/src/Form/UserAvatarType.php" />
+        <option value="$PROJECT_DIR$/src/Form/UserEditType.php" />
+        <option value="$PROJECT_DIR$/src/Form/UserListType.php" />
+        <option value="$PROJECT_DIR$/src/Form/UserNewType.php" />
+        <option value="$PROJECT_DIR$/src/Form/UserType.php" />
+        <option value="$PROJECT_DIR$/src/Form/VServeType.php" />
+        <option value="$PROJECT_DIR$/src/Services/MailManager.php" />
+        <option value="$PROJECT_DIR$/src/Services/SMSManager.php" />
+        <option value="$PROJECT_DIR$/src/Services/UserManager.php" />
+        <option value="$PROJECT_DIR$/src/Services/Utiles.php" />
+        <option value="$PROJECT_DIR$/src/EventListener/UserRegister.php" />
+        <option value="$PROJECT_DIR$/templates/backend/layout.html.twig" />
+        <option value="$PROJECT_DIR$/templates/layout.html.twig" />
+        <option value="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" />
+        <option value="$PROJECT_DIR$/templates/backend/inc/_header.html.twig" />
+        <option value="$PROJECT_DIR$/templates/backend/layout.dashboard.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/BackendController.php" />
+        <option value="$PROJECT_DIR$/templates/backend/dashboard/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/public/chamado.html.twig" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/config/packages/security.yaml" />
       </list>
     </option>
   </component>
@@ -346,26 +319,13 @@
             <path>
               <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
               <item name="customer-connect" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
               <item name="customer-connect" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Command" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Tests" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Tests" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -464,12 +424,12 @@
       <workItem from="1545923777534" duration="124000" />
       <workItem from="1545924401393" duration="33646000" />
       <workItem from="1546176902870" duration="1631000" />
-      <workItem from="1546178927849" duration="9308000" />
+      <workItem from="1546178927849" duration="12334000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157028000" />
+    <option name="totallyTimeSpent" value="160054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,10 +442,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2019334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2019334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -516,204 +475,364 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Entity/Chamado.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/ClienteNewType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        <state relative-caret-position="1769">
+          <caret line="99" column="38" lean-forward="false" selection-start-line="99" selection-start-column="38" selection-end-line="99" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Chart.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/ChamadoClienteType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="950">
+          <caret line="62" column="38" lean-forward="false" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Cliente.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/DefeitoType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        <state relative-caret-position="782">
+          <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Defeito.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/EmpleadoType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="677">
+          <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Empleado.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/EstacaoType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        <state relative-caret-position="761">
+          <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Endereco.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/ImpressoraType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="626">
+          <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Especialidade.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/InternetType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="782">
+          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Estacao.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/ProfileDirType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="1265">
+          <caret line="68" column="25" lean-forward="false" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Impressora.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/ProfileType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="1286">
+          <caret line="69" column="25" lean-forward="false" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Internet.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/RoteadorType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="803">
+          <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Mensagem.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/ServidorType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="635">
+          <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Log.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/SettingsDataType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        <state relative-caret-position="824">
+          <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Menu.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/SettingsLogoType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="1181">
+          <caret line="64" column="25" lean-forward="false" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Roteador.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/SettingsMessageType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="1958">
+          <caret line="101" column="27" lean-forward="false" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Profile.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/SettingsType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        <state relative-caret-position="1622">
+          <caret line="86" column="27" lean-forward="false" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Servidor.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/SistemaType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="782">
+          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Settings.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/StatusType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="35" lean-forward="false" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        <state relative-caret-position="1160">
+          <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Sistema.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/TecnicoNewType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="567">
+          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Status.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/TecnicoType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        <state relative-caret-position="588">
+          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/TipoEstacao.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/UploadType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="887">
+          <caret line="54" column="38" lean-forward="false" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Tecnico.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/TipoEstacaoType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="803">
+          <caret line="48" column="38" lean-forward="false" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Upload.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/UserAvatarType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="35" lean-forward="false" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        <state relative-caret-position="609">
+          <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/UserEditType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1181">
+          <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/UserListType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1265">
+          <caret line="72" column="38" lean-forward="false" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/UserNewType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1559">
+          <caret line="88" column="38" lean-forward="false" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/UserType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1097">
+          <caret line="64" column="38" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/VServeType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/Inicialization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-79">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/MailManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1727">
+          <caret line="88" column="55" lean-forward="false" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
+          <folding>
+            <element signature="e#956#968#1#PHP" expanded="false" />
+            <element signature="e#1193#1206#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/SMSManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1958">
+          <caret line="103" column="55" lean-forward="false" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
+          <folding>
+            <element signature="e#1090#1104#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/Stats.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-79">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/Uploads.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-79">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/UserManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/Utiles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2457">
+          <caret line="716" column="3" lean-forward="false" selection-start-line="716" selection-start-column="3" selection-end-line="716" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventListener/AsignarPrivilegiosPrimerUsuarioSubscriber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-79">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventListener/CallIncoming.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-79">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventListener/LogRegister.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-79">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventListener/MessageIncoming.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventListener/UserRegister.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="62" column="50" lean-forward="false" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/backend/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <element signature="e#12#34#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/VServe.php">
+    <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="168">
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/backend/inc/_last-calls-length.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/ChamadoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10006">
-          <caret line="490" column="46" lean-forward="false" selection-start-line="490" selection-start-column="46" selection-end-line="490" selection-end-column="46" />
+        <state relative-caret-position="-90">
+          <caret line="276" column="20" lean-forward="false" selection-start-line="276" selection-start-column="20" selection-end-line="276" selection-end-column="20" />
           <folding>
-            <marker date="1546247166188" expanded="true" signature="528:587" ph="SELECT ch, t... AppBundle" />
             <marker date="1546247166188" expanded="true" signature="528:748" ph="SELECT ch, t... App" />
             <marker date="1546247166188" expanded="true" signature="1053:1326" ph="SELECT c, t,... App" />
             <marker date="1546247166188" expanded="true" signature="1688:1806" ph="SELECT c FRO... App" />
@@ -739,235 +858,73 @@
             <marker date="1546247166188" expanded="true" signature="16258:16457" ph="SELECT MONTH... " />
             <marker date="1546247166188" expanded="true" signature="16774:17033" ph="SELECT MONTH... " />
             <marker date="1546247166188" expanded="true" signature="17403:17587" ph="SELECT YEAR(... " />
-            <marker date="1546247166188" expanded="true" signature="17470:17587" ph="SELECT YEAR(... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ChartRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/BackendController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ClienteRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2630">
-          <caret line="130" column="26" lean-forward="false" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+        <state relative-caret-position="563">
+          <caret line="94" column="54" lean-forward="true" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
           <folding>
-            <marker date="1546247166209" expanded="true" signature="438:487" ph="SELECT c FRO... AppBundle" />
-            <marker date="1546247166209" expanded="true" signature="438:563" ph="SELECT c FRO... App" />
-            <marker date="1546247166209" expanded="true" signature="870:991" ph="SELECT c FRO... App" />
-            <marker date="1546247166209" expanded="true" signature="1301:1421" ph="SELECT c FRO... App" />
-            <marker date="1546247166209" expanded="true" signature="1730:1857" ph="SELECT DISTI... App" />
-            <marker date="1546247166209" expanded="true" signature="4200:4294" ph="SELECT COUNT... App" />
-            <marker date="1546247166209" expanded="true" signature="4248:4294" ph="SELECT COUNT... AppBundle" />
+            <element signature="e#3583#3618#0#PHP" expanded="true" />
+            <element signature="e#7247#7289#0#PHP" expanded="true" />
+            <element signature="e#8218#8253#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/DefeitoRepository.php">
+    <entry file="file://$PROJECT_DIR$/templates/backend/layout.dashboard.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/EmpleadoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/EnderecoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/EspecialidadeRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/EstacaoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ImpressoraRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/LogRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
-          <caret line="42" column="46" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
+        <state relative-caret-position="168">
+          <caret line="8" column="67" lean-forward="false" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
           <folding>
-            <marker date="1546247166249" expanded="true" signature="1184:1500" ph="SELECT l, ch... App" />
-            <marker date="1546247166249" expanded="true" signature="1244:1500" ph="SELECT l, ch... AppBundle" />
+            <element signature="e#12#34#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/InternetRepository.php">
+    <entry file="file://$PROJECT_DIR$/templates/backend/dashboard/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/MensagemRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/MenuRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ProfileRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/RoteadorRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ServidorRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/SettingsRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/SistemaRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/StatusRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/TecnicoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/TipoEstacaoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/UploadRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        <state relative-caret-position="252">
+          <caret line="25" column="91" lean-forward="false" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
           <folding>
-            <marker date="1546247166155" expanded="true" signature="393:510" ph="SELECT u FRO... App" />
+            <element signature="e#12#46#0#Twig" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1412">
-          <caret line="73" column="48" lean-forward="false" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
-          <folding>
-            <marker date="1546247166231" expanded="true" signature="548:597" ph="SELECT u FRO... AppBundle" />
-            <marker date="1546247166231" expanded="true" signature="548:657" ph="SELECT u FRO... App" />
-            <marker date="1546247166231" expanded="true" signature="954:1219" ph="SELECT u, p,... App" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/VServeRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/dados.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5045">
-          <caret line="244" column="35" lean-forward="false" selection-start-line="244" selection-start-column="35" selection-end-line="244" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/backend/inc/_header.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="141" column="51" lean-forward="false" selection-start-line="141" selection-start-column="51" selection-end-line="141" selection-end-column="51" />
+        <state relative-caret-position="357">
+          <caret line="155" column="125" lean-forward="false" selection-start-line="155" selection-start-column="66" selection-end-line="155" selection-end-column="125" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/CsvImportCommand.php">
+    <entry file="file://$PROJECT_DIR$/templates/public/chamado.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="39" column="72" lean-forward="true" selection-start-line="39" selection-start-column="72" selection-end-line="39" selection-end-column="72" />
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
           <folding>
-            <element signature="e#31#54#0#PHP" expanded="true" />
+            <element signature="e#13#27#0#Twig" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="35" column="47" lean-forward="false" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="93" column="49" lean-forward="false" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

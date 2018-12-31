@@ -51,7 +51,7 @@ class Tecnico
     protected $chamados;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Especialidade", mappedBy="tecnico")
+     * @ORM\OneToMany(targetEntity="App\Entity\Especialidade", mappedBy="tecnico")
      */
     private $especialidades;
 
@@ -185,10 +185,10 @@ class Tecnico
 //    /**
 //     * Add chamados
 //     *
-//     * @param \AppBundle\Entity\Chamado $chamados
+//     * @param \App\Entity\Chamado $chamados
 //     * @return Tecnico
 //     */
-//    public function addChamado(\AppBundle\Entity\Chamado $chamados)
+//    public function addChamado(\App\Entity\Chamado $chamados)
 //    {
 //        $this->chamados[] = $chamados;
 //
@@ -198,9 +198,9 @@ class Tecnico
 //    /**
 //     * Remove chamados
 //     *
-//     * @param \AppBundle\Entity\Chamado $chamados
+//     * @param \App\Entity\Chamado $chamados
 //     */
-//    public function removeChamado(\AppBundle\Entity\Chamado $chamados)
+//    public function removeChamado(\App\Entity\Chamado $chamados)
 //    {
 //        $this->chamados->removeElement($chamados);
 //    }

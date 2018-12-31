@@ -164,24 +164,25 @@ class BackendController extends Controller
      */
     public function lastCallsAction()
     {
-        $usuario = $this->getUser()->getUsername();
+        $usuario = get_current_user();
         $em = $this->getDoctrine()->getManager();
-        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
+        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamadosUser(5, $usuario);
 
         return $this->render('backend/inc/_last-calls.html.twig', array(
             'ultimosChamados' => $ultimosChamados,
         ));
     }
 
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function lastCallsLengthAction()
     {
-        $user = get_current_user();
-        dump($user);die();
-        $usuario = $this->getUser()->getUsername();
+        $usuario = get_current_user();
         $em = $this->getDoctrine()->getManager();
-        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
+        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamadosUser(5, $usuario);
 
-        return $this->render(':backend/inc:_last-calls-length.html.twig', array(
+        return $this->render('backend/inc/_last-calls-length.html.twig', array(
             'ultimosChamados' => $ultimosChamados,
         ));
     }
@@ -205,7 +206,7 @@ class BackendController extends Controller
 
 
 
-        return $this->render(':backend/inc:_left.aside.html.twig', [
+        return $this->render('backend/inc/_left.aside.html.twig', [
             'todosChamados'         => $todosChamados,
             'todosTecnicos'         => $todosTecnicos,
             'todosUsuarios'         => $todosUsuarios,

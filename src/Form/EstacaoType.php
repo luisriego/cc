@@ -22,13 +22,13 @@ class EstacaoType extends AbstractType
                 'label'         => 'Quantidade'
             ))
             ->add('tipo', EntityType::class, array(
-                'class' => 'AppBundle\Entity\TipoEstacao',
+                'class' => 'App\Entity\TipoEstacao',
                 'choice_label'  => 'nome',
                 'required'      => false,
                 'multiple'      => false
             ))
 //            ->add('cliente', EntityType::class, array(
-//                'class' => 'AppBundle\Entity\Cliente',
+//                'class' => 'App\Entity\Cliente',
 //                'choice_label'  => 'nome',
 //                'required'      => true,
 //                'multiple'      => false
@@ -42,7 +42,7 @@ class EstacaoType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Estacao'
+            'data_class' => 'App\Entity\Estacao'
         ));
     }
 }

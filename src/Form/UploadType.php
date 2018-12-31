@@ -28,7 +28,7 @@ class UploadType extends AbstractType
                 'label'         => 'Selecione um Arquivo'
             ])
             ->add('cliente', EntityType::class, [
-                'class' => 'AppBundle\Entity\Cliente',
+                'class' => 'App\Entity\Cliente',
                 'attr' => array(
                     'class' => 'text-uppercase',
                 ),
@@ -52,7 +52,7 @@ class UploadType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Upload'
+            'data_class' => 'App\Entity\Upload'
         ));
     }
 }

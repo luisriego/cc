@@ -438,21 +438,21 @@ class ClienteController extends Controller
 
 //        switch ($ref) {
 //            case 'tecnico':
-//                $pessoa = $em->getRepository('AppBundle:Tecnico')->findOneBy(array('id' => $id));
+//                $pessoa = $em->getRepository('App:Tecnico')->findOneBy(array('id' => $id));
 //                break;
 //            case 'cliente':
-//                $pessoa = $em->getRepository('AppBundle:Cliente')->findOneBy(array('id' => $id));
-//                $chamados = $em->getRepository('AppBundle:Chamado')->findChamadosByClient($pessoa);
-//                $anos = $em->getRepository('AppBundle:Chamado')->findAllYearsXCliente($pessoa);
+//                $pessoa = $em->getRepository('App:Cliente')->findOneBy(array('id' => $id));
+//                $chamados = $em->getRepository('App:Chamado')->findChamadosByClient($pessoa);
+//                $anos = $em->getRepository('App:Chamado')->findAllYearsXCliente($pessoa);
 //                for ($i = 0; $i < count($anos); ++$i) {
 //                    $ano = $anos[$i]['ano'];
-//                    $ch = $em->getRepository('AppBundle:Chamado')->findAllByYearAndClient($ano, $pessoa);
+//                    $ch = $em->getRepository('App:Chamado')->findAllByYearAndClient($ano, $pessoa);
 //                    $graf = $utiles->fazerJSON($ch);
 //                    $dados[$ano] = $graf;
 //                }
 //                break;
 //            case 'usuario':
-//                $pessoa = $em->getRepository('AppBundle:User')->findOneBy(array('id' => $id));
+//                $pessoa = $em->getRepository('App:User')->findOneBy(array('id' => $id));
 //                break;
 //        }
 

@@ -758,7 +758,7 @@ class Cliente
 //    /**
 //     * Add upload
 //     *
-//     * @param \AppBundle\Entity\Upload $upload
+//     * @param \App\Entity\Upload $upload
 //     *
 //     * @return Cliente
 //     */
@@ -772,7 +772,7 @@ class Cliente
 //    /**
 //     * Remove upload
 //     *
-//     * @param \AppBundle\Entity\Upload $upload
+//     * @param \App\Entity\Upload $upload
 //     */
 //    public function removeUpload(Upload $upload)
 //    {

@@ -29,7 +29,7 @@ class TecnicoNewType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Tecnico'
+            'data_class' => 'App\Entity\Tecnico'
         ));
     }
 }

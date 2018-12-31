@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use Doctrine\ORM\EntityRepository;
-use Proxies\__CG__\AppBundle\Entity\Status;
+use Proxies\__CG__\App\Entity\Status;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
@@ -65,17 +65,17 @@ class ChamadoType extends AbstractType
             ->add('problema', TextareaType::class, array(
                 'required' => false))
             ->add('status', EntityType::class, array(
-                'class' => 'AppBundle:Status',
+                'class' => 'App:Status',
                 'choice_label' => 'nome'))
             ->add('tecnicos', EntityType::class, array(
-                'class' => 'AppBundle:Tecnico',
+                'class' => 'App:Tecnico',
                 'expanded' => false,
                 'multiple' => true,
                 'choice_label' => 'nome'))
             ->add('usoInterno', TextareaType::class, array(
                 'required' => false))
             ->add('cliente', EntityType::class, array(
-                'class' => 'AppBundle\Entity\Cliente',
+                'class' => 'App\Entity\Cliente',
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('c')
                         ->orderBy('c.nome', 'ASC');
@@ -95,7 +95,7 @@ class ChamadoType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Chamado',
+            'data_class' => 'App\Entity\Chamado',
         ));
     }
 }

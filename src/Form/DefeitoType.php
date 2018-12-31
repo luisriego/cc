@@ -34,7 +34,7 @@ class DefeitoType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Defeito'
+            'data_class' => 'App\Entity\Defeito'
         ));
     }
 
@@ -43,7 +43,7 @@ class DefeitoType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_defeito';
+        return 'App_defeito';
     }
 
 

@@ -23,7 +23,7 @@
         <!-- ============================================================== -->
         <!-- Contenido  -->
         <!-- ============================================================== -->
-        {% if render(controller('AppBundle:Backend:lastCallsLength')) >= 1 %}
+        {% if render(controller('App\\Controller\\BackendController::lastCallsLengthAction')) >= 1 %}
             {{ include('backend/dashboard/modules/m.last.calls.html.twig') }}
             {% else %}
             <div class="row">

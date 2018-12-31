@@ -37,7 +37,7 @@ class VServeType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\VServe'
+            'data_class' => 'App\Entity\VServe'
         ));
     }
 }

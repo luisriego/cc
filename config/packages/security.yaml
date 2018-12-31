@@ -33,6 +33,6 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/chamado-tecnico, role: ROLE_USER }
-        - { path: ^/admin, role: IS_AUTHENTICATED_ANONYMOUSLY }    # role: ROLE_TECNICO }
+        - { path: ^/admin, role: ROLE_TECNICO }
         - { path: ^/backend/, role: ROLE_TECNICO }
         - { path: ^/admin/tecnicos/, role: ROLE_ADMIN}

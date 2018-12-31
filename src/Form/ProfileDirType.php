@@ -57,7 +57,7 @@ class ProfileDirType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Endereco'
+            'data_class' => 'App\Entity\Endereco'
         ));
     }
 
@@ -66,7 +66,7 @@ class ProfileDirType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_endereco';
+        return 'App_endereco';
     }
 
 

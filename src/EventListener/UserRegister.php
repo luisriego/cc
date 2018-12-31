@@ -60,7 +60,7 @@ class UserRegister
 
     private function _primerUsuario($em)
     {
-        $usuarios = $em->getRepository('AppBundle:User')->findAll();
+        $usuarios = $em->getRepository(User::class)->findAll();
         if (empty($usuarios)) {
             return true;
         } else {

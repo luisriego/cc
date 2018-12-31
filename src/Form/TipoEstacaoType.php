@@ -30,7 +30,7 @@ class TipoEstacaoType extends AbstractType
                 'currency' => '',
             ))
 //            ->add('cliente', EntityType::class, array(
-//                'class' => 'AppBundle\Entity\Cliente',
+//                'class' => 'App\Entity\Cliente',
 //                'property'      => 'nome',
 //                'choice_label'  => 'nome',
 //                'required'      => true,
@@ -46,7 +46,7 @@ class TipoEstacaoType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\TipoEstacao'
+            'data_class' => 'App\Entity\TipoEstacao'
         ));
     }
 }

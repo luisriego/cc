@@ -29,7 +29,7 @@ class Especialidade
     private $nome;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Tecnico", inversedBy="especialidades")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Tecnico", inversedBy="especialidades")
      * @ORM\JoinColumn()
      */
     private $tecnico;

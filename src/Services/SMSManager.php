@@ -41,7 +41,7 @@ class SMSManager
             $cliente = $chamado->getCliente();
 
             // Obtenemos las configuraciones basicas de nuestro cliente.
-            $settings = $this->em->getRepository('AppBundle:Settings')->findOneBy(array('id' => 1));
+            $settings = $this->em->getRepository('App:Settings')->findOneBy(array('id' => 1));
 
             // Si está configurado para que siempre que haya cambios enviar SMS al administrador
             if ($settings->getSmsTodos() === true) {
@@ -101,7 +101,7 @@ class SMSManager
         $urlSms = "https://api.directcallsoft.com/sms/send";
 
         // instancia de la entidad que contiene los valores del setting
-        $settings = $this->em->getRepository('AppBundle:Settings')->findOneBy(array('id' => 1));
+        $settings = $this->em->getRepository('App:Settings')->findOneBy(array('id' => 1));
         if ($settings->getCelular() !== null) {
             $destination = $settings->getCelular();
         }

@@ -56,7 +56,7 @@ class UserNewType extends AbstractType
             ))
             ->add('empresa', EntityType::class, array(
                 'placeholder' => 'Selecione um Cliente da lista abaixo',
-                'class' => 'AppBundle\Entity\Cliente',
+                'class' => 'App\Entity\Cliente',
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('c')
                         ->orderBy('c.nome', 'ASC');
@@ -86,7 +86,7 @@ class UserNewType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\User',
+            'data_class' => 'App\Entity\User',
             'validation_groups' => ['create'],
             'role' => ['ROLE_USER']
         ));

@@ -44,27 +44,27 @@ class ClienteType extends AbstractType
             ->add('proveedores', TextType::class, array(
                 'required' => false))
             ->add('servidores', EntityType::class, array(
-                'class' => 'AppBundle:Servidor',
+                'class' => 'App:Servidor',
                 'choice_label' => 'nome',
                 'required' => false,
                 'multiple' => true))
             ->add('virtuais', EntityType::class, array(
-                'class' => 'AppBundle:VServe',
+                'class' => 'App:VServe',
                 'choice_label' => 'nome',
                 'required' => false,
                 'multiple' => true))
             ->add('internets', EntityType::class, array(
-                'class' => 'AppBundle:Internet',
+                'class' => 'App:Internet',
                 'choice_label' => 'nome',
                 'required' => false,
                 'multiple' => true))
             ->add('sistemas', EntityType::class, array(
-                'class' => 'AppBundle:Sistema',
+                'class' => 'App:Sistema',
                 'choice_label' => 'nome',
                 'required' => false,
                 'multiple' => true))
             ->add('impressoras', EntityType::class, array(
-                'class'         => 'AppBundle:Impressora',
+                'class'         => 'App:Impressora',
                 'choice_label'  => 'nome',
                 'required'      => false,
                 'multiple'      => true))
@@ -90,7 +90,7 @@ class ClienteType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Cliente'
+            'data_class' => 'App\Entity\Cliente'
         ));
     }
 }

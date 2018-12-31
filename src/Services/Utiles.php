@@ -361,7 +361,7 @@ Class Utiles
 //
 //        $cambio = false;
 //        if ($chamado->getEmpresa() == null) {
-////            $nombreCliente = $this->_em->getRepository('AppBundle:Cliente')->findEmpresaLike($chamado->getEmpresa());
+////            $nombreCliente = $this->_em->getRepository(Cliente::class)->findEmpresaLike($chamado->getEmpresa());
 ////            $cliente->setNome($nombreCliente);
 ////            $this->_em->persist($cliente);
 //            dump($nombre);
@@ -389,7 +389,7 @@ Class Utiles
     {
         $cambio = false;
         if ($cliente->getNome() == null) {
-            $nombreCliente = $this->_em->getRepository('AppBundle:Cliente')
+            $nombreCliente = $this->_em->getRepository(Cliente::class)
                 ->findEmpresaLike($chamado->getEmpresa());
             $cliente->setNome($nombreCliente);
             $this->_em->persist($cliente);
@@ -456,7 +456,7 @@ Class Utiles
         $respuesta = ['resultado' => false];
         /* Si la empresa no esta vacia pero no tiene cliente_id */
         if ($chamado->getEmpresa() != null && $chamado->getCliente() == null) {
-            $empresas = $this->_em->getRepository('AppBundle:Cliente')
+            $empresas = $this->_em->getRepository(Cliente::class)
                 ->findEmpresaLike(strtolower($chamado->getEmpresa()));
             if (count($empresas) > 1) {
                 $respuesta = [
@@ -497,7 +497,7 @@ Class Utiles
         if ($chamado->getEmpresa() != null && $chamado->getCliente() == null) {
             //  Busca una parcial con las 8 primeras letras en minusculas
             $parcial = strtolower(substr($chamado->getEmpresa(), 0, 8));
-            $empresasParcial = $this->_em->getRepository('AppBundle:Cliente')
+            $empresasParcial = $this->_em->getRepository(Cliente::class)
                 ->findEmpresaLike($parcial);
             if (count($empresasParcial) != 0) {
                 $chamado->setCliente($empresasParcial[0]);
@@ -510,7 +510,7 @@ Class Utiles
                 ];
             } else {
                 $parcial = explode(" ", $chamado->getEmpresa());
-                $empresasParcial = $this->_em->getRepository('AppBundle:Cliente')
+                $empresasParcial = $this->_em->getRepository(Cliente::class)
                     ->findEmpresaLike($parcial[0]);
                 if (count($empresasParcial) != 0) {
                     $chamado->setCliente($empresasParcial[0]);
@@ -543,7 +543,7 @@ Class Utiles
     {
         $respuesta = ['resultado' => false];
         $ultimos4 = substr($chamado->getTelefone(), -4, 4);
-        $telefone = $this->_em->getRepository('AppBundle:Cliente')
+        $telefone = $this->_em->getRepository(Cliente::class)
             ->findEmpresaLikeTelf($ultimos4);
 
         if (count($telefone) ==1) {
@@ -577,7 +577,7 @@ Class Utiles
         $separado = $this->multiexplode(array('@','.'), $chamado->getEmail());
         dump($separado);
         foreach ($separado as $fraccion) {
-            $cliente = $this->_em->getRepository('AppBundle:Cliente')
+            $cliente = $this->_em->getRepository(Cliente::class)
                 ->findEmpresaLikeEmail($fraccion);
 
             if ($cliente) {
@@ -609,7 +609,7 @@ Class Utiles
     public function buscarClientePorRaiox(Chamado $chamado) 
     {
         $respuesta = ['resultado' => false];
-        $raiox = $this->_em->getRepository('AppBundle:Cliente')
+        $raiox = $this->_em->getRepository(Cliente::class)
             ->findEmpresaLikeRaoiox($chamado->getEmpresa());
         if (count($raiox) == 1) {
             $cliente = $raiox[0];
@@ -618,10 +618,10 @@ Class Utiles
             $posArroba = explode('.', $preArroba[1]);
             $contato = substr($preArroba[0], 0, 5);
             $empresa = substr($posArroba[0], 0, 3);
-            $email =  $this->_em->getRepository('AppBundle:Cliente')
+            $email =  $this->_em->getRepository(Cliente::class)
                 ->findEmpresaLikeEmail($empresa);
             if ($email > 1) {
-                $cli = $this->_em->getRepository('AppBundle:Cliente')
+                $cli = $this->_em->getRepository(Cliente::class)
                     ->findEmpresaLikeContato($contato);
                 if ($cli) {
                     $chamado->setCliente($cli[0]);
@@ -667,16 +667,16 @@ Class Utiles
         foreach ($chamados as $chamado) {
             if ($chamado->getEmpresa() == null && $chamado->getCliente() == null) {
                 dump('Chamado '.$chamados->getId().' nao tem cliente asignado');
-                $emails = $this->_em->getRepository('AppBundle:Cliente')
+                $emails = $this->_em->getRepository(Cliente::class)
                     ->findEmpresaLikeEmail($chamado->getEmail());
 
                 $preArroba = explode('@', $chamado->getEmail());
                 $posArroba = explode('.', $preArroba[1]);
                 $empresa = substr($posArroba[0], 0, 3); ;
 
-                $filtro = $this->_em->getRepository('AppBundle:Cliente')
+                $filtro = $this->_em->getRepository(Cliente::class)
                     ->findEmpresaLike($empresa);
-                $filtro2 = $this->_em->getRepository('AppBundle:Cliente')
+                $filtro2 = $this->_em->getRepository(Cliente::class)
                     ->findEmpresaLikeEmail($empresa);
                 if ($filtro != null) {
                     $chamado->setCliente($filtro);
@@ -713,7 +713,7 @@ Class Utiles
                 $empresa = $chamado->getEmpresa();
                 if ($chamado->getEmpresa() != 'vbc') {
                     dump($empresa);
-                    $cliente = $this->_em->getRepository('AppBundle:Cliente')
+                    $cliente = $this->_em->getRepository(Cliente::class)
                         ->findEmpresaLike('assercon');
                     dump($cliente);
                     foreach ($cliente as $cli) {

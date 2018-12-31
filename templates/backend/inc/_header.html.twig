@@ -136,8 +136,8 @@
                         aria-haspopup="true"
                         aria-expanded="false">
                     <i class="mdi mdi-bullhorn"></i>
-                    <div class="{{ (render(controller('AppBundle:Backend:lastCallsLength')) >= 1) ? 'notify' : '' }}">
-                    {#<div class="{{ (render(controller('AppBundle\\Controller\\BackendController::lastCallsLengthAction')) >= 1) ? 'notify' : '' }}">#}
+                    {#<div class="{{ (render(controller('App:Backend:lastCallsLength')) >= 1) ? 'notify' : '' }}">#}
+                    <div class="{{ (render(controller('App\\Controller\\BackendController::lastCallsLengthAction')) >= 1) ? 'notify' : '' }}">
                         <span class="heartbit"></span>
                         <span class="point"></span>
                     </div>
@@ -145,22 +145,22 @@
                 <div class="dropdown-menu mailbox dropdown-menu-right animated bounceInDown" aria-labelledby="2">
                     <ul>
                         <li>
-                            {% if render(controller('AppBundle:Backend:lastCallsLength')) <= 0 %}
+                            {% if render(controller('App\\Controller\\BackendController::lastCallsLengthAction')) <= 0 %}
                                 <div class="drop-title">Você não tem Novos Chamados</div>
-                            {% elseif render(controller('AppBundle:Backend:lastCallsLength')) == 1 %}
+                            {% elseif render(controller('App\\Controller\\BackendController::lastCallsLengthAction')) == 1 %}
                                 <div class="drop-title">
-                                    Você tem {{ render(controller('AppBundle:Backend:lastCallsLength')) }} Novo Chamado
+                                    Você tem {{ render(controller('App\\Controller\\BackendController::lastCallsLengthAction')) }} Novo Chamado
                                 </div>
                             {% else %}
                                 <div class="drop-title">
-                                    Você tem {{ render(controller('AppBundle:Backend:lastCallsLength')) }} Novos Chamados
+                                    Você tem {{ render(controller('App\\Controller\\BackendController::lastCallsLengthAction')) }} Novos Chamados
                                 </div>
                             {% endif %}
                         </li>
                         <li>
                             <div class="message-center">
                                 <!-- Message Repeat here all the emails-->
-                                {{ render(controller('AppBundle:Backend:lastCalls')) }}
+                                {{ render(controller('App\\Controller\\BackendController::lastCallsAction')) }}
                             </div>
                         </li>
                         <li>

@@ -49,7 +49,7 @@ class UserEditType extends AbstractType
 //                    'class' => 'form-control m-b-30')
 //            ))
             ->add('empresa', EntityType::class, array(
-                'class' => 'AppBundle\Entity\Cliente',
+                'class' => 'App\Entity\Cliente',
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('c')
                         ->orderBy('c.nome', 'ASC');
@@ -66,7 +66,7 @@ class UserEditType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\User'
+            'data_class' => 'App\Entity\User'
         ));
     }
 }

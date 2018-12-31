@@ -43,7 +43,7 @@ class SistemaType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Sistema'
+            'data_class' => 'App\Entity\Sistema'
         ));
     }
 }

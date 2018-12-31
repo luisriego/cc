@@ -28,7 +28,7 @@ class ChamadoClienteType extends AbstractType
             ->add('nome', TextType::class)
             ->add('email', EmailType::class)
             ->add('cliente', EntityType::class, array(
-                'class' => 'AppBundle\Entity\Cliente',
+                'class' => 'App\Entity\Cliente',
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('c')
                         ->orderBy('c.nome', 'ASC');
@@ -38,10 +38,10 @@ class ChamadoClienteType extends AbstractType
                 'choice_label' => 'nome'))
             ->add('telefone', TextType::class, array())
             ->add('status', EntityType::class, array(
-                'class' => 'AppBundle:Status',
+                'class' => 'App:Status',
                 'choice_label' => 'nome'))
             ->add('defeito', EntityType::class, array(
-                'class' => 'AppBundle\Entity\Defeito',
+                'class' => 'App\Entity\Defeito',
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('d')
                         ->orderBy('d.nome', 'ASC');
@@ -60,7 +60,7 @@ class ChamadoClienteType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Chamado',
+            'data_class' => 'App\Entity\Chamado',
         ));
     }
 }

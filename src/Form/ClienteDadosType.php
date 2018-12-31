@@ -21,17 +21,17 @@ class ClienteDadosType extends AbstractType
     {
         $builder
 //            ->add('estacoes', EntityType::class, array(
-//                'class' => 'AppBundle:TipoEstacao',
+//                'class' => 'App:TipoEstacao',
 //                'choice_label' => 'nome'))
             ->add('password', HiddenType::class)
             ->add('virtuais', EntityType::class, array(
-                'class' => 'AppBundle:VServe',
+                'class' => 'App:VServe',
                 'choice_label' => 'nome'))
             ->add('internets', EntityType::class, array(
-                'class' => 'AppBundle:Internet',
+                'class' => 'App:Internet',
                 'choice_label' => 'nome'))
             ->add('impressoras', EntityType::class, array(
-                'class' => 'AppBundle:Impressora',
+                'class' => 'App:Impressora',
                 'choice_label' => 'nome'))
             ->add('proveedores', TextType::class, array(
                 'required' => false,
@@ -41,7 +41,7 @@ class ClienteDadosType extends AbstractType
                     'placeholder' => '')
             ))
             ->add('servidores', EntityType::class, array(
-                'class' => 'AppBundle:Servidor',
+                'class' => 'App:Servidor',
                 'choice_label' => 'nome',
             ))
             ->add('raiox', TextareaType::class, array(
@@ -61,7 +61,7 @@ class ClienteDadosType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Cliente'
+            'data_class' => 'App\Entity\Cliente'
         ));
     }
 }

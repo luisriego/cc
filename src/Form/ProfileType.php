@@ -58,7 +58,7 @@ class ProfileType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Profile'
+            'data_class' => 'App\Entity\Profile'
         ));
     }
 
@@ -67,7 +67,7 @@ class ProfileType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_profile';
+        return 'App_profile';
     }
 
 
