@@ -26,7 +26,7 @@ class DefeitoController extends Controller
     {
 //        $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado:class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('defeito.campos')) {
@@ -38,7 +38,7 @@ class DefeitoController extends Controller
 
         $titulo = 'defeito';
 
-        $dados = $em->getRepository('AppBundle:Defeito')->findAll();
+        $dados = $em->getRepository(Defeito::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -54,10 +54,10 @@ class DefeitoController extends Controller
             ],
         ];
 
-//        $statuses = $em->getRepository('AppBundle:Status')->findAll();
+//        $statuses = $em->getRepository(Status:class)->findAll();
 
         $defeito = new Defeito();
-        $form = $this->createForm('AppBundle\Form\DefeitoType', $defeito);
+        $form = $this->createForm('App\Form\DefeitoType', $defeito);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

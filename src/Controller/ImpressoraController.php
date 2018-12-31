@@ -26,7 +26,7 @@ class ImpressoraController extends Controller
     {
 //        $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('impressora.campos')) {
@@ -38,7 +38,7 @@ class ImpressoraController extends Controller
 
         $titulo = 'impressora';
 
-        $dados = $em->getRepository('AppBundle:Impressora')->findAll();
+        $dados = $em->getRepository(Impressora::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -55,7 +55,7 @@ class ImpressoraController extends Controller
         ];
 
         $impressora = new Impressora();
-        $form = $this->createForm('AppBundle\Form\ImpressoraType', $impressora);
+        $form = $this->createForm('App\Form\ImpressoraType', $impressora);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

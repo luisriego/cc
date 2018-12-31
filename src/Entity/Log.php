@@ -10,7 +10,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * Log
  *
  * @ORM\Table(name="log")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\LogRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\LogRepository")
  */
 class Log
 {

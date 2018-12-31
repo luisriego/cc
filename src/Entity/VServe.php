@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * VServe
  *
  * @ORM\Table(name="vserve")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\VServeRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\VServeRepository")
  */
 class VServe
 {

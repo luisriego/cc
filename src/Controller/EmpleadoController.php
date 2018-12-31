@@ -26,11 +26,11 @@ class EmpleadoController extends Controller
     {
 //        $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
         $campos = ['id', 'nome', 'email', 'emailOculto', 'telefone', 'endereco'];
         $titulo = 'Empleado';
 
-        $dados = $em->getRepository('AppBundle:Empleado')->findAll();
+        $dados = $em->getRepository(Empleado::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -47,7 +47,7 @@ class EmpleadoController extends Controller
         ];
 
         $empleado = new Empleado();
-        $form = $this->createForm('AppBundle\Form\EmpleadoType', $empleado);
+        $form = $this->createForm('App\Form\EmpleadoType', $empleado);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -59,12 +59,12 @@ class EmpleadoController extends Controller
         }
 
         return $this->render('pessoa/index.generico.html.twig', array(
-                'titulo' => $titulo,
+            'titulo' => $titulo,
 //            'ultimosChamados' => $ultimosChamados,
-                'breadcrumbs' => $breadcrumbs,
-                'dados' => $dados,
-                'campos' => $campos,
-                'form' => $form->createView(),
+            'breadcrumbs' => $breadcrumbs,
+            'dados' => $dados,
+            'campos' => $campos,
+            'form' => $form->createView(),
             )
         );
     }

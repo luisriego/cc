@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Chart
  *
  * @ORM\Table(name="chart")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ChartRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ChartRepository")
  */
 class Chart
 {

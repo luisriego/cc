@@ -21,7 +21,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT ch, t, s, c
-                                FROM AppBundle:Chamado ch
+                                FROM App:Chamado ch
                                 JOIN ch.status s
                                 JOIN ch.tecnicos t
                                 JOIN ch.cliente c
@@ -38,7 +38,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c, t, s
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 JOIN c.status s
                                 JOIN c.tecnicos t
                                 WHERE t.username = :usuario
@@ -57,7 +57,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE c.cliente = :cliente
                                 ');
         $consulta->setParameter('cliente', $cliente);
@@ -73,7 +73,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE c.empresa LIKE :empresa
                                 AND c.data > :desde
                                 AND c.data < :hasta
@@ -95,7 +95,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT MONTH(c.data) AS mes, COUNT(c) AS qtd
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE c.empresa LIKE :empresa
                                 AND c.data > :desde
                                 AND c.data < :hasta
@@ -117,7 +117,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE c.cliente = :cliente
                                 AND c.data >= :desde
                                 AND c.data <= :hasta
@@ -133,7 +133,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT MONTH(c.data) AS mes, COUNT(c) AS qtd
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE c.cliente = :cliente
                                 AND c.data >= :desde
                                 AND c.data <= :hasta
@@ -159,7 +159,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE c.nome = :usuario
                                 AND c.data > :desde
                                 AND c.data < :hasta
@@ -184,7 +184,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE c.empresa LIKE :cliente
                                 AND c.data > :desde
                                 AND c.data < :hasta
@@ -204,7 +204,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c
-                                FROM AppBundle:Chamado c 
+                                FROM App:Chamado c 
                                 WHERE c.tecnicos = :tecnico
                                 AND c.data > :desde
                                 AND c.data < :hasta
@@ -225,7 +225,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c, s
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 JOIN c.status s
                                 WHERE c.status != 6
                                 AND c.status != 4
@@ -240,7 +240,7 @@ class ChamadoRepository extends EntityRepository
 //        $em = $this->getEntityManager();
 //        $consulta = $em->createQuery('
 //                                SELECT c, s
-//                                FROM AppBundle:Chamado c
+//                                FROM App:Chamado c
 //                                JOIN c.status s
 //                                WHERE c.status != 6
 //                                ');
@@ -252,7 +252,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT IDENTITY(c.tecnicos)
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE c.id = :chamado
                                 ');
         $consulta->setParameter('chamado', $chamado);
@@ -264,7 +264,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c.id
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 JOIN c.tecnicos t
                                 WHERE c.id = :chamado
                                 AND t.username = :usuario
@@ -279,7 +279,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c, s, cl
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 JOIN c.status s
                                 JOIN c.cliente cl
                                 WHERE c.status = 1
@@ -294,7 +294,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT COUNT(c) AS qtd
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE c.status = 1
                                 ORDER BY c.data DESC
                                 ');
@@ -307,7 +307,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 JOIN c.tecnicos t
                                 WHERE t.username = :usuario
                                 AND c.status = 1
@@ -324,7 +324,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c, t, s
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 JOIN c.status s
                                 JOIN c.tecnicos t
                                 WHERE c.status = 6
@@ -344,7 +344,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c, s, cl
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 JOIN c.status s
                                 JOIN c.cliente cl
                                 WHERE c.status != 6
@@ -358,9 +358,9 @@ class ChamadoRepository extends EntityRepository
 //    {
 //        $q = $this->getEntityManager()->createQueryBuilder();
 //        $q->select('ch.nome as nome','s.nome as status')
-//            ->from('AppBundle:Chamado','ch')
-//            ->join('AppBundle:Status', 's', 'WITH', 'n = s.nome')
-//            ->join('AppBundle:Cliente', 'c', 'WITH', 'ds.language = ln')
+//            ->from('App:Chamado','ch')
+//            ->join('App:Status', 's', 'WITH', 'n = s.nome')
+//            ->join('App:Cliente', 'c', 'WITH', 'ds.language = ln')
 //            ->where('p.id = :feature')
 //            ->andWhere('ln.iso = :lang')
 //            ->setParameter('lang', $locale)
@@ -394,7 +394,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT COUNT(c)
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE c.status = 4
                                 ORDER BY c.data DESC
                                 ');
@@ -406,7 +406,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c, s
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 JOIN c.status s
                                 WHERE c.status = 4
                                 ORDER BY c.data DESC
@@ -423,7 +423,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c, s
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 JOIN c.status s
                                 WHERE s.ativo = :ativo
                                 OR s.slug = :status
@@ -440,7 +440,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c, s
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 JOIN c.status s
                                 WHERE s.ativo = 0
                                 OR s.slug = :finalizado
@@ -460,7 +460,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT MONTH(c.data) AS mes, COUNT(c) AS qtd
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE YEAR(c.data) = :year
                                 GROUP BY mes
                                 ');
@@ -473,7 +473,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT MONTH(c.data) AS mes, COUNT(c) AS qtd
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE YEAR(c.data) = :year
                                 AND c.empresa LIKE :cliente
                                 GROUP BY mes
@@ -488,7 +488,7 @@ class ChamadoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT YEAR(c.data) AS ano
-                                FROM AppBundle:Chamado c
+                                FROM App:Chamado c
                                 WHERE c.empresa LIKE :cliente
                                 GROUP BY ano
                                 ');

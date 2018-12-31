@@ -8,6 +8,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Chamado;
+use App\Entity\Status;
 use App\Services\Utiles;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as FOS;
@@ -25,8 +27,8 @@ class ApiController extends FOSRestController implements ClassResourceInterface
     {
         $em = $this->getDoctrine()->getManager();
 
-        $todosChamadosEsteAno = $em->getRepository('AppBundle:Chamado')->findAllByYear(2018);
-        $todosChamadosAnoPassado = $em->getRepository('AppBundle:Chamado')->findAllByYear(2017);
+        $todosChamadosEsteAno = $em->getRepository(Chamado::class)->findAllByYear(2018);
+        $todosChamadosAnoPassado = $em->getRepository(Chamado::class)->findAllByYear(2017);
 
         $esteAno = $utiles->normalizarArray($todosChamadosEsteAno);
         $anoPassado = $utiles->normalizarArray($todosChamadosAnoPassado);
@@ -119,7 +121,7 @@ class ApiController extends FOSRestController implements ClassResourceInterface
     public function editStatusAction($id, $columna, $valor)
     {
         $em = $this->getDoctrine()->getManager();
-        $status = $em->getRepository('AppBundle:Status')->findOneBy(array('id' => $id));
+        $status = $em->getRepository(Status::class)->findOneBy(array('id' => $id));
         if ($status->getSlug() == 'aberto' || $status->getSlug() == 'finalizado') {
             $respuesta = [
                 'ok' => false

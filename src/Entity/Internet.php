@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Internet
  *
  * @ORM\Table(name="internet")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\InternetRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\InternetRepository")
  */
 class Internet
 {

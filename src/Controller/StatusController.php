@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Chamado;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -31,7 +32,7 @@ class StatusController extends Controller
         
         $weather = $utiles->weather();
         
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('status.campos')) {
@@ -45,7 +46,7 @@ class StatusController extends Controller
 
 
 
-        $dados = $em->getRepository('AppBundle:Status')->findAll();
+        $dados = $em->getRepository(Status::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -62,7 +63,7 @@ class StatusController extends Controller
         ];
 
         $status = new Status();
-        $form = $this->createForm('AppBundle\Form\StatusType', $status);
+        $form = $this->createForm('App\Form\StatusType', $status);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -93,7 +94,7 @@ class StatusController extends Controller
     {
         $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -116,7 +117,7 @@ class StatusController extends Controller
         $titulo = 'criar novo status';
 
         $status = new Status();
-        $form = $this->createForm('AppBundle\Form\StatusType', $status);
+        $form = $this->createForm('App\Form\StatusType', $status);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -130,7 +131,7 @@ class StatusController extends Controller
             'status' => $status,
             'breadcrumbs' => $breadcrumbs,
             'titulo' => $titulo,
-            'ultimosChamados' => $ultimosChamados,
+//            'ultimosChamados' => $ultimosChamados,
             'form' => $form->createView(),
         ));
     }
@@ -145,13 +146,13 @@ class StatusController extends Controller
     {
         $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         $deleteForm = $this->createDeleteForm($status);
 
         return $this->render('admin/status/show.html.twig', array(
             'status' => $status,
-            'ultimosChamados' => $ultimosChamados,
+//            'ultimosChamados' => $ultimosChamados,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -166,10 +167,10 @@ class StatusController extends Controller
     {
         $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         $deleteForm = $this->createDeleteForm($status);
-        $editForm = $this->createForm('AppBundle\Form\StatusType', $status);
+        $editForm = $this->createForm('App\Form\StatusType', $status);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -181,7 +182,7 @@ class StatusController extends Controller
 
         return $this->render('admin/status/edit.html.twig', array(
             'status' => $status,
-            'ultimosChamados' => $ultimosChamados,
+//            'ultimosChamados' => $ultimosChamados,
             'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));

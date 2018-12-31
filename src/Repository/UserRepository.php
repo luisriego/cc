@@ -23,7 +23,7 @@ class UserRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT u
-                                FROM AppBundle:User u
+                                FROM App:User u
                                 ORDER BY u.lastLogin
                                 ');
         $consulta->setMaxResults($limite);
@@ -35,7 +35,7 @@ class UserRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT u, p, e
-                                FROM AppBundle:User u
+                                FROM App:User u
                                 JOIN u.profile p
                                 JOIN u.endereco e
                                 WHERE u.id = :user
@@ -50,7 +50,7 @@ class UserRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT u, p, e, c
-                                FROM AppBundle:User u
+                                FROM App:User u
                                 JOIN u.profile p
                                 JOIN u.endereco e
                                 JOIN u.empresa c
@@ -71,7 +71,7 @@ class UserRepository extends EntityRepository
 //        $em = $this->getEntityManager();
 //        $consulta = $em->createQuery('
 //                                SELECT c
-//                                FROM AppBundle:Chamado c
+//                                FROM App:Chamado c
 //                                WHERE c.nome = :usuario
 //                                AND c.data > :desde
 //                                AND c.data < :hasta

@@ -181,7 +181,7 @@ async function prioridade(editableObj,id,valorAtual) {
     })
     if (valorSel) {
         var columna = 'prioridade';
-        var entidad = 'AppBundle:Defeito';
+        var entidad = 'App:Defeito';
         var url = URLapi+'editar_dados/'+id+'/'+columna+'/'+valorSel+'/'+entidad;
         // alert(url);
         $.ajax({
@@ -218,31 +218,31 @@ async function prioridade(editableObj,id,valorAtual) {
 function getEntidad(titulo) {
     switch(titulo) {
         case "roteador":
-            var entity = 'AppBundle:Roteador';
+            var entity = 'App:Roteador';
             break;
         case "status":
-            var entity = 'AppBundle:Status';
+            var entity = 'App:Status';
             break;
         case "internet":
-            var entity = 'AppBundle:Internet';
+            var entity = 'App:Internet';
             break;
         case "defeito":
-            var entity = 'AppBundle:Defeito';
+            var entity = 'App:Defeito';
             break;
         case "estação":
-            var entity = 'AppBundle:TipoEstacao';
+            var entity = 'App:TipoEstacao';
             break;
         case "impressora":
-            var entity = 'AppBundle:Impressora';
+            var entity = 'App:Impressora';
             break;
         case "servidor":
-            var entity = 'AppBundle:Servidor';
+            var entity = 'App:Servidor';
             break;
         case "sistemas":
-            var entity = 'AppBundle:Sistema';
+            var entity = 'App:Sistema';
             break;
         case "vserve":
-            var entity = 'AppBundle:VServe';
+            var entity = 'App:VServe';
             break;
     }
     

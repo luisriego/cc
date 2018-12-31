@@ -26,7 +26,7 @@ class RoteadorController extends Controller
     {
 //        $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('roteador.campos')) {
@@ -38,7 +38,7 @@ class RoteadorController extends Controller
 
         $titulo = 'roteador';
 
-        $dados = $em->getRepository('AppBundle:Roteador')->findAll();
+        $dados = $em->getRepository(Roteador::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -56,7 +56,7 @@ class RoteadorController extends Controller
 
 
         $roteador = new Roteador();
-        $form = $this->createForm('AppBundle\Form\RoteadorType', $roteador);
+        $form = $this->createForm('App\Form\RoteadorType', $roteador);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

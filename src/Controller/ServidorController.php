@@ -26,7 +26,7 @@ class ServidorController extends Controller
     {
 //        $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('servidor.campos')) {
@@ -38,7 +38,7 @@ class ServidorController extends Controller
 
         $titulo = 'servidor';
 
-        $dados = $em->getRepository('AppBundle:Servidor')->findAll();
+        $dados = $em->getRepository(Servidor::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -54,10 +54,10 @@ class ServidorController extends Controller
             ],
         ];
 
-//        $statuses = $em->getRepository('AppBundle:Status')->findAll();
+//        $statuses = $em->getRepository(Status::class)->findAll();
 
         $servidor = new Servidor();
-        $form = $this->createForm('AppBundle\Form\ServidorType', $servidor);
+        $form = $this->createForm('App\Form\ServidorType', $servidor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

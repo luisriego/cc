@@ -26,7 +26,7 @@ class SistemaController extends Controller
     {
 //        $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('sistema.campos')) {
@@ -40,7 +40,7 @@ class SistemaController extends Controller
 
 
 
-        $dados = $em->getRepository('AppBundle:Sistema')->findAll();
+        $dados = $em->getRepository(Sistema::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -58,7 +58,7 @@ class SistemaController extends Controller
 
 
         $sistema = new Sistema();
-        $form = $this->createForm('AppBundle\Form\SistemaType', $sistema);
+        $form = $this->createForm('App\Form\SistemaType', $sistema);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

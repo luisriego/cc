@@ -19,7 +19,7 @@ class ClienteRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c
-                                FROM AppBundle:Cliente c
+                                FROM App:Cliente c
                                 WHERE LOWER (c.nome)  LIKE :texto
                                 ');
         $consulta->setParameter('texto', '%'.$texto.'%');
@@ -31,7 +31,7 @@ class ClienteRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c
-                                FROM AppBundle:Cliente c
+                                FROM App:Cliente c
                                 WHERE c.telefone  LIKE :texto
                                 ');
         $consulta->setParameter('texto', '%'.$texto.'%');
@@ -43,7 +43,7 @@ class ClienteRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c
-                                FROM AppBundle:Cliente c
+                                FROM App:Cliente c
                                 WHERE c.contato  LIKE :texto
                                 ');
         $consulta->setParameter('texto', '%'.$texto.'%');
@@ -55,7 +55,7 @@ class ClienteRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT DISTINCT c
-                                FROM AppBundle:Cliente c
+                                FROM App:Cliente c
                                 WHERE c.raiox  LIKE :texto
                                 ');
         $consulta->setParameter('texto', '%'.$texto.'%');
@@ -67,7 +67,7 @@ class ClienteRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c
-                                FROM AppBundle:Cliente c
+                                FROM App:Cliente c
                                 WHERE c.email LIKE :texto
                                 ');
         $consulta->setParameter('texto', '%'.$texto.'%');
@@ -79,7 +79,7 @@ class ClienteRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c.id
-                                FROM AppBundle:Cliente c
+                                FROM App:Cliente c
                                 WHERE c.nome LIKE :texto
                                 ');
         $consulta->setParameter('texto', '%'.$texto.'%');
@@ -91,7 +91,7 @@ class ClienteRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
             SELECT c
-            FROM AppBundle:Cliente c
+            FROM App:Cliente c
             WHERE c.nome LIKE :texto
         ');
         $consulta->setParameter('texto', '%'.$id.'%');
@@ -103,7 +103,7 @@ class ClienteRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT c, d
-                                FROM AppBundle:Cliente c
+                                FROM App:Cliente c
                                 JOIN c.direccion d
                                 WHERE c.id = :id
                                 ');
@@ -116,7 +116,7 @@ class ClienteRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
             SELECT COUNT(c) as cantidad
-            FROM AppBundle:Chamado c
+            FROM App:Chamado c
             WHERE c.cliente = :cliente
         ');
         $consulta->setParameter('cliente', $cliente->getId());
@@ -128,7 +128,7 @@ class ClienteRepository extends EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
             SELECT COUNT(u) as cantidad
-            FROM AppBundle:User u
+            FROM App:User u
             WHERE u.empresa = :cliente
         ');
         $consulta->setParameter('cliente', $cliente->getId());

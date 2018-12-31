@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Defeito
  *
  * @ORM\Table(name="defeito")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\DefeitoRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\DefeitoRepository")
  */
 class Defeito
 {

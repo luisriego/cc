@@ -11,7 +11,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * Upload
  *
  * @ORM\Table(name="upload")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UploadRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\UploadRepository")
  * @Vich\Uploadable
  */
 class Upload

@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Chamado;
+use App\Entity\Cliente;
 use App\Form\UserEditType;
 use App\Services\Utiles;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,7 +45,7 @@ class UserController extends Controller
             $alerta = 'Por favor, solicite a um tecnico que reconfigure o seu sistema';
         }
 
-        $dados = $em->getRepository('AppBundle:User')->findAll();
+        $dados = $em->getRepository(User::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -88,7 +90,7 @@ class UserController extends Controller
     public function newAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-//        $pessoa = $em->getRepository('AppBundle:User')->findOneBy(['id' => $usuario]);
+//        $pessoa = $em->getRepository(User::class)->findOneBy(['id' => $usuario]);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('usuario.campos') && $this->container->hasParameter('usuario.titulo')) {
@@ -125,7 +127,7 @@ class UserController extends Controller
 
         $pessoa = new User();
 
-        $form = $this->createForm('AppBundle\Form\UserNewType', $pessoa);
+        $form = $this->createForm('App\Form\UserNewType', $pessoa);
 dump($request);
         $form->handleRequest($request);
 
@@ -167,7 +169,7 @@ dump($request);
     {
         $em = $this->getDoctrine()->getManager();
 
-        $pessoa = $em->getRepository('AppBundle:User')->findOneBy(['id' => $id]);
+        $pessoa = $em->getRepository(User::class)->findOneBy(['id' => $id]);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('cliente.campos') && $this->container->hasParameter('cliente.titulo')) {
@@ -196,7 +198,7 @@ dump($request);
             ],
         ];
 
-        $form = $this->createForm('AppBundle\Form\UserEditType', $pessoa);
+        $form = $this->createForm('App\Form\UserEditType', $pessoa);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -237,36 +239,36 @@ dump($request);
         $contexto = ucfirst($ref);
         $em = $this->getDoctrine()->getManager();
 
-        $pessoa = $em->getRepository('AppBundle:'.$contexto  )->findOneBy(array('id' => $id));
+        $pessoa = $em->getRepository('App:'.$contexto  )->findOneBy(array('id' => $id));
         $contexto = 'findChamadosBy'.$contexto;
-        $chamados = $em->getRepository('AppBundle:Chamado')->$contexto($pessoa);
-        $cliente = $em->getRepository('AppBundle:Cliente')->findOneBy(array('id' => $pessoa->getEmpresa()->getId()));
+        $chamados = $em->getRepository(Chamado::class)->$contexto($pessoa);
+        $cliente = $em->getRepository(Cliente::class)->findOneBy(array('id' => $pessoa->getEmpresa()->getId()));
 
-        $anos = $em->getRepository('AppBundle:Chamado')->findAllYearsXCliente($cliente);
+        $anos = $em->getRepository(Chamado::class)->findAllYearsXCliente($cliente);
         for ($i = 0; $i < count($anos); ++$i) {
             $ano = $anos[$i]['ano'];
-            $ch = $em->getRepository('AppBundle:Chamado')->findAllByYearAndClient($ano, $cliente);
+            $ch = $em->getRepository(Chamado::class)->findAllByYearAndClient($ano, $cliente);
             $graf = $utiles->fazerJSON($ch);
             $dados[$ano] = $graf;
         }
         dump($pessoa);
 //        switch ($ref) {
 //            case 'tecnico':
-//                $pessoa = $em->getRepository('AppBundle:Tecnico')->findOneBy(array('id' => $id));
+//                $pessoa = $em->getRepository(Tecnico::class)->findOneBy(array('id' => $id));
 //                break;
 //            case 'cliente':
-//                $pessoa = $em->getRepository('AppBundle:Cliente')->findOneBy(array('id' => $id));
-//                $chamados = $em->getRepository('AppBundle:Chamado')->findChamadosByClient($pessoa);
-//                $anos = $em->getRepository('AppBundle:Chamado')->findAllYearsXCliente($pessoa);
+//                $pessoa = $em->getRepository(Cliente::class)->findOneBy(array('id' => $id));
+//                $chamados = $em->getRepository(Chamado::class)->findChamadosByClient($pessoa);
+//                $anos = $em->getRepository(Chamado::class)->findAllYearsXCliente($pessoa);
 //                for ($i = 0; $i < count($anos); ++$i) {
 //                    $ano = $anos[$i]['ano'];
-//                    $ch = $em->getRepository('AppBundle:Chamado')->findAllByYearAndClient($ano, $pessoa);
+//                    $ch = $em->getRepository('Chamdo::class)->findAllByYearAndClient($ano, $pessoa);
 //                    $graf = $utiles->fazerJSON($ch);
 //                    $dados[$ano] = $graf;
 //                }
 //                break;
 //            case 'usuario':
-//                $pessoa = $em->getRepository('AppBundle:User')->findOneBy(array('id' => $id));
+//                $pessoa = $em->getRepository(User::class)->findOneBy(array('id' => $id));
 //                break;
 //        }
 
@@ -320,7 +322,7 @@ dump($request);
     {
         $em = $this->getDoctrine()->getManager();
 
-        $pessoa = $em->getRepository('AppBundle:User')->findOneBy(['id' => $id]);
+        $pessoa = $em->getRepository(User::class)->findOneBy(['id' => $id]);
 
 //        $form = $this->createDeleteForm($pessoa);
 //        $form->handleRequest($request);

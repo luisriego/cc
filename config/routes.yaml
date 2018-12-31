@@ -1,8 +1,5 @@
-app:
-    resource: "../src/AppBundle/Controller/"
-    type: annotation
 home:
     path: /
-    controller: AppBundle\Controller\DefaultController::indexAction
+    controller: App\Controller\DefaultController::indexAction
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

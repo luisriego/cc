@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use App\Entity\Internet;
-//use AppBundle\Form\InternetType;
+//use App\Form\InternetType;
 
 /**
  * Servidor controller.
@@ -26,7 +26,7 @@ class InternetController extends Controller
     {
 //        $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('internet.campos')) {
@@ -37,7 +37,7 @@ class InternetController extends Controller
         }
 
         $titulo = 'internet';
-//$entidad = 'AppBundle:Internet';
+//$entidad = 'App:Internet';
         $dados = $em->getRepository($entidad)->findAll();
 
         // dados del breadcrumb
@@ -54,10 +54,10 @@ class InternetController extends Controller
             ],
         ];
 
-//        $statuses = $em->getRepository('AppBundle:Status')->findAll();
+//        $statuses = $em->getRepository('App:Status')->findAll();
 
         $internet = new Internet();
-        $form = $this->createForm('AppBundle\Form\InternetType', $internet);
+        $form = $this->createForm('App\Form\InternetType', $internet);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

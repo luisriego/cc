@@ -3,7 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Chamado;
+use App\Entity\Cliente;
+use App\Entity\Status;
+use App\Entity\Tecnico;
+use App\Entity\User;
 use App\Services\Utiles;
+use const Grpc\STATUS_ABORTED;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -35,15 +40,15 @@ class DefaultController extends Controller
         // crear el formulario en el propio controlador
         $chamado = new Chamado();
 //        $upload = new Upload();
-        $form = $this->createForm('AppBundle\Form\ChamadoClienteType', $chamado);
-//        $uploadForm = $this->createForm('AppBundle\Form\UploadType', $upload);
+        $form = $this->createForm('App\Form\ChamadoClienteType', $chamado);
+//        $uploadForm = $this->createForm('App\Form\UploadType', $upload);
 
         $form->handleRequest($request);
 //        $uploadForm->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            $status = $em->getRepository('AppBundle:Status')->find(1);
+            $status = $em->getRepository(Status::class)->find(1);
 
             $chamado->setData(new \DateTime('now'));
             $chamado->setIp($request->getClientIp());
@@ -139,12 +144,12 @@ class DefaultController extends Controller
         // Primero guradamos en data los valores obtenidos de la api weather con el servicio Utiles
         $weather = $utiles->weather();
 
-        $todosChamados = $em->getRepository('AppBundle:Chamado')->findAll();
-        $todosTecnicos = $em->getRepository('AppBundle:Tecnico')->findAll();
-        $todosUsuarios = $em->getRepository('AppBundle:User')->findBy(array(), array('lastLogin' => 'DESC'));
-        $todosClientes = $em->getRepository('AppBundle:Cliente')->findAll();
-        $chamadosFinalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
-        $abertos = $em->getRepository('AppBundle:Chamado')->chamadosAbertos();
+        $todosChamados = $em->getRepository(Chamado::class)->findAll();
+        $todosTecnicos = $em->getRepository(Tecnico::class)->findAll();
+        $todosUsuarios = $em->getRepository(User::class)->findBy(array(), array('lastLogin' => 'DESC'));
+        $todosClientes = $em->getRepository(Cliente::class)->findAll();
+        $chamadosFinalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
+        $abertos = $em->getRepository(Chamado::class)->chamadosAbertos();
 
         $cabeceras = ['id', 'status', 'nome', 'cliente', 'inicio', 'mensagem'];
 

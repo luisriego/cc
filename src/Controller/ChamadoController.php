@@ -3,13 +3,19 @@
 namespace App\Controller;
 
 use App\Entity\Chamado;
+use App\Entity\Cliente;
+use App\Entity\Log;
+use App\Entity\Status;
+use App\Entity\Tecnico;
 use App\Entity\Upload;
+use App\Entity\User;
 use App\Services\mailManager;
 use App\Services\Uploads;
 use App\Services\Utiles;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use TotalVoice\Client;
 
 class ChamadoController extends Controller
 {
@@ -23,16 +29,16 @@ class ChamadoController extends Controller
 
         if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
         {
-            $todosMisChamados = $em->getRepository('AppBundle:Chamado')->findAllByAdmin(10);
+            $todosMisChamados = $em->getRepository(Chamado::class)->findAllByAdmin(10);
         }else{
-            $todosMisChamados = $em->getRepository('AppBundle:Chamado')->findAllByUser($usuario);
+            $todosMisChamados = $em->getRepository(Chamado::class)->findAllByUser($usuario);
         }
-        $todosChamados = $em->getRepository('AppBundle:Chamado')->findAll();
-        $todosTecnicos = $em->getRepository('AppBundle:Tecnico')->findAll();
-        $todosUsuarios = $em->getRepository('AppBundle:User')->findBy(array(), array('lastLogin' => 'DESC'));
-        $todosClientes = $em->getRepository('AppBundle:Cliente')->findAll();
-        $chamadosFinalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
-        $abertos = $em->getRepository('AppBundle:Chamado')->chamadosAbertos();
+        $todosChamados = $em->getRepository(Chamado::class)->findAll();
+        $todosTecnicos = $em->getRepository(Tecnico::class)->findAll();
+        $todosUsuarios = $em->getRepository(User::class)->findBy(array(), array('lastLogin' => 'DESC'));
+        $todosClientes = $em->getRepository(Cliente::class)->findAll();
+        $chamadosFinalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
+        $abertos = $em->getRepository(Chamado::class)->chamadosAbertos();
 //        dump($abertos); die();
 
         // Esta interaccion va a asignar un cliente a cada chamados.
@@ -78,10 +84,10 @@ class ChamadoController extends Controller
     {
         $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-        $clienteUploads = $em->getRepository('AppBundle:Upload')->findAllByCliente($chamado->getCliente());
+        $clienteUploads = $em->getRepository(Upload::class)->findAllByCliente($chamado->getCliente());
 
         if (null == $chamado->getCliente() && null != $chamado->getEmpresa()){
-            $cli = $em->getRepository('AppBundle:Cliente')->findEmpresaLike($chamado->getEmpresa());
+            $cli = $em->getRepository(Cliente::class)->findEmpresaLike($chamado->getEmpresa());
             if(null != $cli){
                 $chamado->setCliente($cli);
                 $chamado->setEmpresa(mb_strtoupper($chamado->getEmpresa()));
@@ -112,14 +118,14 @@ class ChamadoController extends Controller
         ];
 
         $upload =  new Upload();
-        $form = $this->createForm('AppBundle\Form\ChamadoType', $chamado);
-        $uploadForm = $this->createForm('AppBundle\Form\UploadType', $upload);
+        $form = $this->createForm('App\Form\ChamadoType', $chamado);
+        $uploadForm = $this->createForm('App\Form\UploadType', $upload);
         $form->handleRequest($request);
         $uploadForm->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             if ($form["status"]->getData() == 'finalizado') {
-                $status = $em->getRepository('AppBundle:Status')->findOneBy(array('nome' => 'finalizado'));
+                $status = $em->getRepository(Status::class)->findOneBy(array('nome' => 'finalizado'));
                 $chamado->setFinalizado(new \DateTime('now'));
                 $chamado->setStatus($status);
             }
@@ -176,23 +182,23 @@ class ChamadoController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         // Esta variable recoge el la instancia de la entidad Status Aberto
-        $statusAtual = $em->getRepository('AppBundle:Status')->findOneBy(array('ativo' => 0));
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+        $statusAtual = $em->getRepository(Status::class)->findOneBy(array('ativo' => 0));
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
 //        $this->nameToUppercaseAction();
         if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
         {
-            $todosMisChamados = $em->getRepository('AppBundle:Chamado')->findAllByAdmin(10);
+            $todosMisChamados = $em->getRepository(Chamado::class)->findAllByAdmin(10);
         }else{
-            $todosMisChamados = $em->getRepository('AppBundle:Chamado')->findAllByUser($usuario);
+            $todosMisChamados = $em->getRepository(Chamado::class)->findAllByUser($usuario);
         }
-        $todosChamados = $em->getRepository('AppBundle:Chamado')->findAll();
-        $todosTecnicos = $em->getRepository('AppBundle:Tecnico')->findAll();
-        $todosUsuarios = $em->getRepository('AppBundle:User')->findBy(array(), array('lastLogin' => 'DESC'));
-        $todosClientes = $em->getRepository('AppBundle:Cliente')->findAll();
-        $chamadosFinalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
-        $finalizados = $em->getRepository('AppBundle:Chamado')->findAllChamados($statusAtual);
-//        $finalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
+        $todosChamados = $em->getRepository(Chamado::class)->findAll();
+        $todosTecnicos = $em->getRepository(Tecnico::class)->findAll();
+        $todosUsuarios = $em->getRepository(User::class)->findBy(array(), array('lastLogin' => 'DESC'));
+        $todosClientes = $em->getRepository(Cliente::class)->findAll();
+        $chamadosFinalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
+        $finalizados = $em->getRepository(Chamado::class)->findAllChamados($statusAtual);
+//        $finalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
 
         // Esta interaccion va a asignar un cliente a cada chamado.
         $utiles->completarChamados($finalizados);
@@ -238,23 +244,23 @@ class ChamadoController extends Controller
         $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
         // Esta variable recoge el la instancia de la entidad Status Aberto
-        $statusAtual = $em->getRepository('AppBundle:Status')->findOneBy(array('slug' => 'reprovado'));
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+        $statusAtual = $em->getRepository(Status::class)->findOneBy(array('slug' => 'reprovado'));
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
 //        $this->nameToUppercaseAction();
         if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
         {
-            $todosMisChamados = $em->getRepository('AppBundle:Chamado')->findAllByAdmin(10);
+            $todosMisChamados = $em->getRepository(Chamado::class)->findAllByAdmin(10);
         }else{
-            $todosMisChamados = $em->getRepository('AppBundle:Chamado')->findAllByUser($usuario);
+            $todosMisChamados = $em->getRepository(Chamado::class)->findAllByUser($usuario);
         }
-        $todosChamados = $em->getRepository('AppBundle:Chamado')->findAll();
-        $todosTecnicos = $em->getRepository('AppBundle:Tecnico')->findAll();
-        $todosUsuarios = $em->getRepository('AppBundle:User')->findBy(array(), array('lastLogin' => 'DESC'));
-        $todosClientes = $em->getRepository('AppBundle:Cliente')->findAll();
-        $chamadosFinalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
-        $reprovados = $em->getRepository('AppBundle:Chamado')->findAllChamados($statusAtual);
-//        $reprovados = $em->getRepository('AppBundle:Chamado')->chamadosReprocadosAdmin();
+        $todosChamados = $em->getRepository(Chamado::class)->findAll();
+        $todosTecnicos = $em->getRepository(Tecnico::class)->findAll();
+        $todosUsuarios = $em->getRepository(User::class)->findBy(array(), array('lastLogin' => 'DESC'));
+        $todosClientes = $em->getRepository(Cliente::class)->findAll();
+        $chamadosFinalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
+        $reprovados = $em->getRepository(Chamado::class)->findAllChamados($statusAtual);
+//        $reprovados = $em->getRepository(Chamado::class)->chamadosReprocadosAdmin();
 
         // Esta interaccion va a asignar un cliente a cada chamado.
         $utiles->completarChamados($reprovados);
@@ -300,11 +306,11 @@ class ChamadoController extends Controller
         $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
 
-        $form = $this->createForm('AppBundle\Form\ChamadoType', $chamado);
+        $form = $this->createForm('App\Form\ChamadoType', $chamado);
         $form->handleRequest($request);
 
 
-        $finalizado = $em->getRepository('AppBundle:Status')->findOneBy(array('nome' => 'finalizado'));
+        $finalizado = $em->getRepository(Status::class)->findOneBy(array('nome' => 'finalizado'));
 
 //            Despues asignamos el estatus de finalizado para el Chamado actual y le asignamos ahora al campo finalizado
         $chamado->setStatus($finalizado);
@@ -316,19 +322,19 @@ class ChamadoController extends Controller
 
         if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
         {
-            $todosMisChamados = $em->getRepository('AppBundle:Chamado')->findAllByAdmin(10);
+            $todosMisChamados = $em->getRepository(Chamado::class)->findAllByAdmin(10);
         }else{
-            $todosMisChamados = $em->getRepository('AppBundle:Chamado')->findAllByUser($usuario);
+            $todosMisChamados = $em->getRepository(Chamado::class)->findAllByUser($usuario);
         }
-        $todosChamados = $em->getRepository('AppBundle:Chamado')->findAll();
-        $todosTecnicos = $em->getRepository('AppBundle:Tecnico')->findAll();
-        $todosUsuarios = $em->getRepository('AppBundle:User')->findBy(array(), array('lastLogin' => 'DESC'));
-        $todosClientes = $em->getRepository('AppBundle:Cliente')->findAll();
-        $chamadosFinalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
-        $finalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
+        $todosChamados = $em->getRepository(Chamado::class)->findAll();
+        $todosTecnicos = $em->getRepository(Tecnico::class)->findAll();
+        $todosUsuarios = $em->getRepository(User::class)->findBy(array(), array('lastLogin' => 'DESC'));
+        $todosClientes = $em->getRepository(Cliente::class)->findAll();
+        $chamadosFinalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
+        $finalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
 
         if (null == $chamado->getCliente() && null != $chamado->getEmpresa()){
-            $cli = $em->getRepository('AppBundle:Cliente')->findEmpresaLike($chamado->getEmpresa());
+            $cli = $em->getRepository(Cliente::class)->findEmpresaLike($chamado->getEmpresa());
             if(null != $cli){
                 $chamado->setCliente($cli);
                 $chamado->setEmpresa(mb_strtoupper($chamado->getEmpresa()));
@@ -359,11 +365,11 @@ class ChamadoController extends Controller
             ],
         ];
 
-        $form = $this->createForm('AppBundle\Form\ChamadoType', $chamado);
+        $form = $this->createForm('App\Form\ChamadoType', $chamado);
         $form->handleRequest($request);
 
 
-        $finalizado = $em->getRepository('AppBundle:Status')->findOneBy(array('nome' => 'finalizado'));
+        $finalizado = $em->getRepository(Status::class)->findOneBy(array('nome' => 'finalizado'));
 
 //            Despues asignamos el estatus de finalizado para el Chamado actual y le asignamos ahora al campo finalizado
         $chamado->setStatus($finalizado);
@@ -401,19 +407,19 @@ class ChamadoController extends Controller
 
         if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
         {
-            $todosMisChamados = $em->getRepository('AppBundle:Chamado')->findAllByAdmin(10);
+            $todosMisChamados = $em->getRepository(Chamado::class)->findAllByAdmin(10);
         }else{
-            $todosMisChamados = $em->getRepository('AppBundle:Chamado')->findAllByUser($usuario);
+            $todosMisChamados = $em->getRepository(Chamado::class)->findAllByUser($usuario);
         }
-        $todosChamados = $em->getRepository('AppBundle:Chamado')->findAll();
-        $todosTecnicos = $em->getRepository('AppBundle:Tecnico')->findAll();
-        $todosUsuarios = $em->getRepository('AppBundle:User')->findBy(array(), array('lastLogin' => 'DESC'));
-        $todosClientes = $em->getRepository('AppBundle:Cliente')->findAll();
-        $chamadosFinalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
-        $finalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
+        $todosChamados = $em->getRepository(Chamado::class)->findAll();
+        $todosTecnicos = $em->getRepository(Tecnico::class)->findAll();
+        $todosUsuarios = $em->getRepository(User::class)->findBy(array(), array('lastLogin' => 'DESC'));
+        $todosClientes = $em->getRepository(Cliente::class)->findAll();
+        $chamadosFinalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
+        $finalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
 
         if (null == $chamado->getCliente() && null != $chamado->getEmpresa()){
-            $cli = $em->getRepository('AppBundle:Cliente')->findEmpresaLike($chamado->getEmpresa());
+            $cli = $em->getRepository(Cliente::class)->findEmpresaLike($chamado->getEmpresa());
             if(null != $cli){
                 $chamado->setCliente($cli);
                 $chamado->setEmpresa(mb_strtoupper($chamado->getEmpresa()));
@@ -444,16 +450,16 @@ class ChamadoController extends Controller
             ],
         ];
 
-        $form = $this->createForm('AppBundle\Form\ChamadoType', $chamado);
+        $form = $this->createForm('App\Form\ChamadoType', $chamado);
         $form->handleRequest($request);
 
 
-        $reaberto = $em->getRepository('AppBundle:Status')->findOneBy(array('slug' => 'reaberto'));
+        $reaberto = $em->getRepository(Status::class)->findOneBy(array('slug' => 'reaberto'));
         if ($reaberto) {
             // Despues asignamos el estatus de finalizado para el Chamado actual y le asignamos ahora al campo finalizado
             $chamado->setStatus($reaberto);
         } else {
-            $reaberto = $em->getRepository('AppBundle:Status')->findOneBy(array('slug' => 'aberto'));
+            $reaberto = $em->getRepository(Status::class)->findOneBy(array('slug' => 'aberto'));
             $chamado->setStatus($reaberto);
         }
 
@@ -490,7 +496,7 @@ class ChamadoController extends Controller
         $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
 
-        $eventos = $em->getRepository('AppBundle:Log')->findBy(array('chamado' => $chamado));
+        $eventos = $em->getRepository(Log::class)->findBy(array('chamado' => $chamado));
 
         $titulo = 'Linha do tempo';
 

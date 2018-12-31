@@ -36,8 +36,8 @@ class CsvImportCommand extends Command
 
         $io->title('Intentando importar...');
 
-        $reader = Reader::createFromPath('%kernel.root_dir%/../src/AppBundle/Data/defeito.csv');
-//        $reader = Reader::createFromPath('%kernel.root_dir%/../src/AppBundle/Data/status.csv');
+        $reader = Reader::createFromPath('%kernel.root_dir%/../src/App/Data/defeito.csv');
+//        $reader = Reader::createFromPath('%kernel.root_dir%/../src/App/Data/status.csv');
 
         $results = $reader->fetchAssoc();
 

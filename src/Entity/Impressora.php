@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Impressora
  *
  * @ORM\Table(name="impressora")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ImpressoraRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ImpressoraRepository")
  */
 class Impressora
 {

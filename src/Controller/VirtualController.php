@@ -26,7 +26,7 @@ class VirtualController extends Controller
     {
 //        $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('vserver.campos')) {
@@ -42,7 +42,7 @@ class VirtualController extends Controller
 
 
 
-        $dados = $em->getRepository('AppBundle:VServe')->findAll();
+        $dados = $em->getRepository(VServe::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -60,7 +60,7 @@ class VirtualController extends Controller
 
 
         $servidor = new VServe();
-        $form = $this->createForm('AppBundle\Form\VServeType', $servidor);
+        $form = $this->createForm('App\Form\VServeType', $servidor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

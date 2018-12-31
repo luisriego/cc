@@ -2,19 +2,22 @@
 
 namespace App\Controller;
 
+use App\Entity\Chamado;
+use App\Entity\Cliente;
+use App\Entity\Tecnico;
 use App\Entity\Upload;
-use AppBundle\Services\SMSManager;
+use App\Entity\User;
+use App\Services\SMSManager;
 use App\Services\Stats;
 use App\Services\Uploads;
 use App\Services\Utiles;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-//use AppBundle\Entity\Status;
 
 /**
  * Class DefaultController
- * @package AppBundle\Controller
+ * @package App\Controller
  * @Route("/admin")
  */
 class BackendController extends Controller
@@ -30,7 +33,7 @@ class BackendController extends Controller
         // Primero guardamos en data los valores obtenidos de la api weather con el servicio Utiles
         $weather = $utiles->weather();
 
-        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(10);
+        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(10);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('dashboard.campos')) {
@@ -44,16 +47,16 @@ class BackendController extends Controller
             $graficas = 'dashboard';
         }
 
-        $todosChamados = $em->getRepository('AppBundle:Chamado')->findAll();
-        $todosChamadosEsteAno = $em->getRepository('AppBundle:Chamado')->findAllByYear(2018);
-        $todosChamadosAnoPassado = $em->getRepository('AppBundle:Chamado')->findAllByYear(2017);
-        $todosChamadosAnoRetrasado = $em->getRepository('AppBundle:Chamado')->findAllByYear(2016);
-        $todosTecnicos = $em->getRepository('AppBundle:Tecnico')->findAll();
-        $todosUsuarios = $em->getRepository('AppBundle:User')->findBy(array(), array('lastLogin' => 'DESC'));
-        $todosClientes = $em->getRepository('AppBundle:Cliente')->findAll();
-        $chamadosFinalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
-        $chamadosReprovados = $em->getRepository('AppBundle:Chamado')->chamadosReprovados();
-        $chamadosAbertos = $em->getRepository('AppBundle:Chamado')->chamadosAbertos();
+        $todosChamados = $em->getRepository(Chamado::class)->findAll();
+        $todosChamadosEsteAno = $em->getRepository(Chamado::class)->findAllByYear(2018);
+        $todosChamadosAnoPassado = $em->getRepository(Chamado::class)->findAllByYear(2017);
+        $todosChamadosAnoRetrasado = $em->getRepository(Chamado::class)->findAllByYear(2016);
+        $todosTecnicos = $em->getRepository(Tecnico::class)->findAll();
+        $todosUsuarios = $em->getRepository(User::class)->findBy(array(), array('lastLogin' => 'DESC'));
+        $todosClientes = $em->getRepository(Cliente::class)->findAll();
+        $chamadosFinalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
+        $chamadosReprovados = $em->getRepository(Chamado::class)->chamadosReprovados();
+        $chamadosAbertos = $em->getRepository(Chamado::class)->chamadosAbertos();
 
         // dados del breadcrumb
         $breadcrumbs = [];
@@ -115,7 +118,7 @@ class BackendController extends Controller
     public function dataAction(Request $request, $entity)
     {
         $em = $this->getDoctrine()->getManager();
-        $entityWithNamespace = 'AppBundle\Entity\\'.$entity;
+        $entityWithNamespace = 'App\Entity\\'.$entity;
 
         // checks if a parameter is defined
         if ($this->container->hasParameter(strtolower($entity).'.campos')) {
@@ -132,7 +135,7 @@ class BackendController extends Controller
         $dados = $em->getRepository($entityWithNamespace)->findAll();
 
         $newEntity = new $entityWithNamespace();
-        $form = $this->createForm('AppBundle\Form\\'.ucfirst($entity).'Type', $newEntity);
+        $form = $this->createForm('App\Form\\'.ucfirst($entity).'Type', $newEntity);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -163,7 +166,7 @@ class BackendController extends Controller
     {
         $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         return $this->render('backend/inc/_last-calls.html.twig', array(
             'ultimosChamados' => $ultimosChamados,
@@ -176,7 +179,7 @@ class BackendController extends Controller
         dump($user);die();
         $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         return $this->render(':backend/inc:_last-calls-length.html.twig', array(
             'ultimosChamados' => $ultimosChamados,
@@ -192,13 +195,13 @@ class BackendController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $todosChamados = $em->getRepository('AppBundle:Chamado')->findAll();
-        $todosTecnicos = $em->getRepository('AppBundle:Tecnico')->findAll();
-        $todosUsuarios = $em->getRepository('AppBundle:User')->findBy(array(), array('lastLogin' => 'DESC'));
-        $todosClientes = $em->getRepository('AppBundle:Cliente')->findAll();
-        $chamadosFinalizados = $em->getRepository('AppBundle:Chamado')->chamadosFinalAdmin();
-        $chamadosReprovados = $em->getRepository('AppBundle:Chamado')->chamadosReprovados();
-        $chamadosAbertos = $em->getRepository('AppBundle:Chamado')->chamadosAbertos();
+        $todosChamados = $em->getRepository(Chamado::class)->findAll();
+        $todosTecnicos = $em->getRepository(Tecnico::class)->findAll();
+        $todosUsuarios = $em->getRepository(User::class)->findBy(array(), array('lastLogin' => 'DESC'));
+        $todosClientes = $em->getRepository(Cliente::class)->findAll();
+        $chamadosFinalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
+        $chamadosReprovados = $em->getRepository(Chamado::class)->chamadosReprovados();
+        $chamadosAbertos = $em->getRepository(Chamado::class)->chamadosAbertos();
 
 
 
@@ -245,6 +248,6 @@ class BackendController extends Controller
         // Primero vamos a ver si hay algun valor ya registrado, lo que indicaria que ya esta inicializado.
         // Otra forma seria crear banderas cuando los pasos necesarios sean cumplidos.
         // Una tercera opcion es ver si hay un administrador, si no lo hay, recorreremos los pasos de inicializacion
-        $cliente = $em->getRepository('AppBundle:Cliente')->findAll();
+        $cliente = $em->getRepository(Cliente::class)->findAll();
     }
 }

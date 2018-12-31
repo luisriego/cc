@@ -45,7 +45,7 @@ class ClienteController extends Controller
             $subtitulo = 'Novo Cliente';
         }
 
-        $dados = $em->getRepository('AppBundle:Cliente')->findAll();
+        $dados = $em->getRepository(Cliente::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -68,7 +68,7 @@ class ClienteController extends Controller
 
 //        // Formulário adaptado a entidade
 //        $cliente = new Cliente();
-//        $form = $this->createForm('AppBundle\Form\ClienteNewType', $cliente);
+//        $form = $this->createForm('App\Form\ClienteNewType', $cliente);
 //        $form->handleRequest($request);
 //
 //        if ($form->isSubmitted() && $form->isValid()) {
@@ -139,12 +139,12 @@ class ClienteController extends Controller
         $upload =  new Upload();
 
 
-        $form = $this->createForm('AppBundle\Form\ClienteNewType', $cliente);
-        $formDir = $this->createForm('AppBundle\Form\ProfileDirType', $cliente->getDireccion());
-        $formAvatar = $this->createForm('AppBundle\Form\ClienteAvatarType', $cliente);
-        $formDados = $this->createForm('AppBundle\Form\ClienteType', $cliente);
-        $formEstacao = $this->createForm('AppBundle\Form\EstacaoType', $estacao);
-        $uploadForm = $this->createForm('AppBundle\Form\UploadType', $upload);
+        $form = $this->createForm('App\Form\ClienteNewType', $cliente);
+        $formDir = $this->createForm('App\Form\ProfileDirType', $cliente->getDireccion());
+        $formAvatar = $this->createForm('App\Form\ClienteAvatarType', $cliente);
+        $formDados = $this->createForm('App\Form\ClienteType', $cliente);
+        $formEstacao = $this->createForm('App\Form\EstacaoType', $estacao);
+        $uploadForm = $this->createForm('App\Form\UploadType', $upload);
 
         $form->handleRequest($request);
         $formDir->handleRequest($request);
@@ -217,14 +217,14 @@ class ClienteController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         if (is_numeric($id)) {
-            $cliente = $em->getRepository('AppBundle:Cliente')->findOneBy(['id' => $id]);
+            $cliente = $em->getRepository(Cliente::class)->findOneBy(['id' => $id]);
         } else {
-            $cliente = $em->getRepository('AppBundle:Cliente')->findLike($id);
+            $cliente = $em->getRepository(Cliente::class)->findLike($id);
         }
 
-        $chamados = $em->getRepository('AppBundle:Cliente')->findChamadosXCliente($cliente);
-        $usuarios = $em->getRepository('AppBundle:Cliente')->findUsuariosXCliente($cliente);
-        $clienteUploads = $em->getRepository('AppBundle:Upload')->findAllByCliente($cliente);
+        $chamados = $em->getRepository(Cliente::class)->findChamadosXCliente($cliente);
+        $usuarios = $em->getRepository(Cliente::class)->findUsuariosXCliente($cliente);
+        $clienteUploads = $em->getRepository(Upload::class)->findAllByCliente($cliente);
         // checks if a parameter is defined
         if ($this->container->hasParameter('cliente.campos') && $this->container->hasParameter('cliente.titulo')) {
             // gets value of a parameter
@@ -281,12 +281,12 @@ class ClienteController extends Controller
         $estacao = new Estacao();
         $upload =  new Upload();
 
-        $form = $this->createForm('AppBundle\Form\ClienteNewType', $cliente);
-        $formDir = $this->createForm('AppBundle\Form\ProfileDirType', $cliente->getDireccion());
-        $formAvatar = $this->createForm('AppBundle\Form\ClienteAvatarType', $cliente);
-        $formDados = $this->createForm('AppBundle\Form\ClienteType', $cliente);
-        $formEstacao = $this->createForm('AppBundle\Form\EstacaoType', $estacao);
-        $uploadForm = $this->createForm('AppBundle\Form\UploadType', $upload);
+        $form = $this->createForm('App\Form\ClienteNewType', $cliente);
+        $formDir = $this->createForm('App\Form\ProfileDirType', $cliente->getDireccion());
+        $formAvatar = $this->createForm('App\Form\ClienteAvatarType', $cliente);
+        $formDados = $this->createForm('App\Form\ClienteType', $cliente);
+        $formEstacao = $this->createForm('App\Form\EstacaoType', $estacao);
+        $uploadForm = $this->createForm('App\Form\UploadType', $upload);
         $form->handleRequest($request);
         $formDir->handleRequest($request);
         $formAvatar->handleRequest($request);
@@ -424,14 +424,14 @@ class ClienteController extends Controller
         $contexto = ucfirst($ref);
         $em = $this->getDoctrine()->getManager();
 
-        $pessoa = $em->getRepository('AppBundle:'.$contexto  )->findOneBy(array('id' => $id));
+        $pessoa = $em->getRepository('App:'.$contexto  )->findOneBy(array('id' => $id));
         $contexto = 'findChamadosBy'.$contexto;
-        $chamados = $em->getRepository('AppBundle:Chamado')->$contexto($pessoa);
+        $chamados = $em->getRepository(Chamado::class)->$contexto($pessoa);
 
-        $anos = $em->getRepository('AppBundle:Chamado')->findAllYearsXCliente($pessoa);
+        $anos = $em->getRepository(Chamado::class)->findAllYearsXCliente($pessoa);
         for ($i = 0; $i < count($anos); ++$i) {
             $ano = $anos[$i]['ano'];
-            $ch = $em->getRepository('AppBundle:Chamado')->findAllByYearAndClient($ano, $pessoa);
+            $ch = $em->getRepository(Chamado::class)->findAllByYearAndClient($ano, $pessoa);
             $graf = $utiles->fazerJSON($ch);
             $dados[$ano] = $graf;
         }

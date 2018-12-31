@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Roteador
  *
  * @ORM\Table(name="roteador")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\RoteadorRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\RoteadorRepository")
  */
 class Roteador
 {

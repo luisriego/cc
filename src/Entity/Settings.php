@@ -11,7 +11,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * Settings
  *
  * @ORM\Table(name="settings")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\SettingsRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\SettingsRepository")
  */
 class Settings
 {

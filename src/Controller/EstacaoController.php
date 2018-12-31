@@ -27,7 +27,7 @@ class EstacaoController extends Controller
     {
 //        $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-//        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('estacao.campos')) {
@@ -39,7 +39,7 @@ class EstacaoController extends Controller
 
         $titulo = 'estação';
 
-        $dados = $em->getRepository('AppBundle:TipoEstacao')->findAll();
+        $dados = $em->getRepository(TipoEstacao::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -57,7 +57,7 @@ class EstacaoController extends Controller
 
 
         $estacao = new TipoEstacao();
-        $form = $this->createForm('AppBundle\Form\TipoEstacaoType', $estacao);
+        $form = $this->createForm('App\Form\TipoEstacaoType', $estacao);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

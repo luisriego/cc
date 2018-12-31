@@ -16,30 +16,13 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/*'
-        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php,AppBundle}'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
-
-    # REMOVE LATER
-    # makes classes in src/AppBundle available to be used as services
-    # this creates a service per class whose id is the fully-qualified class name
-    AppBundle\:
-        resource: '../src/AppBundle/*'
-        # you can exclude directories or files
-        # but if a service is unused, it's removed anyway
-        exclude: '../src/AppBundle/{Entity,Repository,Tests}'
-
-    # controllers are imported separately to make sure they're public
-    # and have a tag that allows actions to type-hint services
-    AppBundle\Controller\:
-        resource: '../src/AppBundle/Controller'
-        public: true
-        tags: ['controller.service_arguments']
-    # END REMOVE LATER
 
     twig.extension.text:
         class: Twig_Extensions_Extension_Text
@@ -51,28 +34,28 @@ services:
         tags:
             - { name: twig.extension }
 
-    AppBundle\EventListener\LogRegister:
+    App\EventListener\LogRegister:
         arguments:
             - "@security.token_storage"
         tags:
             - { name: doctrine.event_listener, event: preUpdate }
             - { name: doctrine.event_listener, event: postUpdate }
 
-    AppBundle\EventListener\CallIncoming:
+    App\EventListener\CallIncoming:
         tags:
             - { name: doctrine.event_listener, event: prePersist }
 
-    AppBundle\EventListener\UserRegister:
+    App\EventListener\UserRegister:
         tags:
             - { name: doctrine.event_listener, event: prePersist }
 
-    AppBunle\EventListener\AsignarProvilegiosPrimerusuarioSubscriber:
+    App\EventListener\AsignarProvilegiosPrimerusuarioSubscriber:
         autowire: true
         tags:
             - { name: kernell.event_subscriber }
 
     console_command.csv_import:
-        class: AppBundle\Command\CsvImportCommand
+        class: App\Command\CsvImportCommand
         arguments:
             - "@doctrine.orm.entity_manager"
         tags:

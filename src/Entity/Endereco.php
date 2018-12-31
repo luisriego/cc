@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Endereco
  *
  * @ORM\Table(name="endereco")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\EnderecoRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\EnderecoRepository")
  */
 class Endereco
 {

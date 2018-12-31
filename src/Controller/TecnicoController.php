@@ -38,7 +38,7 @@ class TecnicoController extends Controller
             $alerta = 'Por favor, solicite a um tecnico que reconfigure o seu sistema';
         }
 
-        $dados = $em->getRepository('AppBundle:Tecnico')->findAll();
+        $dados = $em->getRepository(Tecnico::class)->findAll();
 
         // dados del breadcrumb
         $breadcrumbs = [
@@ -55,7 +55,7 @@ class TecnicoController extends Controller
         ];
 
         $pessoa = new Tecnico();
-        $form = $this->createForm('AppBundle\Form\TecnicoNewType', $pessoa);
+        $form = $this->createForm('App\Form\TecnicoNewType', $pessoa);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -71,7 +71,7 @@ class TecnicoController extends Controller
             return $this->redirectToRoute('admin_tecnico_index');
         }
 
-        $tecnicos = $em->getRepository('AppBundle:Tecnico')->findAll();
+        $tecnicos = $em->getRepository(Tecnico::class)->findAll();
 
         return $this->render('backend/pessoas/index.pessoa.html.twig', array(
             'titulo' => $titulo,
@@ -93,10 +93,10 @@ class TecnicoController extends Controller
     {
         // $usuario = $this->getUser()->getUsername();
         // $em = $this->getDoctrine()->getManager();
-        // $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $usuario);
+        // $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // $tecnico = new Tecnico();
-        // $form = $this->createForm('AppBundle\Form\TecnicoNewType', $tecnico);
+        // $form = $this->createForm('App\Form\TecnicoNewType', $tecnico);
         // $form->handleRequest($request);
 
         // if ($form->isSubmitted() && $form->isValid()) {
@@ -146,7 +146,7 @@ class TecnicoController extends Controller
 
         $pessoa = new Tecnico();
 
-        $form = $this->createForm('AppBundle\Form\TecnicoNewType', $pessoa);
+        $form = $this->createForm('App\Form\TecnicoNewType', $pessoa);
 
         $form->handleRequest($request);
 
@@ -200,8 +200,8 @@ class TecnicoController extends Controller
     {
         $tecnico = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
-        $tecnico = $em->getRepository('AppBundle:Tecnico')->findOneBy(array('id' => $id));
-        $ultimosChamados = $em->getRepository('AppBundle:Chamado')->ultimosChamados(5, $tecnico);
+        $tecnico = $em->getRepository(Tecnico::class)->findOneBy(array('id' => $id));
+        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $tecnico);
 
         // checks if a parameter is defined
         if ($this->container->hasParameter('tecnico.campos') && $this->container->hasParameter('tecnico.titulo')) {
@@ -231,7 +231,7 @@ class TecnicoController extends Controller
         ];
 
 //        $deleteForm = $this->createDeleteForm($tecnico);
-        $form = $this->createForm('AppBundle\Form\TecnicoType', $tecnico);
+        $form = $this->createForm('App\Form\TecnicoType', $tecnico);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -262,7 +262,7 @@ class TecnicoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $tecnico = $em->getRepository('AppBundle:Tecnico')->findOneBy(['id' => $id]);
+        $tecnico = $em->getRepository(Tecnico::class)->findOneBy(['id' => $id]);
 
         $em->remove($tecnico);
 

@@ -31,9 +31,9 @@ class ProfileController extends Controller
             $usuario->setEndereco(new Endereco);
         }
 
-        $form = $this->createForm('AppBundle\Form\ProfileType', $usuario->getProfile());
-        $formDir = $this->createForm('AppBundle\Form\ProfileDirType', $usuario->getEndereco());
-        $formAvatar = $this->createForm('AppBundle\Form\UserAvatarType', $usuario);
+        $form = $this->createForm('App\Form\ProfileType', $usuario->getProfile());
+        $formDir = $this->createForm('App\Form\ProfileDirType', $usuario->getEndereco());
+        $formAvatar = $this->createForm('App\Form\UserAvatarType', $usuario);
         $form->handleRequest($request);
         $formDir->handleRequest($request);
         $formAvatar->handleRequest($request);
@@ -98,9 +98,8 @@ class ProfileController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $settings = $em->getRepository('AppBundle:Settings')->findOneBy(array('id' => 1));
-//        $messages = $em->getRepository('AppBundle:Settings')->findOneBy(array('id' => 1));
-//        $settings = ($settings) ? $settings : new Settings();
+        $settings = $em->getRepository(Settings::class)->findOneBy(array('id' => 1));
+
         $titulo = 'Configuração Geral';
 
         $weather = $utiles->weather();
@@ -119,9 +118,9 @@ class ProfileController extends Controller
             ],
         ];
 
-        $form = $this->createForm('AppBundle\Form\SettingsType', $settings);
-        $formMessage = $this->createForm('AppBundle\Form\SettingsMessageType', $settings);
-        $formAvatar = $this->createForm('AppBundle\Form\SettingsLogoType', $settings);
+        $form = $this->createForm('App\Form\SettingsType', $settings);
+        $formMessage = $this->createForm('App\Form\SettingsMessageType', $settings);
+        $formAvatar = $this->createForm('App\Form\SettingsLogoType', $settings);
         $form->handleRequest($request);
         $formMessage->handleRequest($request);
         $formAvatar->handleRequest($request);

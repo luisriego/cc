@@ -19,7 +19,7 @@ class LogRepository extends \Doctrine\ORM\EntityRepository
 //        $em = $this->getEntityManager();
 //        $consulta = $em->createQuery('
 //                                SELECT l, ch, an, a, c
-//                                FROM AppBundle:Log l
+//                                FROM App:Log l
 //                                JOIN l.chamado ch
 //                                JOIN ch.cliente c
 //                                JOIN l.anterior an
@@ -40,7 +40,7 @@ class LogRepository extends \Doctrine\ORM\EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT l, ch, an, a
-                                FROM AppBundle:Log l
+                                FROM App:Log l
                                 JOIN l.chamado ch
                                 JOIN l.anterior an
                                 JOIN l.atual a

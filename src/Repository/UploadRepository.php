@@ -16,7 +16,7 @@ class UploadRepository extends \Doctrine\ORM\EntityRepository
         $em = $this->getEntityManager();
         $consulta = $em->createQuery('
                                 SELECT u
-                                FROM AppBundle:Upload u
+                                FROM App:Upload u
                                 WHERE u.cliente = :cliente
                                 ');
         $consulta->setParameter('cliente', $cliente);
