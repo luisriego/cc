@@ -241,7 +241,8 @@ class ChamadoController extends Controller
      */
     public function reprovadosAction(Utiles $utiles)
     {
-        $usuario = $this->getUser()->getUsername();
+        $reprovados = [];
+        $usuario = get_current_user();
         $em = $this->getDoctrine()->getManager();
         // Esta variable recoge el la instancia de la entidad Status Aberto
         $statusAtual = $em->getRepository(Status::class)->findOneBy(array('slug' => 'reprovado'));
@@ -259,7 +260,10 @@ class ChamadoController extends Controller
         $todosUsuarios = $em->getRepository(User::class)->findBy(array(), array('lastLogin' => 'DESC'));
         $todosClientes = $em->getRepository(Cliente::class)->findAll();
         $chamadosFinalizados = $em->getRepository(Chamado::class)->chamadosFinalAdmin();
-        $reprovados = $em->getRepository(Chamado::class)->findAllChamados($statusAtual);
+        if ($statusAtual) {
+            $reprovados = $em->getRepository(Chamado::class)->findAllChamados($statusAtual);
+        }
+
 //        $reprovados = $em->getRepository(Chamado::class)->chamadosReprocadosAdmin();
 
         // Esta interaccion va a asignar un cliente a cada chamado.

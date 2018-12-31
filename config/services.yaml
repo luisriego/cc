@@ -6,6 +6,64 @@
 parameters:
     locale: 'pt_BR'
 
+# Data Parameters
+    status.campos:     ['id', 'nome', 'cor', 'ativo']
+    status.titulo:     status
+
+    vserve.campos:    ['id', 'nome', 'preco']
+    vserve.titulo:    vserve
+    vserve.subtitulo: servidor virtual
+
+    sistema.campos:    ['id', 'nome', 'telefone', 'obs']
+    sistema.titulo:    sistemas
+
+    servidor.campos:   ['id', 'nome', 'preco']
+    servidor.titulo:   servidor
+
+    roteador.campos:   ['id', 'nome', 'valor']
+    roteador.titulo:   roteador
+
+    internet.campos:   ['id', 'nome', 'telefone', 'obs']
+
+    impressora.campos: ['id', 'nome']
+
+    tipoestacao.campos:    ['id', 'nome', 'valor']
+
+    defeito.campos:    ['id', 'nome', 'prioridade']
+
+
+# Cliente
+    cliente.campos: ['nome', 'email', 'telefone', 'contato', 'raiox']
+    cliente.titulo: 'cliente'
+    cliente.tituloPlano: 'cliente'
+    cliente.subtitulo: 'Listagem de Clientes'
+    cliente.titulo.nuevo: 'novo cliente'
+    cliente.alerta: null
+    cliente.graficos: graficas
+
+# Usuario
+    usuario.campos: ['username', 'email', 'enabled', 'roles']
+    usuario.titulo: 'usuário'
+    usuario.tituloPlano: 'usuario'
+    usuario.subtitulo: 'Listagem de Usuários'
+    usuario.subtitulo.nuevo: 'novo usuário'
+    usuario.titulo.nuevo: 'novo usuário'
+    usuario.alerta: null
+
+# Técnico
+    tecnico.campos: ['nome', 'username', 'chamados']
+    tecnico.titulo: 'técnico'
+    tecnico.tituloPlano: 'tecnico'
+    tecnico.subtitulo: 'Listagem de técnicos'
+    tecnico.subtitulo.nuevo: 'novo técnico'
+    tecnico.titulo.nuevo: 'novo técnico'
+    tecnico.alerta: null
+
+# Dashboard
+    dashboard.campos: ['id', 'status', 'nome', 'empresa', 'data', 'mensagem']
+    dashboard.titulo: ultimos chamados abertos
+    dashboard.graficas: 'dashboard'
+
 services:
     # default configuration for services in *this* file
     _defaults:

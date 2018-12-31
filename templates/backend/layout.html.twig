@@ -6,7 +6,7 @@
 
 {% block l_aside %}
     {#{{ include('backend/inc/_left.aside.html.twig') }}#}
-    {{ render(controller('App:Backend:left')) }}
+    {{ render(controller('App\\Controller\\BackendController::leftAction')) }}
 {% endblock %}
 
 {% block settings %}

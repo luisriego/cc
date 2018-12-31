@@ -9,62 +9,14 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/symfony_requirements" afterPath="$PROJECT_DIR$/bin/symfony_requirements" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles.md" afterPath="$PROJECT_DIR$/bundles.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/packages/security.yaml" afterPath="$PROJECT_DIR$/config/packages/security.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.yaml" afterPath="$PROJECT_DIR$/config/services.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/git.md" afterPath="$PROJECT_DIR$/git.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpunit.xml.dist" afterPath="$PROJECT_DIR$/phpunit.xml.dist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/problemas.md" afterPath="$PROJECT_DIR$/problemas.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/.htaccess" afterPath="$PROJECT_DIR$/src/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/BackendController.php" afterPath="$PROJECT_DIR$/src/Controller/BackendController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ClienteController.php" afterPath="$PROJECT_DIR$/src/Controller/ClienteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Cliente.php" afterPath="$PROJECT_DIR$/src/Entity/Cliente.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Especialidade.php" afterPath="$PROJECT_DIR$/src/Entity/Especialidade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Log.php" afterPath="$PROJECT_DIR$/src/Entity/Log.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Tecnico.php" afterPath="$PROJECT_DIR$/src/Entity/Tecnico.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EventListener/UserRegister.php" afterPath="$PROJECT_DIR$/src/EventListener/UserRegister.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ChamadoClienteType.php" afterPath="$PROJECT_DIR$/src/Form/ChamadoClienteType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ChamadoType.php" afterPath="$PROJECT_DIR$/src/Form/ChamadoType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ClienteAvatarType.php" afterPath="$PROJECT_DIR$/src/Form/ClienteAvatarType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ClienteDadosType.php" afterPath="$PROJECT_DIR$/src/Form/ClienteDadosType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ClienteNewType.php" afterPath="$PROJECT_DIR$/src/Form/ClienteNewType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ClienteType.php" afterPath="$PROJECT_DIR$/src/Form/ClienteType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/DefeitoType.php" afterPath="$PROJECT_DIR$/src/Form/DefeitoType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/EmpleadoType.php" afterPath="$PROJECT_DIR$/src/Form/EmpleadoType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/EstacaoType.php" afterPath="$PROJECT_DIR$/src/Form/EstacaoType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ImpressoraType.php" afterPath="$PROJECT_DIR$/src/Form/ImpressoraType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/InternetType.php" afterPath="$PROJECT_DIR$/src/Form/InternetType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ProfileDirType.php" afterPath="$PROJECT_DIR$/src/Form/ProfileDirType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ProfileType.php" afterPath="$PROJECT_DIR$/src/Form/ProfileType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/RoteadorType.php" afterPath="$PROJECT_DIR$/src/Form/RoteadorType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ServidorType.php" afterPath="$PROJECT_DIR$/src/Form/ServidorType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/SettingsDataType.php" afterPath="$PROJECT_DIR$/src/Form/SettingsDataType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/SettingsLogoType.php" afterPath="$PROJECT_DIR$/src/Form/SettingsLogoType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/SettingsMessageType.php" afterPath="$PROJECT_DIR$/src/Form/SettingsMessageType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/SettingsType.php" afterPath="$PROJECT_DIR$/src/Form/SettingsType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/SistemaType.php" afterPath="$PROJECT_DIR$/src/Form/SistemaType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/StatusType.php" afterPath="$PROJECT_DIR$/src/Form/StatusType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/TecnicoNewType.php" afterPath="$PROJECT_DIR$/src/Form/TecnicoNewType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/TecnicoType.php" afterPath="$PROJECT_DIR$/src/Form/TecnicoType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/TipoEstacaoType.php" afterPath="$PROJECT_DIR$/src/Form/TipoEstacaoType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UploadType.php" afterPath="$PROJECT_DIR$/src/Form/UploadType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UserAvatarType.php" afterPath="$PROJECT_DIR$/src/Form/UserAvatarType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UserEditType.php" afterPath="$PROJECT_DIR$/src/Form/UserEditType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UserListType.php" afterPath="$PROJECT_DIR$/src/Form/UserListType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UserNewType.php" afterPath="$PROJECT_DIR$/src/Form/UserNewType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/UserType.php" afterPath="$PROJECT_DIR$/src/Form/UserType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/VServeType.php" afterPath="$PROJECT_DIR$/src/Form/VServeType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Services/MailManager.php" afterPath="$PROJECT_DIR$/src/Services/MailManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Services/SMSManager.php" afterPath="$PROJECT_DIR$/src/Services/SMSManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Services/UserManager.php" afterPath="$PROJECT_DIR$/src/Services/UserManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Services/Utiles.php" afterPath="$PROJECT_DIR$/src/Services/Utiles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ChamadoController.php" afterPath="$PROJECT_DIR$/src/Controller/ChamadoController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony.md" afterPath="$PROJECT_DIR$/symfony.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/backend/dashboard/index.html.twig" afterPath="$PROJECT_DIR$/templates/backend/dashboard/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/backend/inc/_header.html.twig" afterPath="$PROJECT_DIR$/templates/backend/inc/_header.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/backend/layout.dashboard.html.twig" afterPath="$PROJECT_DIR$/templates/backend/layout.dashboard.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/backend/layout.html.twig" afterPath="$PROJECT_DIR$/templates/backend/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layout.html.twig" afterPath="$PROJECT_DIR$/templates/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/public/chamado.html.twig" afterPath="$PROJECT_DIR$/templates/public/chamado.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" afterPath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/translations/messages.pt_BR.yml" afterPath="$PROJECT_DIR$/translations/messages.pt_BR.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,10 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Controller/ClienteController.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Cliente.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Especialidade.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Log.php" />
         <option value="$PROJECT_DIR$/src/Entity/Tecnico.php" />
         <option value="$PROJECT_DIR$/src/Form/ClienteType.php" />
         <option value="$PROJECT_DIR$/src/Form/ChamadoType.php" />
@@ -149,7 +97,6 @@
         <option value="$PROJECT_DIR$/src/Services/UserManager.php" />
         <option value="$PROJECT_DIR$/src/Services/Utiles.php" />
         <option value="$PROJECT_DIR$/src/EventListener/UserRegister.php" />
-        <option value="$PROJECT_DIR$/templates/backend/layout.html.twig" />
         <option value="$PROJECT_DIR$/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" />
         <option value="$PROJECT_DIR$/templates/backend/inc/_header.html.twig" />
@@ -159,6 +106,11 @@
         <option value="$PROJECT_DIR$/templates/public/chamado.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
+        <option value="$PROJECT_DIR$/templates/backend/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/Repository/ChamadoRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/ChamadoController.php" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/src/Controller/TecnicoController.php" />
       </list>
     </option>
   </component>
@@ -324,8 +276,19 @@
             <path>
               <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
               <item name="customer-connect" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-connect" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-connect" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -424,12 +387,12 @@
       <workItem from="1545923777534" duration="124000" />
       <workItem from="1545924401393" duration="33646000" />
       <workItem from="1546176902870" duration="1631000" />
-      <workItem from="1546178927849" duration="12334000" />
+      <workItem from="1546178927849" duration="15046000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160054000" />
+    <option name="totallyTimeSpent" value="162766000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -475,46 +438,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Form/ClienteNewType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1769">
-          <caret line="99" column="38" lean-forward="false" selection-start-line="99" selection-start-column="38" selection-end-line="99" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/ChamadoClienteType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="62" column="38" lean-forward="false" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/DefeitoType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/EmpleadoType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/EstacaoType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
-          <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/ImpressoraType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="626">
@@ -792,16 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/backend/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding>
-            <element signature="e#12#34#0#Twig" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -828,10 +741,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/backend/dashboard/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="25" column="91" lean-forward="false" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
+          <folding>
+            <element signature="e#12#46#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/backend/inc/_header.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="155" column="125" lean-forward="false" selection-start-line="155" selection-start-column="66" selection-end-line="155" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/public/chamado.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+          <folding>
+            <element signature="e#13#27#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="35" column="47" lean-forward="false" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="93" column="49" lean-forward="false" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/backend/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="60" lean-forward="false" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/backend/layout.dashboard.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="60" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/ChamadoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="276" column="20" lean-forward="false" selection-start-line="276" selection-start-column="20" selection-end-line="276" selection-end-column="20" />
+        <state relative-caret-position="672">
+          <caret line="430" column="35" lean-forward="true" selection-start-line="430" selection-start-column="35" selection-end-line="430" selection-end-column="35" />
           <folding>
             <marker date="1546247166188" expanded="true" signature="528:748" ph="SELECT ch, t... App" />
             <marker date="1546247166188" expanded="true" signature="1053:1326" ph="SELECT c, t,... App" />
@@ -862,68 +835,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/dependency-injection/ContainerInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="82" column="20" lean-forward="false" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/BackendController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="94" column="54" lean-forward="true" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
-          <folding>
-            <element signature="e#3583#3618#0#PHP" expanded="true" />
-            <element signature="e#7247#7289#0#PHP" expanded="true" />
-            <element signature="e#8218#8253#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/backend/layout.dashboard.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="67" lean-forward="false" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
-          <folding>
-            <element signature="e#12#34#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/backend/dashboard/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="25" column="91" lean-forward="false" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
-          <folding>
-            <element signature="e#12#46#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/backend/inc/_header.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="155" column="125" lean-forward="false" selection-start-line="155" selection-start-column="66" selection-end-line="155" selection-end-column="125" />
+        <state relative-caret-position="-382">
+          <caret line="94" column="54" lean-forward="false" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/public/chamado.html.twig">
+    <entry file="file://$PROJECT_DIR$/config/params.data.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-          <folding>
-            <element signature="e#13#27#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="35" column="47" lean-forward="false" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+        <state relative-caret-position="794">
+          <caret line="58" column="35" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="58" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="93" column="49" lean-forward="false" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+        <state relative-caret-position="1344">
+          <caret line="64" column="35" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="64" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TecnicoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="50" column="75" lean-forward="false" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ChamadoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="248" column="52" lean-forward="false" selection-start-line="248" selection-start-column="52" selection-end-line="248" selection-end-column="52" />
           <folding />
         </state>
       </provider>
