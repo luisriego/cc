@@ -2,12 +2,13 @@
 
 namespace App\Controller;
 
-use App\Entity\Chamado;
+use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Status;
 use App\Services\Utiles;
 
@@ -16,35 +17,32 @@ use App\Services\Utiles;
  *
  * @Route("/admin/status")
  */
-class StatusController extends Controller
+class StatusController extends AbstractController
 {
     /**
      * Lists all Status entities.
+     * @param Request                $request
+     * @param Utiles                 $utiles
+     * @param ContainerInterface     $container
+     * @param EntityManagerInterface $em
+     * @return Response
      *
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="admin_status_index")
-     * @Method({"GET", "POST"})
-     * @Template("backend/dados/index.html.twig")
      */
-    public function indexAction(Request $request, Utiles $utiles)
+    public function indexAction(Request $request, Utiles $utiles, ContainerInterface $container, EntityManagerInterface $em)
     {
-//        $usuario = $this->getUser()->getUsername();
-        $em = $this->getDoctrine()->getManager();
-        
         $weather = $utiles->weather();
-        
-//        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
-        if ($this->container->hasParameter('status.campos')) {
+        if ($container->hasParameter('status.campos')) {
             // gets value of a parameter
-            $campos = $this->container->getParameter('status.campos');
-            $titulo = $this->container->getParameter('status.titulo');
+            $campos = $container->getParameter('status.campos');
+            $titulo = $container->getParameter('status.titulo');
         }else{
             $campos = ['id', 'nome', 'cor', 'ativo'];
             $titulo = 'status';
         }
-
-
 
         $dados = $em->getRepository(Status::class)->findAll();
 
@@ -74,21 +72,29 @@ class StatusController extends Controller
 //            return $this->redirectToRoute('admin_status_index', array('id' => $status->getId()));
         }
 
-        return array(
+        return $this->render(':backend/dados:index.html.twig', array(
             'titulo' => $titulo,
             'dados' => $dados,
             'weather' => $weather,
             'breadcrumbs' => $breadcrumbs,
             'campos' => $campos,
             'form' => $form->createView(),
-        );
+        ));
+
+//        return array(
+//            'titulo' => $titulo,
+//            'dados' => $dados,
+//            'weather' => $weather,
+//            'breadcrumbs' => $breadcrumbs,
+//            'campos' => $campos,
+//            'form' => $form->createView(),
+//        );
     }
 
     /**
      * Creates a new Status entity.
      *
-     * @Route("/new", name="admin_status_new")
-     * @Method({"GET", "POST"})
+     * @Route("/new", name="admin_status_new", methods={"GET", "POST"})
      */
     public function newAction(Request $request)
     {
@@ -139,8 +145,7 @@ class StatusController extends Controller
     /**
      * Finds and displays a Status entity.
      *
-     * @Route("/{id}", name="admin_status_show")
-     * @Method("GET")
+     * @Route("/{id}", name="admin_status_show", methods={"GET"})
      */
     public function showAction(Status $status)
     {
@@ -160,8 +165,7 @@ class StatusController extends Controller
     /**
      * Displays a form to edit an existing Status entity.
      *
-     * @Route("/{id}/edit", name="admin_status_edit")
-     * @Method({"GET", "POST"})
+     * @Route("/{id}/edit", name="admin_status_edit", methods={"GET", "POST"})
      */
     public function editAction(Request $request, Status $status)
     {
@@ -191,8 +195,7 @@ class StatusController extends Controller
     /**
      * Deletes a Status entity.
      *
-     * @Route("/{id}", name="admin_status_delete")
-     * @Method("DELETE")
+     * @Route("/{id}", name="admin_status_delete", methods={"DELETE"})
      */
     public function deleteAction(Request $request, Status $status)
     {

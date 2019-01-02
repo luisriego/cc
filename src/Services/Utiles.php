@@ -14,6 +14,7 @@ use App\Entity\Cliente;
 use App\Entity\Endereco;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Clase que incluye métodos útiles para la aplicación
@@ -38,6 +39,12 @@ Class Utiles
     public function __construct(EntityManagerInterface $em)
     {
         $this->_em = $em;
+    }
+
+    public function breadcrumb()
+    {
+        $breadcrumbs = [];
+
     }
 
     /**

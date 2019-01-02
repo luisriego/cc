@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdddeb2d-15a1-4b37-a797-4937d9bf5918" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/symfony2.xml" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/console" afterPath="$PROJECT_DIR$/bin/console" />
@@ -9,14 +10,22 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/symfony_requirements" afterPath="$PROJECT_DIR$/bin/symfony_requirements" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles.md" afterPath="$PROJECT_DIR$/bundles.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.yaml" afterPath="$PROJECT_DIR$/config/services.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/packages/framework.yaml" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/packages/twig.yaml" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.yaml" afterPath="$PROJECT_DIR$/config/routes.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/git.md" afterPath="$PROJECT_DIR$/git.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpunit.xml.dist" afterPath="$PROJECT_DIR$/phpunit.xml.dist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/problemas.md" afterPath="$PROJECT_DIR$/problemas.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/.htaccess" afterPath="$PROJECT_DIR$/src/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ChamadoController.php" afterPath="$PROJECT_DIR$/src/Controller/ChamadoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/BackendController.php" afterPath="$PROJECT_DIR$/src/Controller/BackendController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ServidorController.php" afterPath="$PROJECT_DIR$/src/Controller/ServidorController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/SistemaController.php" afterPath="$PROJECT_DIR$/src/Controller/SistemaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/StatusController.php" afterPath="$PROJECT_DIR$/src/Controller/StatusController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/StatusType.php" afterPath="$PROJECT_DIR$/src/Form/StatusType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Services/Utiles.php" afterPath="$PROJECT_DIR$/src/Services/Utiles.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony.md" afterPath="$PROJECT_DIR$/symfony.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/backend/layout.html.twig" afterPath="$PROJECT_DIR$/templates/backend/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/backend/dados/index.html.twig" afterPath="$PROJECT_DIR$/templates/backend/dados/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/translations/messages.pt_BR.yml" afterPath="$PROJECT_DIR$/translations/messages.pt_BR.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,12 +51,80 @@
     <favorites_list name="customer-connect" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="StatusController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/StatusController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="488">
+              <caret line="49" column="19" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="24" />
+              <folding>
+                <element signature="e#34#74#0#PHP" expanded="true" />
+                <element signature="e#2375#2407#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="framework.yaml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utiles.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Services/Utiles.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <folding>
+                <element signature="e#1169#4779#0#PHP" expanded="false" />
+                <element signature="e#4924#5068#0#PHP" expanded="false" />
+                <element signature="e#5200#5566#0#PHP" expanded="false" />
+                <element signature="e#5753#5889#0#PHP" expanded="false" />
+                <element signature="e#6120#6421#0#PHP" expanded="false" />
+                <element signature="e#6592#6891#0#PHP" expanded="false" />
+                <element signature="e#7134#9668#0#PHP" expanded="false" />
+                <element signature="e#9847#10008#0#PHP" expanded="false" />
+                <element signature="e#10190#10482#0#PHP" expanded="false" />
+                <element signature="e#10637#10954#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/backend/dados/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1218">
+              <caret line="44" column="29" lean-forward="false" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+              <folding>
+                <element signature="e#12#36#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dados.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/dados.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-504">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>form.</find>
       <find>AppBundle</find>
+      <find>norma</find>
     </findStrings>
     <replaceStrings>
       <replace>formMessage.</replace>
@@ -60,14 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Entity/Tecnico.php" />
-        <option value="$PROJECT_DIR$/src/Form/ClienteType.php" />
-        <option value="$PROJECT_DIR$/src/Form/ChamadoType.php" />
-        <option value="$PROJECT_DIR$/src/Form/ClienteAvatarType.php" />
-        <option value="$PROJECT_DIR$/src/Form/ClienteDadosType.php" />
-        <option value="$PROJECT_DIR$/src/Form/ClienteNewType.php" />
-        <option value="$PROJECT_DIR$/src/Form/ChamadoClienteType.php" />
-        <option value="$PROJECT_DIR$/src/Form/DefeitoType.php" />
         <option value="$PROJECT_DIR$/src/Form/EmpleadoType.php" />
         <option value="$PROJECT_DIR$/src/Form/EstacaoType.php" />
         <option value="$PROJECT_DIR$/src/Form/ImpressoraType.php" />
@@ -81,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/Form/SettingsMessageType.php" />
         <option value="$PROJECT_DIR$/src/Form/SettingsType.php" />
         <option value="$PROJECT_DIR$/src/Form/SistemaType.php" />
-        <option value="$PROJECT_DIR$/src/Form/StatusType.php" />
         <option value="$PROJECT_DIR$/src/Form/TecnicoNewType.php" />
         <option value="$PROJECT_DIR$/src/Form/TecnicoType.php" />
         <option value="$PROJECT_DIR$/src/Form/TipoEstacaoType.php" />
@@ -95,13 +163,11 @@
         <option value="$PROJECT_DIR$/src/Services/MailManager.php" />
         <option value="$PROJECT_DIR$/src/Services/SMSManager.php" />
         <option value="$PROJECT_DIR$/src/Services/UserManager.php" />
-        <option value="$PROJECT_DIR$/src/Services/Utiles.php" />
         <option value="$PROJECT_DIR$/src/EventListener/UserRegister.php" />
         <option value="$PROJECT_DIR$/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" />
         <option value="$PROJECT_DIR$/templates/backend/inc/_header.html.twig" />
         <option value="$PROJECT_DIR$/templates/backend/layout.dashboard.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/BackendController.php" />
         <option value="$PROJECT_DIR$/templates/backend/dashboard/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/public/chamado.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
@@ -111,6 +177,17 @@
         <option value="$PROJECT_DIR$/src/Controller/ChamadoController.php" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/TecnicoController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/SistemaController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/ServidorController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/BackendController.php" />
+        <option value="$PROJECT_DIR$/config/routes.yaml" />
+        <option value="$PROJECT_DIR$/src/Form/StatusType.php" />
+        <option value="$PROJECT_DIR$/templates/backend/dados/index.html.twig" />
+        <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
+        <option value="$PROJECT_DIR$/src/Controller/StatusController.php" />
+        <option value="$PROJECT_DIR$/src/Services/Utiles.php" />
+        <option value="$PROJECT_DIR$/config/packages/framework.yaml" />
       </list>
     </option>
   </component>
@@ -276,19 +353,19 @@
             <path>
               <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
               <item name="customer-connect" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-connect" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
               <item name="customer-connect" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="customer-connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customer-connect" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Services" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -310,7 +387,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -387,12 +464,12 @@
       <workItem from="1545923777534" duration="124000" />
       <workItem from="1545924401393" duration="33646000" />
       <workItem from="1546176902870" duration="1631000" />
-      <workItem from="1546178927849" duration="15046000" />
+      <workItem from="1546178927849" duration="30026000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162766000" />
+    <option name="totallyTimeSpent" value="177746000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -405,9 +482,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2019334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2019334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -434,106 +512,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Form/ImpressoraType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/InternetType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/ProfileDirType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1265">
-          <caret line="68" column="25" lean-forward="false" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/ProfileType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1286">
-          <caret line="69" column="25" lean-forward="false" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/RoteadorType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
-          <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/ServidorType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/SettingsDataType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/SettingsLogoType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1181">
-          <caret line="64" column="25" lean-forward="false" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/SettingsMessageType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1958">
-          <caret line="101" column="27" lean-forward="false" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/SettingsType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1622">
-          <caret line="86" column="27" lean-forward="false" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/SistemaType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/StatusType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
-          <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/TecnicoNewType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -663,14 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/Utiles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2457">
-          <caret line="716" column="3" lean-forward="false" selection-start-line="716" selection-start-column="3" selection-end-line="716" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -843,14 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/BackendController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-382">
-          <caret line="94" column="54" lean-forward="false" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/params.data.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="794">
@@ -867,6 +835,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/framework-bundle/Controller/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TecnicoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -875,10 +851,144 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ServidorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SistemaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#34#99#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="32" column="35" lean-forward="false" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding>
+            <element signature="e#113#136#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ChamadoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="248" column="52" lean-forward="false" selection-start-line="248" selection-start-column="52" selection-end-line="248" selection-end-column="52" />
+        <state relative-caret-position="-756">
+          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding>
+            <element signature="e#2297#2330#0#PHP" expanded="true" />
+            <element signature="e#6235#6267#0#PHP" expanded="true" />
+            <element signature="e#8788#8821#0#PHP" expanded="true" />
+            <element signature="e#11766#11799#0#PHP" expanded="true" />
+            <element signature="e#15744#15777#0#PHP" expanded="true" />
+            <element signature="e#19377#19410#0#PHP" expanded="true" />
+            <element signature="e#21089#21126#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/BackendController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="47" />
+          <folding>
+            <element signature="e#3649#3684#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/dados.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/StatusType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="47" column="50" lean-forward="false" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/backend/dados/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1218">
+          <caret line="44" column="29" lean-forward="false" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+          <folding>
+            <element signature="e#12#36#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/Utiles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#1169#4779#0#PHP" expanded="false" />
+            <element signature="e#4924#5068#0#PHP" expanded="false" />
+            <element signature="e#5200#5566#0#PHP" expanded="false" />
+            <element signature="e#5753#5889#0#PHP" expanded="false" />
+            <element signature="e#6120#6421#0#PHP" expanded="false" />
+            <element signature="e#6592#6891#0#PHP" expanded="false" />
+            <element signature="e#7134#9668#0#PHP" expanded="false" />
+            <element signature="e#9847#10008#0#PHP" expanded="false" />
+            <element signature="e#10190#10482#0#PHP" expanded="false" />
+            <element signature="e#10637#10954#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/StatusController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="49" column="19" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="24" />
+          <folding>
+            <element signature="e#34#74#0#PHP" expanded="true" />
+            <element signature="e#2375#2407#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>

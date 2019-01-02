@@ -7,12 +7,13 @@ use App\Entity\Cliente;
 use App\Entity\Tecnico;
 use App\Entity\Upload;
 use App\Entity\User;
-use App\Services\SMSManager;
 use App\Services\Stats;
 use App\Services\Uploads;
 use App\Services\Utiles;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -20,27 +21,25 @@ use Symfony\Component\HttpFoundation\Request;
  * @package App\Controller
  * @Route("/admin")
  */
-class BackendController extends Controller
+class BackendController extends AbstractController
 {
     /**
      * @Route("/")
      * @Route("/dashboard/", name="dashboard")
      */
-    public function backendAction(Request $request, Utiles $utiles, Stats $stats)
+    public function backendAction(Request $request, Utiles $utiles, Stats $stats, ContainerInterface $container, EntityManagerInterface $em)
     {
-        $em = $this->getDoctrine()->getManager();
-        
         // Primero guardamos en data los valores obtenidos de la api weather con el servicio Utiles
         $weather = $utiles->weather();
 
         $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(10);
 
         // checks if a parameter is defined
-        if ($this->container->hasParameter('dashboard.campos')) {
+        if ($container->hasParameter('dashboard.campos')) {
             // gets value of a parameter
-            $campos = $this->container->getParameter('dashboard.campos');
-            $titulo = $this->container->getParameter('dashboard.titulo');
-            $graficas = $this->container->getParameter('dashboard.graficas');
+            $campos = $container->getParameter('dashboard.campos');
+            $titulo = $container->getParameter('dashboard.titulo');
+            $graficas = $container->getParameter('dashboard.graficas');
         }else{
             $campos = ['id', 'status', 'nome', 'empresa', 'telefone', 'data', 'mensagem'];
             $titulo = 'Titulo desde el controller';
@@ -115,19 +114,19 @@ class BackendController extends Controller
      *
      * @Route("/dados_utilizados/{entity}/", name="data_list", methods={"GET","POST"})
      */
-    public function dataAction(Request $request, $entity)
+    public function dataAction(Request $request, $entity, ContainerInterface $container)
     {
         $em = $this->getDoctrine()->getManager();
         $entityWithNamespace = 'App\Entity\\'.$entity;
 
         // checks if a parameter is defined
-        if ($this->container->hasParameter(strtolower($entity).'.campos')) {
+        if ($container->hasParameter(strtolower($entity).'.campos')) {
             // gets value of a parameter
-            $campos = $this->container->getParameter(strtolower($entity).'.campos');
+            $campos = $container->getParameter(strtolower($entity).'.campos');
         }
-        if ($this->container->hasParameter(strtolower($entity).'.titulo')) {
+        if ($container->hasParameter(strtolower($entity).'.titulo')) {
             // gets value of a parameter
-            $titulo = $this->container->getParameter(strtolower($entity).'.titulo');
+            $titulo = $container->getParameter(strtolower($entity).'.titulo');
         }else{
             $titulo = strtolower($entity);
         }

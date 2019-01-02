@@ -2,37 +2,35 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Sistema;
-use App\Form\SistemaType;
 
 /**
  * Servidor controller.
  *
  * @Route("/admin/sistema")
  */
-class SistemaController extends Controller
+class SistemaController extends AbstractController
 {
     /**
      * Lists all Internet entities.
      *
-     * @Route("/", name="admin_sistema_index")
-     * @Method({"GET", "POST"})
+     * @Route("/", name="admin_sistema_index", methods={"GET", "POST"})
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request, ContainerInterface $container)
     {
 //        $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
 //        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
-        if ($this->container->hasParameter('sistema.campos')) {
+        if ($container->hasParameter('sistema.campos')) {
             // gets value of a parameter
-            $campos = $this->container->getParameter('sistema.campos');
-            $titulo = $this->container->getParameter('sistema.titulo');
+            $campos = $container->getParameter('sistema.campos');
+            $titulo = $container->getParameter('sistema.titulo');
         }else{
             $campos = ['id', 'nome', 'telefone', 'obs'];
             $titulo = 'sistemas';

@@ -19,12 +19,12 @@ class StatusType extends AbstractType
         $builder
             ->add('nome', TextType::class, array(
                 'attr'  => array(
-                    'class' => 'form-control m-b-30',
+                    'class' => 'form-control m-b-5',
                     'placeholder' => 'Nome que o novo status vai ter...')
             ))
             ->add('cor', ChoiceType::class, array(
                 'attr'  => array(
-                    'class' => 'form-control m-b-30'),
+                    'class' => 'form-control m-b-5'),
                 'choices' => array(
                     'Amarelo'       => 'yellow',
                     'Azul'          => 'blue',
@@ -45,7 +45,7 @@ class StatusType extends AbstractType
             ->add('ativo', ChoiceType::class, array(
                 'label' => 'Este Status esta ainda ativo?',
                 'attr'  => array(
-                    'class' => 'form-control m-b-30'),
+                    'class' => 'form-control m-b-5'),
                 'choices' => array(
                     'Ativo'           => true,
                     'Inativo/Fechado' => false,

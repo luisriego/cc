@@ -2,36 +2,34 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Servidor;
-use App\Form\ServidorType;
 
 /**
  * Servidor controller.
  *
  * @Route("/admin/servidor")
  */
-class ServidorController extends Controller
+class ServidorController extends AbstractController
 {
     /**
      * Lists all Servidor entities.
      *
-     * @Route("/", name="admin_servidor_index")
-     * @Method({"GET", "POST"})
+     * @Route("/", name="admin_servidor_index", methods={"GET", "POST"})
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request, ContainerInterface $container)
     {
 //        $usuario = $this->getUser()->getUsername();
         $em = $this->getDoctrine()->getManager();
 //        $ultimosChamados = $em->getRepository(Chamado::class)->ultimosChamados(5, $usuario);
 
         // checks if a parameter is defined
-        if ($this->container->hasParameter('servidor.campos')) {
+        if ($container->hasParameter('servidor.campos')) {
             // gets value of a parameter
-            $campos = $this->container->getParameter('servidor.campos');
+            $campos = $container->getParameter('servidor.campos');
         }else{
             $campos = ['id', 'nome', 'preco'];
         }
