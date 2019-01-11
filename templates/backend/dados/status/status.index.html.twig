@@ -1,0 +1,87 @@
+{% extends 'backend/layout.html.twig' %}
+
+{% block head %}
+    <link href="{{ asset('assets/css/pages/file-upload.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/mystyle.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/sweetalert/sweetalert.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block title %}{{ titulo|capitalize }}{% endblock %}
+{% block content %}
+    {% if referrer is not defined %}
+        {% set referrer = "dashboard" %}
+    {% endif %}
+
+
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+{#<div class="container-fluid">#}
+    {{ include('backend/inc/_breadcrumb.html.twig') }}
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row js-wrapper">
+        <!-- column -->
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    {% if subtitulo is defined %}
+                        <h3 class="card-title">Listagem de {{ subtitulo|title }}</h3>
+                    {% else %}
+                        <h3 class="card-title">Listagem de {{ titulo|title }}</h3>
+                    {% endif %}
+                    <table id="mainTable" class="table table-striped table-bordered">
+                        <thead>
+                        <tr>
+                            <th class="text-nowrap xs">Açao</th>
+                            <th class="text-nowrap">Nome</th>
+                            <th class="text-nowrap">Cor</th>
+                            <th class="text-nowrap">Ativo</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for dado in dados %}
+                            {{ include('backend/dados/status/inc/_table.html.twig', { 'dado': dado }) }}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card card-body">
+                <h3 class="box-title m-b-10">Criar um novo {{ titulo|title }}</h3>
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12 js-new-data-form-wrapper">
+                        {{ include('backend/dados/inc/_form.html.twig') }}
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+
+{#</div>#}
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- End Page Content -->
+    <!-- ============================================================== -->
+
+{% endblock %}
+
+{% block js %}
+    <script src="{{ asset('assets/js/custom/my.jquery.dataTables.min.js') }}"></script>
+    {#<script src="{{ asset('assets/js/custom/dados.js') }}"></script>#}
+    <script src="{{ asset('assets/js/custom/status.js') }}"></script>
+    {#<script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>#}
+    {#<script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.js') }}"></script>#}
+    <script >
+
+    </script>
+
+{% endblock %}

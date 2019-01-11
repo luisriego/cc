@@ -11,8 +11,10 @@ use App\Services\Stats;
 use App\Services\Uploads;
 use App\Services\Utiles;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -112,12 +114,33 @@ class BackendController extends AbstractController
      * Esta funcion intenta gestionar todas las entidades de tipo dato en una sola accion,recibiendo los parametros
      * desde 'params.data.yml' parametrizando las entradas y salidas.
      *
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/dados_utilizados/{entity}/", name="data_list", methods={"GET","POST"})
      */
-    public function dataAction(Request $request, $entity, ContainerInterface $container)
+    public function dataAction(Request $request, $entity, ContainerInterface $container, EntityManagerInterface $em)
     {
-        $em = $this->getDoctrine()->getManager();
         $entityWithNamespace = 'App\Entity\\'.$entity;
+        $jsClassName = 'js-new-'.mb_strtolower($entity);
+        $campos = [];
+
+        // dados del breadcrumb
+        $breadcrumbs = [
+            'home' => [
+                'name' => 'Dashboard',
+                'url'  => 'homepage',
+                'is_root' => false
+            ],
+            'dados' => [
+                'name' => 'Dados Utilizados',
+                'url'  => '',
+                'is_root' => true
+            ],
+            'status' => [
+                'name' => $entity,
+                'url'  => '',
+                'is_root' => true
+            ],
+        ];
 
         // checks if a parameter is defined
         if ($container->hasParameter(strtolower($entity).'.campos')) {
@@ -138,18 +161,40 @@ class BackendController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $dado = $form->getData();
             $em->persist($newEntity);
             $em->flush();
 
-            return $this->redirectToRoute('admin_'.strtolower($entity).'_index');
+            if ($request->isXmlHttpRequest()) {
+                return $this->render('backend/dados/inc/_table.html.twig', [
+                    'dado' => $dado,
+                    'campos' => $campos,
+                    'titulo' => $titulo,
+                ]);
+            }
+
+//            return $this->redirectToRoute('admin_'.strtolower($entity).'_index');
         }
+
+        if ($request->isXmlHttpRequest()) {
+            $html =  $this->renderView('backend/dados/inc/_form.html.twig', [
+                'form' => $form->createView()
+            ]);
+            dump($html);
+
+            return new Response($html, 400);
+        }
+
+
 
         return $this->render('backend/dados/index.html.twig',
             array(
                 'titulo' => $titulo,
-                'breadcrumbs' => '',
+                'breadcrumbs' => $breadcrumbs,
+                'jsClassName' => $jsClassName,
                 'dados' => $dados,
                 'campos' => $campos,
+                'entity' => $entity,
                 'form' => $form->createView(),
             )
         );
@@ -235,6 +280,23 @@ class BackendController extends AbstractController
         $router = $request->headers->get('referer');
 
         return $this->redirect($router);
+    }
+
+    /**
+     * Esta funcion borra la entidade de tipo dato, recibiendo los parametros
+     * desde 'params.data.yml' parametrizando las entradas y salidas.
+     *
+     * @Route("/apagar_dado/{entity}/{id}", name="data_delete", methods={"DELETE"})
+     */
+    public function deleteData($entity, $id, EntityManagerInterface $em)
+    {
+        $entityWithNamespace = 'App\Entity\\'.$entity;
+        $dado = $em->getRepository($entityWithNamespace)->findOneBy(['id' => $id]);
+
+        $em->remove($dado);
+        $em->flush();
+
+        return new Response(null, 204);
     }
 
 

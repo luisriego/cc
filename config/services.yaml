@@ -6,6 +6,11 @@
 parameters:
     locale: 'pt_BR'
 
+# Breadcrumb Parameters
+    homepage:
+        url: 'homepage'
+        text: 'Homepage'
+
 # Data Parameters
     status.campos:     ['id', 'nome', 'cor', 'ativo']
     status.titulo:     status

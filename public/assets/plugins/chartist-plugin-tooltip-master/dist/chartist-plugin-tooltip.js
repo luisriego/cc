@@ -53,7 +53,10 @@
         }
 
         var $chart = chart.container;
-        var $toolTip = $chart.querySelector('.chartist-tooltip');
+        if ($chart != null) {
+            var $toolTip = $chart.querySelector('.chartist-tooltip');
+        }
+
         if (!$toolTip) {
           $toolTip = document.createElement('div');
           $toolTip.className = (!options.class) ? 'chartist-tooltip' : 'chartist-tooltip ' + options.class;

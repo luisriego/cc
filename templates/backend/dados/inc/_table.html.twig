@@ -1,0 +1,65 @@
+<tr data-id="{{ dado.id }}">
+    <td class="text-nowrap">
+        <a class="float-right"
+           href=""
+           data-toggle="tooltip"
+           data-original-title="Apagar">
+            <i class="mdi mdi-delete text-danger"></i>
+        </a>
+        <i class="mdi mdi-delete text-danger"
+           data-url="{{ path('data_delete', {entity: entity, id: dado.id}) }}"
+           onclick="deleteRow(this)">
+        </i>
+    </td>
+    {% for campo in campos %}
+        {% if campo == 'roles' %}
+            {% if dado.roles[0] == 'ROLE_ADMIN' or dado.roles[0] == 'ROLE_SUPER_ADMIN' %}
+                <td>Administrador</td>
+            {% elseif dado.roles[0] == 'ROLE_TECNICO' %}
+                <td>Técnico</td>
+            {% else %}
+                <td>Usuário</td>
+            {% endif %}
+        {% elseif campo == 'cor' %}
+            <td contenteditable="true"
+                name="{{ campo }}"
+                onchange="ColourSelected(this,{{dado.id}}), confirmar()"
+                style="background-color: {{ attribute(dado, campo) }}">
+                {{ include('backend/dados/inc/_select.colour.status.html.twig') }}
+            </td>
+        {% elseif campo == 'email' or campo == 'username' %}
+            <td>{{ attribute(dado, campo) }}</td>
+        {% elseif campo == 'enabled' or campo == 'ativo' %}
+            {% if attribute(dado, campo) is same as(true)  %}
+                <td class="text-center label-danger text-white"
+                    onclick="ativo({{ dado.id }},'true')">
+                    Ativo
+                </td>
+            {% elseif attribute(dado, campo) is same as(false) %}
+                <td class="text-center label-success"
+                    onclick="ativo('{{ dado.id }}','false')">
+                    <b>Encerrado</b>
+                </td>
+            {% else %}
+                <td class="text-center label-warning text-white"
+                    onclick="ativo({{ dado.id }},'null')">
+                    Reprovado
+                </td>
+            {% endif %}
+        {% elseif campo == 'id' %}
+            <td>{{ attribute(dado, campo) }}</td>
+        {% elseif campo == 'prioridade' %}
+            <td onclick="prioridade(this,{{dado.id}},{{ attribute(dado, campo) }})">
+                {{ attribute(dado, campo)|capitalize }}
+            </td>
+        {% else %}
+            {%set columna = campo %}
+            <td contenteditable="true"
+                name="{{ campo }}"
+                data-entity = "{{ titulo }}"
+                onBlur="saveToDatabase(this,{{dado.id}},'{{ attribute(dado, campo)|trim }}')">
+                {{ attribute(dado, campo)|trim }}
+            </td>
+        {% endif %}
+    {% endfor %}
+</tr>

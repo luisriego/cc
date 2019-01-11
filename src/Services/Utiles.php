@@ -41,12 +41,6 @@ Class Utiles
         $this->_em = $em;
     }
 
-    public function breadcrumb()
-    {
-        $breadcrumbs = [];
-
-    }
-
     /**
      * Este método intenta evitar el error que se produce ciando la 
      * API hgbrasil 

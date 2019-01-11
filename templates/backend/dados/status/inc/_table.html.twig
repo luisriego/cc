@@ -1,0 +1,40 @@
+
+{% if dado.status == 1  %}
+    {% set ativoTexto = 'Ativo' %}
+    {% set ativoCor = 'label-danger' %}
+{% elseif dado.status == 0 %}
+    {% set ativoTexto = 'Encerrado' %}
+    {% set ativoCor = 'label-success' %}
+{% elseif dado.status == 2 %}
+    {% set ativoTexto = 'Reprovado' %}
+    {% set ativoCor = 'label-warning' %}
+{% else %}
+    {% set ativoTexto = 'Ativo' %}
+    {% set ativoCor = '' %}
+{% endif %}
+
+<tr data-id="{{ dado.id }}">
+    <td class="text-nowrap">
+        <i class="mdi mdi-delete text-danger"
+           data-url="{{ path('data_ajax_delete', {id: dado.id}) }}"
+           onclick="deleteRow(this)">
+        </i>
+    </td>
+    <td contenteditable="true"
+        data-url="{{ path('change_name_ajax', {id: dado.id}) }}"
+        onblur="cambiarNombre(this)">
+        {{ dado.nome }}
+    </td>
+    <td contenteditable="true"
+        data-url="{{ path('data_ajax_cor', {id: dado.id}) }}"
+        onchange="cambiarColor(this)"
+        style="background-color: {{ dado.cor }}; color: white">
+        {{ include('backend/dados/inc/_select.colour.status.html.twig') }}
+    </td>
+    <td contenteditable="true"
+        class="text-center {{ ativoCor }} text-white"
+        data-url="{{ path('change_status_ajax', {id: dado.id}) }}"
+        onclick="cambiarAccion(this,{{ dado.status }})">
+        {{ ativoTexto }}
+    </td>
+</tr>

@@ -15,13 +15,13 @@
 <!-- ============================================================== -->
 <!-- Container fluid  -->
 <!-- ============================================================== -->
-<div class="container-fluid">
+{#<div class="container-fluid">#}
     {{ include('backend/inc/_breadcrumb.html.twig') }}
 
     <!-- ============================================================== -->
     <!-- Start Page Content -->
     <!-- ============================================================== -->
-    <div class="row">
+    <div class="row js-wrapper">
         <!-- column -->
         <div class="col-lg-8">
             <div class="card">
@@ -46,73 +46,7 @@
                         </thead>
                         <tbody>
                         {% for dado in dados %}
-                            <tr data-id="{{ dado.id }}">
-                                <td class="text-nowrap">
-{#                                    <a href=""
-                                       data-toggle="tooltip"
-                                       data-original-title="Editar">
-                                        <i class="fa fa-pencil text-inverse m-r-10"></i>
-                                    </a>#}
-
-                                    <a class="float-right"
-                                       href=""
-                                       data-toggle="tooltip"
-                                       data-original-title="Apagar">
-                                        <i class="mdi mdi-delete text-danger"></i>
-                                    </a>
-                                </td>
-                                {% for campo in campos %}
-                                    {% if campo == 'roles' %}
-                                        {% if dado.roles[0] == 'ROLE_ADMIN' or dado.roles[0] == 'ROLE_SUPER_ADMIN' %}
-                                            <td>Administrador</td>
-                                        {% elseif dado.roles[0] == 'ROLE_TECNICO' %}
-                                            <td>Técnico</td>
-                                        {% else %}
-                                            <td>Usuário</td>
-                                        {% endif %}
-                                    {% elseif campo == 'cor' %}
-                                        <td contenteditable="true"
-                                            name="{{ campo }}"
-                                            onchange="ColourSelected(this,{{dado.id}}), confirmar()"
-                                            style="background-color: {{ attribute(dado, campo) }}">
-                                            {{ include('backend/dados/inc/_select.colour.status.html.twig') }}
-                                        </td>
-                                    {% elseif campo == 'email' or campo == 'username' %}
-                                        <td>{{ attribute(dado, campo) }}</td>
-                                    {% elseif campo == 'enabled' or campo == 'ativo' %}
-                                        {% if attribute(dado, campo) is same as(true)  %}
-                                            <td class="text-center label-danger text-white"
-                                                onclick="ativo({{ dado.id }},'true')">
-                                                Ativo
-                                            </td>
-                                        {% elseif attribute(dado, campo) is same as(false) %}
-                                            <td class="text-center label-success"
-                                                onclick="ativo('{{ dado.id }}','false')">
-                                                <b>Encerrado</b>
-                                            </td>
-                                        {% else %}
-                                            <td class="text-center label-warning text-white"
-                                                onclick="ativo({{ dado.id }},'null')">
-                                                Reprovado
-                                            </td>
-                                        {% endif %}
-                                    {% elseif campo == 'id' %}
-                                        <td>{{ attribute(dado, campo) }}</td>
-                                    {% elseif campo == 'prioridade' %}
-                                        <td onclick="prioridade(this,{{dado.id}},{{ attribute(dado, campo) }})">
-                                            {{ attribute(dado, campo)|capitalize }}
-                                        </td>
-                                    {% else %}
-                                        {%set columna = campo %}
-                                        <td contenteditable="true" 
-                                            name="{{ campo }}"
-                                            data-entity = "{{ titulo }}"
-                                            onBlur="saveToDatabase(this,{{dado.id}},'{{ attribute(dado, campo)|trim }}')">
-                                            {{ attribute(dado, campo)|trim }}
-                                        </td>
-                                    {% endif %}
-                                {% endfor %}
-                            </tr>
+                            {{ include('backend/dados/inc/_table.html.twig', { 'dado': dado }) }}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -123,27 +57,18 @@
             <div class="card card-body">
                 <h3 class="box-title m-b-10">Criar um novo {{ titulo|title }}</h3>
                 <div class="row">
-                    <div class="col-sm-12 col-xs-12">
-                        {{ form_start(form, {'attr': {'class': 'form-material m-t-30'}}) }}
-                        {{ form_errors(form) }}
-                        <div class="form-group">
-                            {{ form_widget(form) }}
-                        </div>
-                        <div class="form-group">
-                            {{ include('backend/inc/_botones.accion.html.twig') }}
-                        </div>
-
-                        {{ form_widget(form._token) }}
-                        {{ form_end(form, {'render_rest': false}) }}
+                    <div class="col-sm-12 col-xs-12 js-new-data-form-wrapper">
+                        {{ include('backend/dados/inc/_form.html.twig') }}
                     </div>
                 </div>
+            </div>
         </div>
     </div>
     <!-- ============================================================== -->
     <!-- End PAge Content -->
     <!-- ============================================================== -->
 
-</div>
+{#</div>#}
 <!-- ============================================================== -->
 <!-- End Container fluid  -->
 <!-- ============================================================== -->
@@ -159,8 +84,22 @@
     <script src="{{ asset('assets/js/custom/dados.js') }}"></script>
     {#<script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>#}
     {#<script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.js') }}"></script>#}
-    <script >
+    {#<script>#}
+        {#var $wrapper = $('.js-wrapper');#}
+        {#this.$wrapper.find('.js-new-data-form').on(#}
+            {#'submit',#}
+            {#function (e) {#}
+                {#e.preventDefault();#}
 
-    </script>
+                {#var $form = $(e.currentTarget);#}
+{#//                $.ajax({#}
+{#//                    url: $form.get(0).action,#}
+{#//                    method: 'POST',#}
+{#//                    data: $form.serialize()#}
+{#//                });#}
+                {#console.log(e, $form.get(0).action);#}
+            {#}#}
+        {#);#}
+    {#</script>#}
 
 {% endblock %}

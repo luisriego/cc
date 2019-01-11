@@ -1,0 +1,12 @@
+{{ form_start(form, {'attr': {'class': 'form-material m-t-30 js-new-data-form'}}) }}
+    {{ form_errors(form) }}
+    <div class="form-group">
+        {{ form_widget(form) }}
+    </div>
+    {#<a href="#" class="btn btn-primary env-api" onclick="handledSubmitForm(this)">envApi</a>#}
+    <div class="form-group envApi">
+        {{ include('backend/inc/_botones.accion.html.twig') }}
+    </div>
+
+    {{ form_widget(form._token) }}
+{{ form_end(form, {'render_rest': false}) }}

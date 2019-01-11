@@ -31,7 +31,7 @@ class StatusType extends AbstractType
                     'Azul Escuro'   => 'blueDark',
                     'Azul Claro'    => 'blueLight',
                     'Pink'          => 'pink',
-                    'Pink Escuro'   => 'pinkDark',
+                    'Pink Escuro'   => 'deeppink',
                     'Purpura'       => 'purple',
                     'Laranja'       => 'orange',
                     'Laranja Escuro' => 'orangeDark',
@@ -42,14 +42,14 @@ class StatusType extends AbstractType
                     'Vermelho'      => 'red',
                 )
             ))
-            ->add('ativo', ChoiceType::class, array(
+            ->add('status', ChoiceType::class, array(
                 'label' => 'Este Status esta ainda ativo?',
                 'attr'  => array(
                     'class' => 'form-control m-b-5'),
                 'choices' => array(
-                    'Ativo'           => true,
-                    'Inativo/Fechado' => false,
-                    'Reprovado'       => null,
+                    'Ativo'           => 1,
+                    'Inativo/Fechado' => 0,
+                    'Reprovado'       => 2,
                 )
             ))
         ;

@@ -57,6 +57,11 @@ class Status
      */
     protected $chamados;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $status;
+
 
     public function __construct()
     {
@@ -229,5 +234,17 @@ class Status
     public function getAtivo()
     {
         return $this->ativo;
+    }
+
+    public function getStatus(): ?int
+    {
+        return $this->status;
+    }
+
+    public function setStatus(int $status): self
+    {
+        $this->status = $status;
+
+        return $this;
     }
 }

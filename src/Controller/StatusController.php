@@ -49,8 +49,13 @@ class StatusController extends AbstractController
         // dados del breadcrumb
         $breadcrumbs = [
             'home' => [
-                'name' => 'Dados Utilizados',
+                'name' => 'Dashboard',
                 'url'  => 'homepage',
+                'is_root' => false
+            ],
+            'dados' => [
+                'name' => 'Dados Utilizados',
+                'url'  => '',
                 'is_root' => true
             ],
             'status' => [
@@ -68,11 +73,34 @@ class StatusController extends AbstractController
             $em->persist($status);
             $em->flush();
 
-            return $this->redirectToRoute('admin_status_index');
-//            return $this->redirectToRoute('admin_status_index', array('id' => $status->getId()));
+            if ($request->isXmlHttpRequest()) {
+                return $this->render('backend/dados/status/inc/_table.html.twig', [
+                    'dado'   => $form->getData(),
+                    'campos' => $campos,
+                    'titulo' => $titulo,
+                ]);
+            }
+
+//            return $this->redirectToRoute('admin_'.strtolower($entity).'_index');
         }
 
-        return $this->render(':backend/dados:index.html.twig', array(
+        if ($request->isXmlHttpRequest()) {
+            $html =  $this->renderView('backend/dados/inc/_form.html.twig', [
+                'form' => $form->createView()
+            ]);
+
+            return new Response($html, 400);
+        }
+
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $em->persist($status);
+//            $em->flush();
+//
+//            return $this->redirectToRoute('admin_status_index');
+////            return $this->redirectToRoute('admin_status_index', array('id' => $status->getId()));
+//        }
+
+        return $this->render('backend/dados/status/status.index.html.twig', array(
             'titulo' => $titulo,
             'dados' => $dados,
             'weather' => $weather,
@@ -127,6 +155,7 @@ class StatusController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            dd('parou, parou, parou!!!');
             $em->persist($status);
             $em->flush();
 
@@ -237,5 +266,73 @@ class StatusController extends AbstractController
         $em->flush();
 
         return $this->redirectToRoute('admin_status_index');
+    }
+
+    /**
+     * Esta funcion borra la entidade de tipo dato, recibiendo los parametros
+     * desde 'params.data.yml' parametrizando las entradas y salidas.
+     *
+     * @Route("/apagar_dado/{id}", name="data_ajax_delete", methods={"DELETE"})
+     */
+    public function deleteAjax(Status $status, EntityManagerInterface $em)
+    {
+        $em->remove($status);
+        $em->flush();
+
+        return new Response(null, 204);
+    }
+
+    /**
+     * @Route("/trocar_cor/{id}", name="data_ajax_cor", methods={"PUT"})
+     */
+    public function trocaCorAjax(Status $status, EntityManagerInterface $em, Request $request)
+    {
+        $status->setCor($request->get('cor'));
+
+        $em->persist($status);
+        $em->flush();
+
+        return new Response(null, 204);
+    }
+
+    /**
+     * @Route("/trocar_nome/{id}", name="change_name_ajax", methods={"PUT"})
+     */
+    public function nameAjax(Status $status, EntityManagerInterface $em, Request $request)
+    {
+        if ($status->getNome() != 'aberto' || $status->getNome() != 'finalizado') {
+            $status->setSlug(null);
+        }
+
+        $status->setNome($request->get('name'));
+
+        $em->persist($status);
+        $em->flush();
+
+        return new Response(null, 204);
+    }
+
+    /**
+     * @Route("/trocar_status/{id}", name="change_status_ajax", methods={"PUT"})
+     */
+    public function changeStatusAjax(Status $status, EntityManagerInterface $em, Request $request)
+    {
+        if ($status->getSlug() == 'aberto' || $status->getSlug() == 'finalizado') {
+            $respuesta = [
+                'ok' => false,
+                'message' => 'Nem o status Aberto e nem Finalizado podem modificar o seu tipo'
+            ];
+            $statusCode = '403';
+        } else {
+            $statusVal = intval($request->get('statusVal'));
+            $status->setStatus($statusVal);
+            $em->persist($status);
+            $em->flush();
+
+            $respuesta = ['ok' => true];
+            $statusCode = '200';
+        }
+
+        return new Response($status->getNome(), 200);
     }
 }

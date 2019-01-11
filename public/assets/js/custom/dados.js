@@ -4,6 +4,8 @@
 
 // Funcion para mostrar 'anterior, proximo, buscar' y el resto de elementos DataTable
 $(document).ready(function() {
+
+
     $('#mainTable').DataTable();
     $(document).ready(function() {
         var table = $('#example').DataTable({
@@ -31,9 +33,72 @@ $(document).ready(function() {
                 });
             }
         });
+
     });
 });
 
+var $wrapper = $('.js-wrapper');
+$wrapper.on(
+    'submit',
+    '.js-new-data-form',
+    function (e) {
+        e.preventDefault();
+
+        var $form = $(e.currentTarget);
+        var $tbody = $wrapper.find('tbody');
+        $.ajax({
+            url: $form.get(0).action,
+            method: 'POST',
+            data: $form.serialize(),
+            success: function (data) {
+                $tbody.append(data),
+                confirmar()
+            },
+            error: function (jqXHR) {
+                $form.closest('.js-new-data-form')
+                    .html(jqXHR.responseText);
+            }
+        });
+        // console.log($form.get(0).action);
+        // console.log($data);
+    }
+);
+
+function deleteRow(e) {
+    $(e).removeClass('mdi mdi-delete');
+    $(e).addClass('fa fa-spinner');
+    $(e).addClass('fa fa-spin');
+
+    var deleteUrl = $(e).data('url');
+    var $row = $(this).closest('tr');
+    $.ajax({
+        url: deleteUrl,
+        method: 'DELETE',
+        success: function () {
+            $row.fadeOut();
+
+            console.log('Y ahora?');
+        }
+    });
+
+    console.log($row);
+}
+
+function cambiarCor(editableObj) {
+    var cor = $(editableObj).find('option:selected').val();
+    $.ajax({
+        url: $(editableObj).data('url'),
+        type: "PUT",
+        data: {"cor": cor},
+        success: function (data) {
+            $(editableObj).css("background-color", cor);
+            confirmar();
+        },
+        error: function(xhr){
+            error(xhr);
+        }
+    });
+}
 
 function saveToDatabase(editableObj,id, valorOriginal) {
     var valorNuevo = $.trim(editableObj.innerHTML);
@@ -74,6 +139,7 @@ function ColourSelected(editableObj,id) {
         },
         error: function(xhr){
             error(xhr);
+            console.log('error: '+xhr)
         }
     });
 }
@@ -100,6 +166,13 @@ function error(xhr) {
         confirmButtonText: 'Close!',
         timer: 2000
     })
+}
+
+async function otraFuncion(e) {
+    e.preventDefault();
+    // var $form = e.currentTarget;
+
+    console.log('ahora estoy en otra función');
 }
 
 async function ativo(id, valorAtual) {
